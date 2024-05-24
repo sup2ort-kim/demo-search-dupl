@@ -1,0 +1,154 @@
+@charset "utf-8";
+
+
+/* NotoSans */
+@font-face{
+	font-family:'nts';
+	font-weight:normal;
+	font-style: normal;
+	src:url("/font/NotoSans/NotoSansR.eot");
+	src:url("/font/NotoSans/NotoSansR.eot?#iefix") format('embedded-opentype'),
+		url("/font/NotoSans/NotoSansR.woff2") format('woff2'),
+		url("/font/NotoSans/NotoSansR.woff") format('woff');
+}
+
+@font-face{
+	font-family:'nts';
+	font-weight:100;
+	font-style: normal;
+	src:url("/font/NotoSans/NotoSansT.eot");
+	src:url("/font/NotoSans/NotoSansT.eot?#iefix") format('embedded-opentype'),
+		url("/font/NotoSans/NotoSansT.woff2") format('woff2'),
+		url("/font/NotoSans/NotoSansT.woff") format('woff');
+}
+
+@font-face{
+	font-family:'nts';
+	font-weight:200;
+	font-style: normal;
+	src:url("/font/NotoSans/NotoSansL.eot");
+	src:url("/font/NotoSans/NotoSansL.eot?#iefix") format('embedded-opentype'),
+		url("/font/NotoSans/NotoSansL.woff2") format('woff2'),
+		url("/font/NotoSans/NotoSansL.woff") format('woff');
+}
+
+
+
+@font-face{
+	font-family:'nts';
+	font-weight:500;
+	font-style: normal;
+	src:url("/font/NotoSans/NotoSansM.eot");
+	src:url("/font/NotoSans/NotoSansM.eot?#iefix") format('embedded-opentype'),
+		url("/font/NotoSans/NotoSansM.woff2") format('woff2'),
+		url("/font/NotoSans/NotoSansM.woff") format('woff');
+}
+
+@font-face{
+	font-family:'nts';
+	font-weight:600;
+	font-style: normal;
+	src:url("/font/NotoSans/NotoSansB.eot");
+	src:url("/font/NotoSans/NotoSansB.eot?#iefix") format('embedded-opentype'),
+		url("/font/NotoSans/NotoSansB.woff2") format('woff2'),
+		url("/font/NotoSans/NotoSansB.woff") format('woff');
+}
+
+@font-face{
+	font-family:'nts';
+	font-weight:bold;
+	font-style: normal;
+	src:url("/font/NotoSans/NotoSansDL.eot");
+	src:url("/font/NotoSans/NotoSansDL.eot?#iefix") format('embedded-opentype'),
+		url("/font/NotoSans/NotoSansDL.woff2") format('woff2'),
+		url("/font/NotoSans/NotoSansDL.woff") format('woff');
+}
+
+
+
+/* Montserrat */
+@font-face{
+	font-family:'mst';
+	font-weight:normal;
+	font-style: normal;
+	src:url("/font/Montserrat/MontserratR.eot");
+	src:url("/font/Montserrat/MontserratR.eot?#iefix") format('embedded-opentype'),
+		url("/font/Montserrat/MontserratR.woff2") format('woff2'),
+		url("/font/Montserrat/MontserratR.woff") format('woff');
+}
+@font-face{
+	font-family:'mst';
+	font-weight:300;
+	font-style: normal;
+	src:url("/font/Montserrat/MontserratM.eot");
+	src:url("/font/Montserrat/MontserratM.eot?#iefix") format('embedded-opentype'),
+		url("/font/Montserrat/MontserratM.woff2") format('woff2'),
+		url("/font/Montserrat/MontserratM.woff") format('woff');
+}
+
+
+
+@font-face{
+	font-family:'mst';
+	font-weight:600;
+	font-style: normal;
+	src:url("/font/Montserrat/MontserratSB.eot");
+	src:url("/font/Montserrat/MontserratSB.eot?#iefix") format('embedded-opentype'),
+		url("/font/Montserrat/MontserratSB.woff2") format('woff2'),
+		url("/font/Montserrat/MontserratSB.woff") format('woff');
+}
+
+
+@font-face{
+	font-family:'mst';
+	font-weight:bold;
+	font-style: normal;
+	src:url("/font/Montserrat/MontserratSB.eot");
+	src:url("/font/Montserrat/MontserratSB.eot?#iefix") format('embedded-opentype'),
+		url("/font/Montserrat/MontserratSB.woff2") format('woff2'),
+		url("/font/Montserrat/MontserratSB.woff") format('woff');
+}
+
+
+
+
+
+
+  /* fallback */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/materialicons/v140/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+
+
+
+
+  /* Xeicon */
+  @font-face {
+     font-family: 'xeicon';
+     font-weight: 400;
+     font-style: normal;
+     src: url("/font/xeicon/xeicon.eot") format("eot"),
+     url("/font/xeicon/xeicon.ttf") format("truetype"),
+     url("/font/xeicon/xeicon.woff") format("woff"),
+     url("/font/xeicon/xeicon.woff2") format("woff2");
+  }

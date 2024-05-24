@@ -1911,4 +1911,3 @@
         
 	</div><!--contents_box-->
 
-<%@ include file="/WEB-INF/jsp/egovframework/usr/cmn/accessLogging.jsp" %>

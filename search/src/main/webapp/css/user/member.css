@@ -1,0 +1,200 @@
+/*로그인*/
+.login{  width:100%; box-sizing:border-box; height: auto; width: 500px; text-align: center; margin: 0 auto  ; border:1px solid #dadada; border-radius: 30px; 
+    padding: 20px 50px 60px; margin-top: 70px;     box-shadow: 3px 3px 10px rgba(0,0,0,0.08);}
+.login:after{content:''; display: block; clear: both;  }
+.login .login_cont { position:relative;   margin:0px 0 30px; }
+.login .login_cont .loginbox{ margin:0 auto; }
+.login .login_cont .loginbox .input_L{ width: 100%; }
+.login .login_cont .loginbox .btn_L { width:100%; }
+.login_tit {font-size: 30px; font-weight: 600;}
+
+/* ID PW찾기 */
+.login-pwArea {display: flex; ;}
+.login-pwArea .login {width:40%; margin: 0 5%; height: 100%;}
+.login-pwArea .auth_wrap li {width:100%}
+
+
+
+.login .login_cont .loginbox .input_L li {margin-bottom:10px;}
+.login .login_cont .loginbox .input_L li input {width:100%; height:45px; font-size:15px; background:#fff; border-radius: 5px;}
+
+.bnt_login{width:100%;  text-align:center; margin-top: 15px; }
+.bnt_login button {background:#183989; border-color:#183989; color:#fff; font-weight:bold; font-size:17px; border-radius:5px; width: 100%;height:45px;}
+.bnt_login:focus{border:none;}
+.sbtn_login{ width:100%;font-size:15px;line-height:43px;height:43px; padding:0 20px; text-align:center;color:#000 !important;border:1px solid #dadada;background:#fff; border-radius:5px; transition: all .40s ease;}
+.sbtn_login:hover{ text-decoration:underline; background: #f2f2f2; font-weight: bold;}
+
+.area_idschbox {display: flex; height: 45px;}
+.area_idschbox :after{content:''; display: block; clear: both;  }
+
+.input_L p { position:relative; width:100%; height:60px; }
+.input_L input{ box-sizing:border-box; padding:20px 0 0; width:100%; height:100%; border:0 none; color:#000; outline:none; font-size: 18px; padding-right: 80px  ;}
+.input_L label { position:absolute; left:0%; bottom:0; width:100%; height:100%; border-bottom:1px solid #000; text-align:left; pointer-events:none; }
+.input_L label:after { content:""; position:absolute; left:0; bottom:-1px; width:0; height:100%; border-bottom:2px solid #000; transition:all .3s ease; } /* 파란색 가로줄 */
+.input_L label span { position:absolute; left:0; bottom:5px; transition:all .3s ease; font-size: 16px; color:#183989 }
+.input_L input:focus + label span, 
+.input_L input:valid + label span { transform:translateY(-150%); font-size:14px; color:#ccc; }  /* input에 글을 입력하고 포커스가 지나간 상태에서 제어하려면 valid 선택자를 써야한다. */
+/* 포커스 될 때 label span(name)이 위로 올라감 */
+.input_L input:focus + label::after,
+.input_L input:valid + label::after { width:100%; transform:translateX(0); } 
+/* 포커스 될 때 파란색 가로줄이 생김 */
+.certification {position:absolute; right:0; bottom:8px; border:1px solid #ccc; background: #fff; border-radius: 30px; padding: 6px 15px;}
+.certification:hover {background: #f8f8f8;}
+.certification_  {position:absolute; right:0; bottom:8px; padding: 6px 15px; color:#0071b9}
+.login .list_type {text-align: left;}
+.login .list_type li { display: inline-block; margin-right: 25px; position:relative}
+.login .list_type li .active {text-decoration: underline; color:#0071b9}
+.login .list_type li button {font-size: 16px;}
+.login .list_type li:first-child:after{position: absolute; right:0; top:2px; content: '|'; right:-15px}
+
+.idpw_tit {text-align: left; font-size: 22px; margin-top: 15px;}
+.idpw_tit2{ margin: 15px 0; font-size: 17px;}
+
+
+
+
+.sir_singo_msg button {cursor:pointer;font-family:Arial,'돋움',Dotum;border:none;padding:0;background:#fff; outline:0}
+.sir_singo_msg .blind_view{font-size:1.14em;font-weight:bold;color:#ff4343;margin-top:-3px;text-decoration:underline}
+.singo_view { display:none; }
+.atvs {    display: none;}
+/*a:hover + .atvs {    display: block;}*/
+
+.login_infotxt {text-align: left; color:#ff5926; line-height: 18px; margin: 8px 0;}
+
+
+.area_idschbox .join_btbox{width: 48%; position:relative; margin-right: 4%;}
+.area_idschbox .sch_btbox{width: 48%; position:relative}
+
+.LoginType{position:relative; padding-bottom: 30px; margin-bottom: 50px;}
+.LoginType li { float:left; margin-bottom: 10px; height: 45px; border:1px solid #dadada; position:relative;border-radius: 8px; text-align: center; color:#183989}
+.LoginType li.select{border:1px solid #183989}
+.LoginType a li {font-size: 15px; display: table; vertical-align: middle;width: 48%; margin: 0 1%;height: 100%; font-size: 16px; line-height: 20px; }
+.LoginType a li p {display: table-cell; vertical-align: middle; padding: 10px 0; height: 65px}
+
+
+
+
+/* join_state */
+.join_state {    position: relative;    width: 740px;    margin: 0 auto; margin-top: 70px;}
+.join_state .state_list {    margin-left: -25px;    margin-top: -15px}
+.join_state .state_list:after {    content: '';    display: block;    clear: both}
+.join_state .state_list li {    position: relative;    float: left;    width: 20%;    box-sizing: border-box}
+.join_state .state_list li .state_box {    margin-left: 25px;    margin-top: 15px;    text-align: center}
+.join_state .state_list li .state_box .state_tit {    position: relative;    height: 142px;    margin-bottom: 10px;    padding-top: 90px;    border: 1px solid #dadada;    border-radius: 5px;
+    box-sizing: border-box}
+.join_state .state_list li .state_box .state_tit .tit {    font-size: 14px;    font-weight: normal;    letter-spacing: -1px;    line-height: 155%;    color: #808080}
+.join_state .state_list li .state_box .state_num {    display: block;    letter-spacing: -0.2px;    line-height: 135%;    color: #808080;    font-weight: normal;    font-size: 15px}
+
+.join_state .state_list li .state_box.use01 .state_tit {    background: url('/images/common/ico_use01_or.png') no-repeat 50% 24px;    background-size: 60px 62px}
+.join_state .state_list li .state_box.use01.active .state_tit {    background: url('/images/common/ico_use01_on.png') no-repeat 50% 24px;    background-size: 60px 62px}
+
+.join_state .state_list li .state_box.use02 .state_tit {    background: url('/images/common/ico_use02_or.png') no-repeat 50% 24px;    background-size: 60px 62px}
+.join_state .state_list li .state_box.use02.active .state_tit {    background: url('/images/common/ico_use02_on.png') no-repeat 50% 24px;    background-size: 60px 62px}
+
+.join_state .state_list li .state_box.use03 .state_tit {    background: url('/images/common/ico_use03_or.png') no-repeat 50% 24px;    background-size: 60px 62px}
+.join_state .state_list li .state_box.use03.active .state_tit {    background: url('/images/common/ico_use03_on.png') no-repeat 50% 24px;    background-size: 60px 62px}
+
+.join_state .state_list li .state_box.use04 .state_tit {    background: url('/images/common/ico_use04_or.png') no-repeat 50% 24px;    background-size: 60px 62px}
+.join_state .state_list li .state_box.use04.active .state_tit {    background: url('/images/common/ico_use04_on.png') no-repeat 50% 24px;    background-size: 60px 62px}
+.join_state .state_list li .state_box.active .state_tit {    border: 1px solid #183989}
+.join_state .state_list li .state_box.active .state_tit .tit {    color: #183989}
+.join_state .state_list li .state_box.active .state_num {    color: #183989}
+
+.join_state .state_list.col2 li {    width: 50%}
+.join_state .state_list.col3 li {    width: 33.33333%}
+.join_state .state_list.col4 li {    width: 25%}
+.join_state .state_list.col5 li {    width: 20%}
+.join_state .state_list.col6 li {    width: 16.66666%}
+.join_state .state_list li .state_box .state_tit:before {    content: '';    position: absolute;    left: 50%;    bottom: -16px;    width: 31px;    height: 31px;    margin-left: -15.5px;
+    border-radius: 50%;    box-sizing: border-box;    z-index: 1}
+
+.join_state .state_list li .state_box .state_tit:after {    content: '';    position: absolute;    left: 50%;    bottom: -4px;    width: 7px;    height: 7px;    margin-left: -3.5px;
+    background: rgba(24, 57, 137, .4);    border-radius: 50%;    box-sizing: border-box;    z-index: 1}
+.join_state .state_list li .state_box.active .state_tit:before {    background: #183989;    -webkit-animation: expn-bounce 2.2s infinite ease-in-out;
+    -moz-animation: state-bounce 2.2s infinite ease-in-out;    -o-animation: state-bounce 2.2s infinite ease-in-out;    animation: state-bounce 1.6s infinite ease-in-out;}
+.join_state .state_list li .state_box.active .state_tit:after {    background: rgba(255,255,255,0.95)}
+
+
+
+
+@keyframes state-bounce {    0%, 100% {        transform: scale(0.5);        -webkit-transform: scale(0.5)    }
+
+    50% {
+        transform: scale(0.8);
+        -webkit-transform: scale(0.8)
+    }
+}
+
+/* 유형선택 */
+.member_type2 {width:740px; margin: 0 auto;}
+.member_type2 dl {border:1px solid #ccc; border-radius: 8px; margin-bottom: 10px; padding: 30px;}
+.member_type2 > a dl:hover, .member_type2 > a dl.select{border:3px solid #183989}
+.member_type2 dl > dt {font-size: 18px;color:#183989}
+.member_type2 dl > dd {font-size: 15px;}
+
+/* 가입완료 */
+.tt_signin_done {  width: 740px; padding-bottom: 30px;  margin:50px auto 0px;  border:solid 1px #ddd;  text-align: center;border-radius: 15px;}
+.tt_signin_done > span {  color:#000;  font-weight:500;  font-size:30px;}
+.tt_signin_done p {  margin-top: 30px;color:#183989 ;}
+.tt_signin_done p i {font-size: 70px;}
+.tt_signin_done p i:hover{color:#183989}
+.tt_signin_done_top {  width: 100%;  height: 250px;  
+  padding-top: 30px; font-size: 30px; color:#000; border-top-left-radius: 15px;  border-top-right-radius: 15px; background: #f5f7fa;}
+.tt_signin_done .tt_signin_done_md {  padding:30px 30px 0px 30px;  text-align: left; }
+.tt_signin_done_top .size18 {font-size: 20px;}
+.tt_signin_done .tt_signin_done_md > ul {    width:100%;  padding-bottom: 10px;  padding-left: 10px;}
+.tt_signin_done .tt_signin_done_md > ul > li{  font-size:16px;  margin-bottom:10px;}
+.tt_signin_done .tt_signin_done_md > ul > li span{  font-size:16px;  display:inline-block;  color:#666666;  min-width:150px;}
+.tt_signin_done .tt_signin_done_bt {  margin-top: 30px;  text-align: left;  padding: 0px 30px 0px 40px;}
+.tt_signin_done .tt_signin_done_bt > ul > li span {  display: inline-block;  width: 150px;  float: left;  height: 100px;  font-size: 17px;  color: #666;}
+.tt_signin_done .tt_signin_done_bt > ul > li > ul.signin_list > li{  font-size: 16px;  margin-bottom: 6px;}
+
+
+/* 이용약관 */
+
+/*개인정보약관동의*/
+.use_1 { height:150px; border:1px solid #E7E7E7; background:#fff; overflow-y:scroll; scrollbar-face-color: #e5e5e5; scrollbar-shadow-color:#e7e7e7; 
+    scrollbar-highlight-color:#e7e7e7; scrollbar-3dlight-color:#f8f8f8; scrollbar-darkshadow-color:f8f8f8; scrollbar-track-color:#f8f8f8; scrollbar-arrow-color:#b3b3b3; padding:15px; font-size:14px; font-weight:300; margin-top:25px;}
+    .h300{ height:300px !important; }
+    .use_1 h4{  font-weight:bold; margin-top:20px; }
+    .use_1 .big_subject{font-weight:bold; color:#0071b9; margin:25px 0; font-size:20px; text-align:left}
+    .use_1 p{ font-size:13px; color:#666; padding-top:5px; line-height:16px; font-weight:500;}
+    .use_1 div { font-size:13px; margin-top:15px;}
+    /*개인정보약관동의테이블*/
+    .list_table { margin-top:20px; border-top: #d1d1d1 1px solid; border-bottom: #d1d1d1 1px solid; margin-bottom: 30px; }
+    .list_table th { background: #f5f5f5; text-align: left; padding: 8px 10px 6px; border-right: #e5e5e5 1px solid; border-bottom: #e5e5e5 1px solid; font-weight: bold; line-height: 1.7; text-align: center; }
+    .list_table td { text-align: left; padding: 8px 0 6px 15px; border-right: #e5e5e5 1px solid; border-bottom: #e5e5e5 1px solid; font-weight: normal; background: none; line-height: 1.7; }
+    .list_table .end { border-right: 0; }
+    
+/*동의하기*/
+.agree_check{ margin:25px 15px 15px 0; text-align:left; font-size:15px;} .agree_check > strong { font-weight:400; }
+
+
+
+
+@media (max-width: 780px)
+{
+
+    .login, .member_type2, .join_state, .tt_signin_done   {width:100%}
+    .join_state{width:100%; margin:50px auto 15px}
+    .join_state .state_list li{width:50% !important}
+    .join_state .state_list li .state_box .state_tit{height:132px; padding-top:90px}
+    .login_tit {font-size: 25px; }
+
+}
+
+
+
+@media (max-width: 460px)
+{
+    .login {padding: 20px 20px 30px; }
+    .sbtn_login {font-size:14px;  padding:0 8px; }
+    .area_idschbox {display: block; height: auto;}
+    .area_idschbox .join_btbox, .area_idschbox .sch_btbox {width:100%; float: none; margin-bottom: 5px;}
+    .LoginType a li {font-size: 15px;}
+    .tt_signin_done p {font-size: 25px; margin-top:10px}
+    .tt_signin_done_top {height: 200px;}
+
+    .login_tit {font-size: 20px; }
+
+}

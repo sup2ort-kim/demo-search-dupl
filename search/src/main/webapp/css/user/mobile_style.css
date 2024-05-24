@@ -1,0 +1,2942 @@
+/* 반응형 코딩 ---------------------------------------------- */
+/* min사용할 때는 width가 작은순서대로 작성해야함. 
+   max사용할 때는 width가 큰 순서대로 작성
+   screen:pc,태블릿,스마트폰 단말기 */
+
+/* @media screen and (min-width:1280px) and (max-width:1599px){}
+@media screen and (min-width:1024px) and (max-width:1279px){}
+@media screen and (min-width:768px) and (max-width:1023px){} */
+
+
+/* 홈 하단 - 우리가 좋아한 LikeSNU 컬렉션 책 한권 이미지 */
+.left_book_img01 .book_tit{position: absolute;top: -1px;left: -1px;}
+
+/* 텍스트 줄바꿈 */
+.slide3_box li{height: 265px;}
+.slide3_box li h2 > a{overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;height: auto;}
+.slide3_box li h3{white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
+.slide3_box li p{overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 3;
+-webkit-box-orient: vertical;height: 50px;margin: 5px 0;line-height: 18px;}
+.slide5_box li h5{overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;height: 50px;width: 81%;float: left;margin-bottom: 5px;}
+.slide5_box li{line-height: 20px;}
+.textbook_tit{clear: both;}
+.slide4_txt_box{clear: both;height: 60px;}
+.subject_slide_box h5, .subject_slide_box h4{white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
+.slide5_box li h5 a{height: 40px;}
+.main04 .slide3_box li h2 > a{height: 60px;}
+.main04 .slide3_box li h3{height: 25px;}
+.main04 .slide3_box li p{height: 38px;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 2;
+-webkit-box-orient: vertical;line-height: 18px; margin: 10px 0;}
+
+.class_3slide li h2 a{overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 2;
+-webkit-box-orient: vertical;height: 55px;line-height: 27px;}
+.class_3slide li span.red, .class_3slide li span.teacher{white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
+/* 2024.01.11 유지나 시작 */
+.main05 .class_3slide .slick-slide {position: relative; height: 340px}
+.main05 .class_3slide .slick-slide .more_view_btn1{position: absolute;bottom: 33px;right: 10px;top:inherit;}
+.main05 .class_3slide .slick-slide .more_view_drop1{bottom:32px;transform: translateX(90%);}
+.main05 .class_3slide .slick-slide .more_view_drop1 li{border:0;background: none;margin: 0;padding: 0;height: auto;float: none;width: auto;}
+/* 2024.01.11 유지나 끝 */
+
+/* main3 - 도서 책 제목 1줄 */
+.best_book_right li .book_right_tit{overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+
+/* top 메뉴 인기검색어 */
+.search_wrod .sub_menu{z-index: 9999;}
+
+/* main4 - 논문 메인 슬라이더 호버 수정 */
+.main04 .top_slide3_play li:hover{cursor: pointer; transform: none;box-shadow: none;}
+.main04 .more_view_btn1{cursor: pointer;}
+.main03 .slide4_txt_box .more_view_btn1 {position: absolute; top:20px;right: 0;}
+
+/* main3 - 도서 메인 슬라이더 더보기 */
+.main03 .slide5_box .tag{cursor: pointer;}
+.main03 .slide5_box li h5{height: 40px;}
+.main03 .slide3_play li h5{width: 100%;}
+
+/* main3 - 도서 백그라운드->이미지 수정 */
+.best_book_left li:nth-child(1){background: none;}
+/* .select_book_img{background: none!important;} */
+.select_book_img img{display: block;width: 100%;height: 100%;}
+
+/* main2 - 주제 비율 수정 */
+.main02 .right_slide_box {width: 40%!important;}
+.main02 .contents_box .main_banner{margin-bottom: 0!important;height: 300px;}
+
+/* main1 - 홈 카드박스 수정 */
+.main01 .right_card_box:nth-of-type(1){margin-right: 2%;width: 48%;}
+.card3_play .left_book_img{margin: 0 12px;}
+
+/* main4 - 하단 메인 배너 버튼 수정 */
+.main04 .contents_box2 .main_banner > a{float: left!important;}
+
+/* sub_style.css 수정 시작 ------------------------------------------- */
+.gray_sub_txt{clear: both;}
+
+/* sub_style.css 도서결과검색 상세 - 2023.12.28 유지나 수정------------------------------------- */
+
+.sub3-2 .card3_play .left_book_img > a {width: 170px;height: 230px;}
+
+.sub3-2 .card_box{height: 485px;}
+.sub3-2 .card3_play .slick-track{padding-top: 10px;}
+.sub5-2 .right_book_list{margin-bottom: 20px;}
+.sub3-2 .slide3_box li{height: 260px;}
+/* sub_style.css 수정 끝 ------------------------------------------- */
+
+/* 더보기 화살표 수정 */
+.main02 .more_view::after {content: '';background: url(/images/more_view_i_w.png) no-repeat right 40%;background-position: -12px;margin-left: 3px;padding-right: 16px;}
+.menu1>.sub1{bottom:15px;}
+
+/* 2023.12.26 유지나 수정 */
+/* main4 더보기 버튼 오른쪽 위치 수정 */
+.main03 .slide45_play .more_view_drop1{right: 0px;bottom:20px;transform: translateX(100%);}
+.main04 .top_slide3_play .more_view_drop1{right: 0px;bottom:25px;transform: translateX(85%);}
+.main04 .top_slide3_play .more_view_btn1{bottom:25px;}
+
+/* 팔로우 버튼 select 클래스 추가 */
+.card_box a.follow_btn.select{color: #ffe157;cursor: pointer;}
+.card_box a.follow_btn.select::before{content: "\ea10"; font-family: xeicon!important;margin-right: 7px;position: absolute; left: 18px; top:7px;font-size: 22px;}
+   
+/* 2023.12.27 수 mian4 - 논문 중간 컨텐츠 책->논문 으로 변경 */
+.main04 .thesis_3box{box-shadow: none;border-radius: 0;border:0;padding: 30px;margin-top: 30px!important;}
+.main04 .thesis_3box .slick-slide{width: 350px; margin: 0 14px; height: 280px;padding: 35px 30px;position: relative;}
+.main04 .thesis_3box .slick-slide:hover{transform: none;box-shadow: none;}
+.main04 .thesis_3box .slick-prev{top:45%;left: 30px;}
+.main04 .thesis_3box .slick-next{top:45%;right: 30px;}
+
+
+/* main5 강의 - 메인 슬라이드 패딩 수정 */
+.class_3slide li{padding: 25px 30px;}
+
+
+/* 2023.12.27 수 mian5 -강의 중간 컨텐츠 도서/논문 탭 슬라이드 추가 */
+.tab_slider4 .buttons{width: auto;padding: 15px 8px;}
+.tab_slider4 .buttons > button.active{color: #040000;padding: 0px 15px;height: 38px;line-height: 35px;display: inline-block;border: 2px solid #183989;border-radius: 3px;
+box-sizing: border-box;transition: ease-in-out 0.5s;text-align: center;font-weight: 500;background: #fff;}
+.tab_slider4 .buttons > button{width: auto;font-size: 16px;border: 1px solid #cdcdcd;display: block;border-radius: 3px;
+background: #fff;padding: 0px 15px;font-weight: 400;box-sizing: border-box;text-align: center;height: 38px;line-height: 35px;display: inline-block;color: #040000;}
+.tab_slider4 .tabs{padding-top: 0;}
+.tab_slider4 .tab{position: relative;}
+.tab_slider4 .cont_tit{margin: 20px 0 10px 0!important;}
+.tab_slider4{height: auto;margin-top: 20px;height: 370px;}
+.tab_slider4 .tab {display:none;}
+.tab_slider4 .tab.active { display:block;}
+
+.main05 .tab_slider4 .slide5_box .slick-slide{width: 155px!important;margin: 0 20px;}
+.main05 .tab_slider4 li a.slide5_box_img01{width: 155px!important;height: 230px!important;}
+.main05 .tab_slider4 .slick-track{margin-top: 0px;}
+.main05 .slider4{width: 95%;margin: 0 auto;}
+.main05 .tab_slider4 .slide5_box .slick-prev{top:38%;}
+.main05 .tab_slider4 .slide5_box .slick-next{transform: translateX(100%);right: 30px;top:38%;}
+
+.main05 .tab_slider4 .slide3_box{box-shadow: none;border:0;padding: 0;}
+.main05 .tab_slider4 .slide3_box li{box-shadow: none;border:0;width: 350px;}
+.main05 .tab_slider4 .slide3_box .slick-prev{top:44%;}
+.main05 .tab_slider4 .slide3_box .slick-next{transform: translateX(100%);right: 45px;top:44%;}
+
+
+/* 도서, 논문, 강의 하단 탭 슬라이드 더보기 버튼 오류 수정 */
+.main03 .tab_slider .menu1{padding: 0;width: auto;padding-top: 2px;}
+.main04 .tab_slider .menu1{padding: 0;width: auto;padding-top: 2px;}
+.main05 .tab_slider .menu1{padding: 0;width: auto;padding-top: 2px;}
+.menu1 i{font-weight: bold;}
+
+.main03 .tab_slider .menu1>.sub1{bottom:2px;}
+.main04 .tab_slider .menu1>.sub1{bottom:2px;}
+.main05 .tab_slider .menu1>.sub1{bottom:2px;}
+
+/* main3 도서 중간 슬라이드 버튼 css 수정 */
+.main03 .right_slider3 .slide3_play .slick-next{right: 0;}
+.main03 .right_slider3 .slide3_play .slick-prev{left: 8px;}
+
+/* 도서, 논문, 강의 메인 버튼 top 위치 수정 */
+.main03 .slide5_box .slick-next{bottom:60px;}
+.main03 .slide5_box .slick-prev{bottom:60px;}
+
+.main04 .top_slide3_play .slick-next{bottom:-40px;}
+.main04 .top_slide3_play .slick-prev{bottom:-40px;}
+
+/* main5 강의 하단 배너 버튼 위치 수정 */
+.main05 .contents_box2 .main_banner a{margin-left: 8px;}
+
+/* 슬라이드 이미지 border-radius */
+.slide5_box li > a img{border-radius: 13px;}
+.tab_slider .slider .slick-slide a img{border-radius: 15px;border-top-left-radius: 0;border-bottom-left-radius: 0;border-top-left-radius: 0;}
+
+
+
+/* main02 - 주제 하단 논문 탭 수정(2024.01.09) 시작 */
+.class_3slide3{margin-top: 0px;padding: 0 30px;height: 310px;}
+.class_3slide3 li{border: 1px solid #3366cc;padding: 40px 30px;border-radius: 16px;float: left;
+background: #fff;font-size: 16px;box-sizing: border-box;margin: 0 20px;position: relative;}
+.class_3slide3 li h2{font-size: 22px;color: #244189;}
+.class_3slide3 li h2 a {font-weight: 600;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;
+white-space:initial;height: 55px;line-height: 1.2;}
+.class_3slide3 li h2 a:hover{text-decoration: underline;}
+.class_3slide3 li > span{font-size: 16px;display: block;}
+.class_3slide3 li span.red{color: #e34054;padding-top: 15px;}
+.class_3slide3 li span.teacher{color: #000;font-weight: 600;padding-bottom: 10px;}
+.class_3slide3 li p{color: #717171;font-weight: 400;word-break: keep-all;height: 100px;}
+.class_3slide3 li .tag_box{margin: 0;}
+.class_3slide3 li .tag{background: #e1edff;}
+.class_3slide3 .slick-prev{z-index: 1000;text-indent: -9999px;left: 0px;top: 40%!important;position: absolute;width: 49px;height: 49px;transform: translateX(-50%);
+background: #fff url(/images/slide_arrow_left.png) no-repeat center;border: 2px solid #e6e6e6;box-sizing: border-box;box-shadow: 3px 3px 3px rgba(0,0,0,0.1);border-radius: 50%;}
+.class_3slide3 .slick-next{z-index: 1000;text-indent: -9999px;
+right: 0px;top: 40%!important;position: absolute;width: 49px;height: 49px;transform: translateX(50%);background: #fff url(/images/slide_arrow_right.png) no-repeat center;
+border: 2px solid #e6e6e6;box-sizing: border-box;box-shadow: 3px 3px 3px rgba(0,0,0,0.1);border-radius: 50%;}
+
+.main02 .tab_slider2 .marginTop{padding-top: 60px;}
+.main02 .tab_slider2 .slider2{margin-top: 0;height: 310px;}
+.main02 .tab_slider2 .thesis_3box2 {box-shadow: none;border: 0;padding: 0;margin-top: 0px;width: 100%;padding: 0 30px;height: 310px;}
+.main02 .tab_slider2 .thesis_3box2 li {box-shadow: none;border: 0;position: relative;}
+.main02 .tab_slider2 .thesis_3box2 .slick-slide:hover{transform: none;}
+.main02 .tab_slider2 .thesis_3box2 .slick-prev{top: 40%!important;}
+.main02 .tab_slider2 .thesis_3box2 .slick-next{top: 40%!important;}
+.main02 .tab_slider2 .thesis_3box2 li h2{padding: 0;text-align: left;}
+.main02 .tab_slider2 .class_3slide3 li h2{padding: 0;text-align: left;}
+
+.main02 .tab_slider2 .sub1 li{background: none;padding: 0;height: auto;margin: 0;border: 0;}
+.main02 .tab_slider2 .sub1 li:hover{transform:none;}
+.main02 .thesis_3box2 .menu1 {width: auto;}
+.main02 .class_3slide3 .menu1 {width: auto;}
+
+.main02 .thesis_3box2 .menu1>.sub1 {right: 0;transform: translateX(85%);bottom: 30px;}
+.main02 .class_3slide3 .menu1>.sub1 {right: 0;transform: translateX(85%);bottom: 30px;}
+.main02 .LikeSNU_collec .menu1>.sub1 {right: 0;transform: translateX(100%);bottom: -20px;}
+.main02 .LikeSNU_collec .menu1{position: absolute;right: 20px;top: 74%;width: auto;}
+
+/* 2024.01.27 토 유지나 수정 시작 */
+.main02 .tab_slider2 .LikeSNU_collec .card_box{height: 230px;}
+.main02 .LikeSNU_collec .sub_card_box{margin: 0px 30px;}
+.main02 .LikeSNU_collec .sub_card_box .card_box{}
+.main02 .LikeSNU_collec .card_box h2{padding: 0;text-align: left;}
+.likesnu_slider {height: 460px;}
+.likesnu_slider .slick-slide {margin:80px 10px 0 10px!important;}
+.likesnu_slider .slick-prev{z-index: 1000;text-indent: -9999px;left: -30px;top: 40%!important;position: absolute;width: 49px;height: 49px;transform: translateX(-50%);
+background: #fff url(/images/slide_arrow_left.png) no-repeat center;border: 2px solid #e6e6e6;box-sizing: border-box;box-shadow: 3px 3px 3px rgba(0,0,0,0.1);border-radius: 50%;}
+.likesnu_slider .slick-next{z-index: 1000;text-indent: -9999px;
+right: -30px;top: 40%!important;position: absolute;width: 49px;height: 49px;transform: translateX(50%);background: #fff url(/images/slide_arrow_right.png) no-repeat center;
+border: 2px solid #e6e6e6;box-sizing: border-box;box-shadow: 3px 3px 3px rgba(0,0,0,0.1);border-radius: 50%;}
+/* 2024.01.27 토 유지나 수정 끝 */
+
+/* main02 - 주제 하단 논문 탭 수정(2024.01.09) 끝 */
+
+.main02 .LikeSNU_collec .card_box .tag_box {margin-top: 2-0px;}
+.main02 .LikeSNU_collec .share_box {top:80%;  right:10px}
+
+
+
+
+/* 공통 더보기 추가 2024.01.11 유지나 수정 시작 ---------------------------------------------- */
+.menu3>.sub3 div>a::before{vertical-align: middle;margin-top: -4px;display: inline-block;}
+.menu3>.sub3 div>a.pdf::before{content: '\eb7c';font-family: xeicon!important;padding-right: 8px;font-size: 20px;color: #000;}
+.menu3>.sub3 div>a.basket::before{content: '\e913';font-family: xeicon!important;padding-right: 8px;font-size: 20px;color: #000;}
+.menu3>.sub3 div>a.read::before{content: '\e950';font-family: xeicon!important;padding-right: 5px;font-size: 20px;color: #000;}
+.menu3>.sub3 div>a.not_interested::before{content: '\e9ae';font-family: xeicon!important;padding-right: 7px;font-size: 20px;color: #000;}
+.menu3>.sub3 div>a.loan::before{content: '\e9fa';font-family: xeicon!important;padding-right: 7px;font-size: 20px;color: #000;}
+.menu3>.sub3 div>a.aladdin::before{content: '\e980';font-family: xeicon!important;padding-right: 7px;font-size: 20px;color: #000;}
+
+.menu3{text-align:left;position: absolute;right: 20px;bottom:25px; cursor: pointer; cursor: pointer;}
+.menu3>.sub3{ display: none; width: 203px; position: absolute;right: 0;transform: translateX(100%); bottom:0px;background: #fff;
+border-radius: 11px;z-index: 1000;box-shadow: 5px 5px 5px rgba(0,0,0,0.05);border: 1px solid #e1e1e1;box-sizing: border-box; z-index: 9999; padding: 10px 0;;}
+.menu3>.sub3 div>a{text-decoration:none;width: 100%;color: #4c4c4c;font-size: 14px;padding:0px 15px;box-sizing: border-box;
+line-height: 35px;height: 35px;vertical-align: middle;display: inline-block;}
+.menu3>.sub3 div>a:hover,
+.menu3>.sub3 div>a:active,
+.menu3>.sub3 div>a:focus{text-decoration:underline;}
+
+.menu3 i {font-size: 23px;;}
+.menu3 i:hover,
+.menu3 i:active,
+.menu3 i:focus{color:#048ee3;}
+.menu3>.sub3.up{
+  height:0px;
+  animation-name:slide_up;
+}
+.menu3>.sub3.down{
+  height:172px;
+  animation-name:slide_down;
+}
+
+/* 공통 더보기 추가 2024.01.11 유지나 수정 끝 -------------------------------------------------- */
+
+
+
+
+/* 반응형 시작 ----------------------------------------------------------------------- */
+@media screen and (min-width:1600px) and (max-width:1919px){
+
+/* 홈 - main2 주제 시작 -------------*/
+.main02 .visual_slide{width: 1320px;margin: 0 auto;margin-top: 30px;}
+.subject_slide_box{width: 1320px;margin: 0 auto;margin-top: 80px;padding-left: 0;}
+.main02 .class_3slide2 .slick-slide{margin: 10px;padding: 38px 30px;}
+.main02 .class_3slide2 .slick-slide::after{clear: both;content: '';display: block;}
+.main02 .class_3slide2 .slick-prev{left: -420px;bottom: 10px;}
+.main02 .class_3slide2 .slick-next{left: -360px;bottom: 10px;}
+.tab_slider2 .slider2 .slick-slide{margin: 0 15px;width: 150px;}
+.main02 .tab_slider2 .right_book_img01 > a{width: 150px;height: 203px;}
+.tab_slider2 .slider2 .slick-list {width: 95%;margin: 0 auto;}
+.main02 .card_box{height: 380px;}
+.subject_left_box{width: 26%;}
+/* 홈 - main2 주제 끝 -------------*/
+
+/* 홈 - main# 도서 시작 -------------*/
+.main03 .left_txt_box{padding-left: 0;}
+.main03 .contents_box3{width: 1320px;margin: 0 auto;}
+.main03 .right_slide_box{width: 920px;}
+.main03 .slide45_play .slick-slide{width: 200px!important;margin: 0 15px;}
+.main03 .slide5_box li a.slide5_box_img01{width: 200px;height: 286px;}
+.slide4_txt_box{width: auto;}
+.main03 .slide5_box .tag:last-of-type{margin-top: 10px;}
+.main03 .right_slide_box .slide5_box .slick-prev{left: -405px;}
+.main03 .right_slide_box .slide5_box .slick-next{left: -340px;}
+
+/* 이 강의를 수강생이 보고있어요 */
+.main03 .right_slider3 .slick-prev{left: inherit!important;}
+.main03 .right_slider3 .slick-next{left: inherit!important;}
+.main03 .slide3_play li h5{width: 100%;}
+/* 홈 - main3 도서 끝 -------------*/
+
+/* 홈 - main5 강의 시작 -------------*/
+.main05 .class_3slide .slick-prev{left: -405px;}
+.main05 .class_3slide .slick-next{left: -340px;}
+.main05 .contents_box2{margin-right: 50px;}
+.main05 .contents_box2 .main_banner {/* width: 40%; */padding-left: 160px;}/*240502수정  */
+/* .main05 .contents_box2 .main_banner a{float: right;} */
+.bottom_center_txt{width: 40%;}
+/* 홈 - main5 강의 끝 -------------*/
+
+
+/* 홈 - main4 논문 시작 -------------*/
+.main04 .top_slide3_play .slick-prev{left: -380px;}
+.main04 .top_slide3_play .slick-next{left: -370px;}
+/* 2024.01.27 토 유지나 수정 시작 */
+.main04 .visual_slide{margin-bottom: 50px;}
+/* 2024.01.27 토 유지나 수정 끝 */
+.main04 .left_txt_box{padding-top: 60px;}
+.main04 .contents_box2 .main_banner{width: 100%;height: 550px;}
+
+/* 2023.12.27 수 mian4 - 논문 중간 컨텐츠 책->논문 으로 변경 */
+.main04 .thesis_3box{box-shadow: none;border-radius: 0;border:0;padding: 30px 20px;margin-top: 35px!important;}
+.main04 .thesis_3box .slick-slide{width: 358px; margin: 0 14px; height: 280px;}
+.main04 .thesis_3box .slick-prev{top:45%;left: 20px;}
+.main04 .thesis_3box .slick-next{top:45%;right: 20px;}
+/* 홈 - main5 논문 끝 -------------*/
+
+
+}
+
+
+
+
+/* 2023.12.27 유지나 수정 */
+@media screen and (max-width: 1600px){
+   
+/* main 더보기 버튼 왼쪽 방향 공통
+.main01 .card_box .more_view_drop1{left: 0px;right: inherit;transform: translateX(-80%);}
+.main03 .card_box .more_view_drop1{left: 0px;right: inherit;transform: translateX(-80%);}
+   */
+
+ /* home, 도서, 논문, 강의 하단 탭 슬라이드 더보기 버튼 왼쪽으로 변경 */
+.main01 .card_box .more_view_drop1{left: 0px;right: inherit;transform: translateX(-80%);}
+.sub3-2 .card_box .more_view_drop1{left: 0px;right: inherit;transform: translateX(-80%);}
+.sub5-2 .card_box .more_view_drop1{left: 0px;right: inherit;transform: translateX(-80%);}
+.main03 .tab_slider .menu1{padding: 0;width: auto;padding-top: 2px;}
+.main04 .tab_slider .menu1{padding: 0;width: auto;padding-top: 2px;}
+.main05 .tab_slider .menu1{padding: 0;width: auto;padding-top: 2px;}
+.menu1 i{font-weight: bold;}
+
+.main03 .tab_slider .menu1>.sub1{bottom:2px;right: inherit;left: 0;transform: translateX(-80%);}
+.main04 .tab_slider .menu1>.sub1{bottom:2px;right: inherit;left: 0;transform: translateX(-80%);}
+.main05 .tab_slider .menu1>.sub1{bottom:2px;right: inherit;left: 0;transform: translateX(-80%);}
+
+}
+
+
+   
+
+
+@media screen and (min-width:1280px) and (max-width:1599px){
+
+/* main ----------------------------------------- */
+
+/* 홈 - main1 시작 -------------*/
+.top_search_box{width: 1180px;margin: 0 auto;}
+.top_5menu{width: 478px;}
+.search_wrod{margin-left: 20px;}
+.search_wrap{width: 370px;}
+.contents_box{width: 1180px;margin: 0 auto;}
+
+/* 비쥬얼 이미지 */
+.main-section.main-contact{margin: 0 30px;}
+.visual_box{padding: 0;}
+.visual_img{height: 400px;}
+.visual_b_txt {right: 30px;}
+.main-section.main-contact::before{height: 520px;}
+
+/* 나만을 위한 맞춤 추천 도서  */
+.main01 .slide5_box{width: 1180px;margin: 40px 0 auto;}
+.main01 .slide5_play .slick-slide{width: 203px!important;}
+.slide5_box li a.slide5_box_img{width: 203px!important;height: 291px;}
+.main01 .slide5_play .slick-slide{margin: 0 16px!important;}
+.slide5_box .slick-prev{top: 30%;}
+.slide5_box .slick-next{top: 30%;}
+.tag{margin-top: 12px;}
+.slide3_box .tag{margin-top:5px}
+.slide5_box li h5{margin-bottom: 5px;}
+
+/* 우리가 좋아한 LikeSNU 컬렉션 */
+.right_book_list{width: 64%;}
+.card_box{width: 49%;}
+.card3_play .left_book_img a{width: 160px!important; height: 216px!important;}
+.left_book_img01{width: 160px!important; height: 216px!important;} 
+.left_book_img01 img{width: 160px;height: 216px;} 
+.card_cont_box{padding: 0 22px;}
+.card3_play .left_book_img {margin: 0 12px;}
+
+
+
+/* LikeSNU 서울대인의지식활동 패턴을 참고하여, 나만의 독서, 연구, 학계획을 설계해보세요. */
+.bottom_cont .b_cont_list{height: 255px;}
+.main01 .contents_box .main_banner{margin-bottom: 100px;}
+
+/* footer 수정 */
+footer .site-info{padding: 1.875rem;}
+.copyrights{padding: 0 0 0.875rem 0;margin-left: -10px;}
+/* 홈 - main1 끝 -------------*/
+
+
+/* 홈 - main2 주제 시작 -------------*/
+.main02 .visual_slide{width: 1180px;margin: 0 auto;margin-top: 30px;}
+.subject_slide_box{width: 1180px;margin: 0 auto;margin-top: 80px;padding-left: 0;}
+.main02 .class_3slide2 .slick-slide{margin: 10px;padding: 38px 30px; min-height: 330px}
+.main02 .class_3slide2 .slick-slide::after{clear: both;content: '';display: block;}
+.main02 .class_3slide2 .slick-prev{left: -380px;bottom: -20px;}
+.main02 .class_3slide2 .slick-next{left: -320px;bottom: -20px;}
+.tab_slider2 .slider2 .slick-slide{margin: 0 15px;width: 150px;}
+.main02 .tab_slider2 .right_book_img01 > a{width: 150px;height: 203px;}
+.tab_slider2 .slider2 .slick-list {width: 95%;margin: 0 auto;}
+.main02 .card_box{height: 380px;}
+.subject_left_box{width: 26%;}
+/* 홈 - main2 주제 끝 -------------*/
+
+
+/* 홈 - main3 도서 시작 -------------*/
+/* 상단 슬라이드 */
+.main03 .left_txt_box{padding-left: 0;}
+.main03 .contents_box3{width: 1180px;margin: 0 auto;}
+.main03 .right_slide_box{width: 850px;}
+.main03 .slide45_play .slick-slide{width: 180px!important;margin: 0 15px;}
+.main03 .slide5_box li a.slide5_box_img01{width: 180px!important;height: 257px!important;}
+.slide4_txt_box{width: auto;}
+.main03 .slide5_box .tag:last-of-type{margin-top: 10px;}
+.main03 .right_slide_box .slide5_box .slick-prev{left: -330px;}
+.main03 .right_slide_box .slide5_box .slick-next{left: -260px;}
+.main03 .slide45_play{height: 450px;}
+
+/* 서울대 인기대출 도서는? */
+.best_book_left li:nth-child(1){width: 190px;height: 275px;}
+.best_book_left li:nth-child(1) img{max-width: 100%;height: auto;display: inline-block;vertical-align: middle;}
+.best_book_left li:nth-child(2){padding: 15px 0;margin-left: 15px;}
+.best_book_left .best_book_tit{padding: 20px 0;}
+.best_book_left .best_book_txt{overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;}
+.select_book_img{width: 140px;height: 191px;}
+.best_book_box {height: 280px;}
+.best_book_right li{padding: 35px 10px;}
+.contents_box .cont{margin-bottom: 50px;}
+
+
+/* 이 강의를 수강생이 보고있어요 */
+.main03 .slide3_play .slick-slide{margin: 0 22px!important;width: 190px!important;}
+.main03 .right_slider3 .slide3_play li a.slide5_box_img01{width: 190px!important;height: 282px!important;}
+.main03 .right_slider3 .slick-prev{left: 10px!important;}
+.main03 .right_slider3 .slick-next{left: inherit!important;right: 10px;}
+.select_class_list{margin-top: 20px;height: 345px!important;}
+.main03 .card_box:nth-of-type(2){margin-right: 0;}
+.main03 .slide3_play li h5{width: 100%;}
+
+/* 놓치기 아쉬울 SNU 컬렉션 */
+.tab_slider .slider .slick-slide{width: 160px!important;height: 216px!important;margin: 0 9px;}
+.tab_slider .left_book_img > a {width: 160px!important;height: 216px!important;}
+.tab_slider .slider{padding: 0 22px;}
+.tab_slider .tag_box{margin-top: 15px;}
+
+.main03 .contents_box .main_banner img{width: 280px;top:10px;}
+.main03 .contents_box .main_banner{margin-bottom: 100px;padding: 35px 40px 35px 50px;}
+/* 홈 - main3 도서 끝 -------------*/
+
+/* 홈 - main5 강의 시작 -------------*/
+.main05 .class_3slide .slick-prev{left: -330px;}
+.main05 .class_3slide .slick-next{left: -260px;}
+.main05 .contents_box2{margin-right: 50px;}
+.main05 .contents_box2 .main_banner {/* width: 38%; */padding-left: 50px;}/*240502수정 */
+/* .main05 .contents_box2 .main_banner a{float: right;} *//*240502수정 */
+.bottom_center_txt{width: 45%;}
+.search_terms_box {width: 1180px; height: auto;}
+.search_terms_box ul{clear: both;padding-top: 18px;width: 100%; height: auto; overflow: hidden; padding-left: 0;}
+.main05 .class_3slide .slick-slide{margin: 0 10px;padding: 30px 20px;position: relative;  height: 350px;}
+.search_terms_box span{margin: 0 9px;}
+.main05 .contents_box2 img {position: absolute;top: 20px;right: 0;width: 230px;}
+
+
+/* 강의 - 중간 탭 슬라이드 추가 */
+.main05 .tab_slider4{margin-top: 5px;height: 360px;}
+.main05 .tab_slider4 .slide5_box .slick-slide{width: 140px!important;margin: 0 20px;}
+.main05 .tab_slider4 li a.slide5_box_img01{width: 140px!important;height: 208px!important;}
+.main05 .tab_slider4 .slick-track{margin-top: 0px;}
+.main05 .slider4{width: 95%;margin: 0 auto;}
+.main05 .tab_slider4 .slide5_box .slick-prev{top:38%;left: 0px!important;}
+.main05 .tab_slider4 .slide5_box .slick-next{transform: translateX(100%);right: 30px;top:38%;}
+
+.main05 .tab_slider4 .slide3_box{box-shadow: none;border:0;padding: 0;}
+.main05 .tab_slider4 .slide3_box li{box-shadow: none;border:0;width: 350px;}
+.main05 .tab_slider4 .slide3_box .slick-prev{top:44%;left: 0!important;}
+.main05 .tab_slider4 .slide3_box .slick-next{transform: translateX(100%);right: 20px;top:44%;}
+/* 홈 - main5 강의 끝 -------------*/
+
+
+
+/* 홈 - main4 논문 시작 -------------*/
+.main04 .slide3_box{width: 100%;}
+.main04 .top_slide3_play .slick-slide{height: 260px;}
+.main04 .top_slide3_play .more_view_btn1{bottom: 30px;}
+.main04 .top_slide3_play .more_view_drop1{bottom: 30px;}
+.main04 .top_slide3_play .slick-prev{left: -310px;bottom:-30px;}
+.main04 .top_slide3_play .slick-next{left: -290px;bottom:-30px;}
+/* 2024.01.27 토 유지나 수정 시작 */
+.main04 .visual_slide{margin-bottom: 100px;}
+/* 2024.01.27 토 유지나 수정 끝 */
+.main04 .left_txt_box{padding-top: 60px;}
+.main04 .contents_box2 .main_banner{width: 100%;margin-bottom: 0;height: 500px;}
+
+/* 2023.12.27 수 mian4 - 논문 중간 컨텐츠 책->논문 으로 변경 */
+.main04 .thesis_3box{box-shadow: none;border-radius: 0;border:0;padding: 30px 0;margin-top: 10px!important;}
+.main04 .thesis_3box .slick-slide{width: 350px; margin: 0 14px; height: 280px;}
+.main04 .thesis_3box .slick-prev{top:45%;left: 0px!important;}
+.main04 .thesis_3box .slick-next{top:45%;right: 0px!important;}
+
+/* 홈 - main4 논문 끝 -------------*/
+
+
+
+/* sub ----------------------------------------- */
+
+
+/* Sub - sub3_도서검색_상세 슬라이드 시작 -------------*/
+.sub3-2 .card3_play .left_book_img {}
+.sub3-2 .cont{width: 73%;}
+.sub3-2 .card2{width: 100%;}
+.sub3-2 .slide5_box{width: 95%;margin: 0 auto;}
+.sub3-2 .slide5_box li.slick-slide{margin: 0 10px;}
+.sub3-2 .slide5_box li a.slide5_box_img{width: 140px!important;height: 200px!important;}
+.sub3-2 .slide5_box .slick-prev{left: 0;}
+.sub3-2 .card_box .tag_box{margin-top: 15px;}
+/* Sub - sub3_도서검색_상세 슬라이드 끝 -------------*/
+
+
+/* Sub - sub5_강의검색_상세 슬라이드 시작 -------------*/
+.tab_slider3 .slider3 .slick-list{width: auto;}
+
+/* Sub - sub5_강의검색_상세 슬라이드 끝 -------------*/
+
+
+}
+
+
+
+/* main02 - 주제 하단 논문 탭 수정(2024.01.09) 시작 */
+@media screen and (max-width:1280px){
+.main02 .LikeSNU_collec .card_box .tag_box .tag{margin-right: 4px;}
+.main02 .tab_slider2 .thesis_3box2 li{width: 350px;}
+/* 더보기 공통 수정 */
+.menu3{bottom:35px;}
+.search_terms_box > ul > li a {font-size: 18px ;}
+}
+@media screen and (max-width:1100px){
+/* 2024.01.27 토 유지나 수정 시작 */ 
+.main02 .tab_slider2 .LikeSNU_collec .card_box{}
+.main02 .tab_slider2 .LikeSNU_collec .card_box:nth-of-type(4){}
+.main02 .tab_slider2 .thesis_3box2 li{width: 350px;}
+.main02 .likesnu_slider .slick-slide{width: 300px!important;}
+/* 2024.01.27 토 유지나 수정 끝 */
+}
+/* main02 - 주제 하단 논문 탭 수정(2024.01.09) 끝 */
+
+   
+
+
+@media screen and (min-width:1100px) and (max-width:1279px){
+
+   /* 공통 */
+.quickmenu{display: none;}
+.quikmenu_open{display: none;}
+
+/* main ----------------------------------------- */
+
+/* 홈 - main1 */
+.top_search_box{width:95%;margin: 0 auto;}
+.top_5menu{width: 400px;}
+.main1 ul.tabs1 > li .li_tit{padding: 9px 18px!important;}
+.main1 ul.tabs1 > li.current .li_tit{padding: 9px 32px!important;}
+.search_wrod{width: 250px;}
+.search_wrod .tit2{width: 150px;}
+.search_wrod{margin-left: 20px;}
+.search_wrap{width: 350px;}
+.contents_box{width: 1040px; margin: 0 auto;}
+
+/* 비쥬얼 이미지 */
+.main-section.main-contact{margin: 0 30px;}
+.visual_box{padding: 0;}
+.visual_img{height: 370px;}
+.visual_b_txt {right: 30px;}
+.main-section.main-contact::before{height: 370px;}
+
+/* 나만을 위한 맞춤 추천 도서  */
+.main01 .slide5_box{width: 940px;margin: 0 auto;padding-top: 30px;}
+.main01 .slide5_play .slick-slide{width: 203px!important;}
+.slide5_box li a.slide5_box_img{width: 203px!important;height: 291px;}
+.main01 .slide5_play .slick-slide{margin: 0 16px!important;}
+.slide5_box .slick-prev{top: 35%;}
+.slide5_box .slick-next{top: 35%;right: 0;}
+.tag{margin-top: 12px;}
+.slide5_box li h5{margin-bottom: 5px;}
+
+/* 이 논문들은 어떠세요? */
+.slide3_box{padding: 30px 30px 30px;width: 95%;margin: 0 auto;margin-top: 40px;}
+.slide3_play li{width: 350px;}
+.slide3_play .tag{margin-top: 20px;}
+
+
+/* 우리가 좋아한 LikeSNU 컬렉션 */
+.right_book_list{width: 65%;margin-left: 15px;height: 176px;}
+.card_box{/* width: 48%!important; */height: 440px;}
+.card3_play .left_book_img a{width: 130px!important; height: 176px!important;}
+.left_book_img01{width: 130px!important; height: 176px!important;} 
+.left_book_img01 img{width: 130px;height: 176px;} 
+.card_cont_box{padding: 0 21px 10px 21px;}
+.card3_play .left_book_img {margin: 0 14px;}
+.right_card_box .tag_box{margin-top: 10px;}
+.right_card_box .slick-track{padding-bottom: 5px;}
+.main01 .left_card_box .tag_box{margin-top: 15px;}
+.right_book_list li > p{padding: 0;}
+.right_book_list li{height: auto;}
+
+
+/* LikeSNU 서울대인의지식활동 패턴을 참고하여, 나만의 독서, 연구, 학계획을 설계해보세요. */
+.bottom_cont{height: 560px;background-size: cover;}
+.bottom_cont .b_cont_list{height: 290px;}
+.bottom_cont h2{word-break: keep-linear;padding: 40px 150px;}
+.main01 .contents_box .main_banner{margin-bottom: 80px;}
+
+
+/* footer 수정 */
+footer .site-info{padding: 1.875rem;}
+.copyrights{padding: 0 0 0.875rem 0;margin-left: -10px;}
+
+
+
+/* 홈 - main2 주제 시작 -------------*/
+.main02 .visual_slide{width: 1040px;margin: 0 auto;margin-top: 30px;}
+.subject_slide_box{width: 1040px;margin: 0 auto;margin-top: 80px;padding-left: 0;}
+.main02 .class_3slide2 .slick-slide{margin: 10px;padding: 38px 20px;width: 230px!important;min-height: 330px}
+.main02 .class_3slide2 .slick-slide::after{clear: both;content: '';display: block;}
+.main02 .class_3slide2 .slick-prev{left: -44%;bottom: 30px;}
+.main02 .class_3slide2 .slick-next{left: -35%;bottom: 30px;}
+
+/* main02 - 주제 하단 논문 탭 수정(2024.01.09) 시작 */
+.tab_slider2 .book_slide_wrap .slick-slide{margin: 0 15px;width: 150px;}
+.class_3slide3 li{width: 320px;}
+.main02 .tab_slider2 .right_book_img01 > a{width: 150px;height: 203px;}
+.tab_slider2 .slider2 .slick-list {width: 92%;margin: 0 auto;}
+/* main02 - 주제 하단 논문 탭 수정(2024.01.09) 끝 */
+.main02 .card_box{height: 380px;width: 100%!important;}
+.subject_left_box{width: 26%;height: 380px;background-size: 180px auto;}
+.main02 .left_txt_box{width: 50%;margin-right: 3%;}
+.main02 .right_slide_box{width: 46%!important;}
+.subject_left_box > p{font-size: 15px;}
+.subject_right_box{width: 70%;padding: 10px 0;}
+
+/* 2024.01.27 토 유지나 수정 시작 */
+.main02 .likesnu_slider .slick-slide{width: 300px!important;}
+/* 2024.01.27 토 유지나 수정 끝 */
+
+.search_terms_box > ul > li a {font-size: 18px ;}
+
+
+
+/* 홈 - main2 주제 끝 -------------*/
+
+/* 홈 - main3 도서 시작 -------------*/
+/* 상단 슬라이드 */
+.main03 .left_txt_box{padding-left: 0;}
+.main03 .contents_box3{width: 1040px;margin: 0 auto;}
+.main03 .right_slide_box{width: 700px;}
+.main03 .slide45_play .slick-slide{width: 200px!important;margin: 0 15px;}
+.main03 .slide5_box li a.slide5_box_img01{width: 200px!important;height: 286px!important;}
+.slide4_txt_box{width: auto;}
+.main03 .slide5_box .tag:last-of-type{margin-top: 10px;}
+.main03 .right_slide_box .slide5_box .slick-prev{left: -340px;}
+.main03 .right_slide_box .slide5_box .slick-next{left: -270px;}
+
+
+/* 서울대 인기대출 도서는? */
+.best_book_left li:nth-child(1){width: 170px;height: 246px;}
+.best_book_left li:nth-child(1) img{max-width: 100%;height: auto;display: inline-block;vertical-align: middle;}
+.best_book_left li:nth-child(2){padding: 15px 0;margin-left: 15px;width: 62%;}
+.best_book_left .best_book_tit{padding: 10px 0;}
+
+/* 2024.01.04 유지나 수정 시작 */
+.best_book_left .best_book_txt{overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 6;-webkit-box-orient: vertical;width: 325px;}
+/* 2024.01.04 유지나 수정 끝 */
+
+.best_book_left .best_book_txt br{display: none;}
+.select_book_img{width: 120px;height: 175px;}
+.best_book_box {height: 270px;}
+.best_book_left {width: 52%;}
+.best_book_right {width: 48%;}
+.best_book_right li{padding: 35px 10px;}
+.contents_box .cont{margin-bottom: 50px;}
+.select_top_tit{font-size: 15px;}
+.best_book_left h2{margin-bottom: 15px;padding-right: 0;}
+
+
+/* 이 강의를 수강생이 보고있어요 */
+.main03 .slide3_play .slick-slide{margin: 0 17px!important;width: 180px!important;}
+.main03 .right_slider3 .slide3_play li a.slide5_box_img01{width: 180px!important;height: 267px!important;}
+.main03 .right_slider3 .slick-prev{left: inherit!important;}
+.main03 .right_slider3 .slick-next{left: inherit!important;transform: translateX(50%);right: 10px;}
+.select_class_list{margin-top: 20px;}
+.card_box:nth-of-type(2){margin-right: 0;}
+.LikeSNU_cllec, .card_box:nth-of-type(2){margin-right: 1%;}
+
+/* 놓치기 아쉬울 SNU 컬렉션 */
+.tab_slider .slider .slick-slide{width: 130px!important;height: 176px!important;margin: 0 13px;}
+.tab_slider .left_book_img > a {width: 130px!important;height: 176px!important;}
+.tab_slider .slider{padding: 0 22px;}
+.tab_slider .tag_box{margin-top: 15px;}
+.tab_slider .buttons{width: 70%;}
+.tab_slider{height: 600px;}
+
+.main03 .contents_box .main_banner img{width: 280px;top:10px;}
+.main03 .contents_box .main_banner{margin-bottom: 100px;padding: 35px 40px 35px 50px;}
+/* 홈 - main3 도서 끝 -------------*/
+
+
+
+/* 홈 - main5 강의 시작 -------------*/
+.main05 .class_3slide .slick-prev{left: -340px;}
+.main05 .class_3slide .slick-next{left: -270px; }
+.main05 .contents_box2{margin-right: 50px;}
+.main05 .contents_box2 .main_banner {/* width: 40%; */padding-left: 50px;}/*240502수정  */
+/* .main05 .contents_box2 .main_banner .cont_tit{font-size: 22px;} *//*240502수정  */
+/* .main05 .contents_box2 .main_banner a{float: right;} *//*240502수정  */
+.main05 .contents_box2 img{width: 230px;top: 30px;right: 0;}
+.bottom_center_txt{width: 40%;}
+.bottom_center_txt p{font-size: 18px;}
+.main05 .class_3slide .slick-slide{margin: 0 10px;padding: 25px 20px;}
+.search_terms_box {width: 1040px; height: auto;}
+.search_terms_box ul{clear: both;padding-top: 45px;width: 100%; padding-left: 0; }
+.search_terms_box h3 {font-size: 20px;}
+.search_terms_box h3::before {top:10px}
+.search_terms_box > ul > li a {padding:5px 8px; font-size: 16px;}
+.search_terms_box span{font-size: 18px;}
+
+/* 강의 - 중간 탭 슬라이드 추가 */
+.main05 .tab_slider4{margin-top: 5px;height: 360px;}
+.main05 .tab_slider4 .slide5_box .slick-slide{width: 140px!important;margin: 0 20px;}
+.main05 .tab_slider4 li a.slide5_box_img01{width: 140px!important;height: 208px!important;}
+.main05 .tab_slider4 .slick-track{margin-top: 0px;}
+.main05 .slider4{width: 95%;margin: 0 auto;}
+.main05 .tab_slider4 .slide5_box .slick-prev{top:36%;left: 0px!important;}
+.main05 .tab_slider4 .slide5_box .slick-next{transform: translateX(100%);right: 30px;top:36%;}
+
+.main05 .tab_slider4 .slide3_box{box-shadow: none;border:0;padding: 0;}
+.main05 .tab_slider4 .slide3_box li{box-shadow: none;border:0;width: 350px;}
+.main05 .tab_slider4 .slide3_box .slick-prev{top:44%;left: 0!important;}
+.main05 .tab_slider4 .slide3_box .slick-next{transform: translateX(100%);right: 20px;top:44%;}
+/* 홈 - main5 강의 끝 -------------*/
+
+
+
+/* 홈 - main4 논문 시작 -------------*/
+.main04 .slide3_box{width: 100%;}
+.main04 .top_slide3_play .slick-prev{left: -320px;}
+.main04 .top_slide3_play .slick-next{left: -300px;}
+
+.main04 .top_slide3_play .slick-slide{height: 260px;}
+.main04 .top_slide3_play .more_view_btn1{bottom: 30px;}
+.main04 .top_slide3_play .more_view_drop1{bottom: 30px;}
+/* 2024.01.27 토 유지나 수정 시작 */
+.main04 .visual_slide{margin-bottom: 50px;}
+/* 2024.01.27 토 유지나 수정 끝 */
+.main04 .left_txt_box{padding-top: 50px;}
+.main04 .contents_box2 .main_banner{width: 100%;margin-bottom: 0;height: 400px;background-size: cover;}
+.main04 .contents_box2 .main_banner .cont_tit{font-size: 28px;padding-top:10px;}
+.main04 .top_slide3_play .slick-slide{margin: 0 12px!important;}
+.main04 .top_slide3_play .slick-list{padding-top: 0;}
+
+/* 2023.12.27 수 mian4 - 논문 중간 컨텐츠 책->논문 으로 변경 */
+.main04 .thesis_3box{box-shadow: none;border-radius: 0;border:0;padding: 30px 10px;margin-top: 10px!important;}
+.main04 .thesis_3box .slick-slide{width: 350px; margin: 0 12px; height: 280px;}
+.main04 .thesis_3box .slick-prev{top:45%;left: 10px!important;}
+.main04 .thesis_3box .slick-next{top:45%;right: 10px!important;}
+/* 홈 - main4 논문 끝 -------------*/
+
+
+
+/* sub ----------------------------------------- */
+
+
+/* Sub - sub3_도서검색_상세 슬라이드 시작 -------------*/
+.sub3-2 .card3_play .left_book_img {width: 130px;height: 176px;}
+.sub3-2 .cont{width: 71%;}
+.sub3-2 .card2{width: 100%;}
+.sub3-2 .slide5_box{width: 95%;margin: 0 auto;padding: 0 16px;}
+.sub3-2 .slide5_box li.slick-slide{margin: 0 3px;}
+.sub3-2 .slide5_box li a.slide5_box_img{width: 150px!important;height: 215px!important;}
+.sub3-2 .slide5_box .slick-prev{left: 0;}
+.sub3-2 .slide5_box .slick-next{right: 0;transform: none;}
+.sub3-2 .card_box .tag_box{margin-top: 15px;}
+/* Sub - sub3_도서검색_상세 슬라이드 끝 -------------*/
+
+/* Sub - sub5_강의검색_상세 슬라이드 시작 -------------*/
+.tab_slider3 .slider3 .slick-list{width: auto;}
+.sub3-2 .card_box {height: 429px;}
+
+
+/* Sub - sub5_강의검색_상세 슬라이드 끝 -------------*/
+
+
+}
+
+
+/* top menu 인기검색어 틀어짐 수정 */
+@media screen and (min-width:1100px) and (max-width:1150px){
+.search_wrod {margin-left: 20px;width: 250px!important;}
+.search_wrod .tit2 {width: 160px!important;}
+}
+
+@media screen and (min-width:1151px) and (max-width:1200px){
+.search_wrod {margin-left: 24px;width: 295px!important;}
+.search_wrod .tit2 {width: 180px!important;}
+}
+
+@media screen and (min-width:1201px) and (max-width:1230px){
+.search_wrod {margin-left: 10px;width: 356px!important;}
+.search_wrod .tit2 {width: 200px!important;}
+} 
+@media screen and (min-width:1231px) and (max-width:1250px){
+.search_wrod {margin-left: 20px;width: 370px!important;}
+.search_wrod .tit2 {width: 250px!important;}
+} 
+@media screen and (min-width:1251px) and (max-width:1279px){
+.search_wrod {margin-left: 30px;width: 384px!important;}
+.search_wrod .tit2 {width: 260px!important;}
+}     
+
+
+
+
+@media screen and (min-width:992px) and (max-width:1099px){
+ 
+/* 공통 */
+.quickmenu{display: none;}
+.quikmenu_open{display: none;}
+
+/* main ----------------------------------------- */
+
+/* 홈 - main1 */
+.top_search_box{width:960px;margin: 0 auto;}
+.top_5menu{width: 400px;}
+.main1 ul.tabs1 > li .li_tit{padding: 9px 18px!important;}
+.main1 ul.tabs1 > li.current .li_tit{padding: 9px 32px!important;}
+.search_wrod{width: 230px;}
+.search_wrod .tit2{width: 130px;}
+.search_wrod{margin-left: 20px;}
+.search_wrap{width: 300px;}
+.contents_box{width: 960px; margin: 0 auto;}
+
+/* 비쥬얼 이미지 */
+.main-section.main-contact{margin: 0 30px;}
+.visual_box{padding: 0;}
+.visual_img{height: 300px;}
+.visual_b_txt {right: 30px;}
+.main-section.main-contact::before{height: 300px;}
+
+/* 나만을 위한 맞춤 추천 도서  */
+.main01 .slide5_box{width: 945px;margin: 0 auto;padding-top: 30px;}
+.main01 .slide5_play .slick-slide{width: 203px!important;}
+.slide5_box li a.slide5_box_img{width: 203px!important;height: 291px;}
+.main01 .slide5_play .slick-slide{margin: 0 16px!important;}
+.slide5_box .slick-prev{top: 35%;}
+.slide5_box .slick-next{top: 35%;right: 0;}
+.tag{margin-top: 12px;}
+.slide5_box li h5{margin-bottom: 5px;}
+
+/* 이 논문들은 어떠세요? */
+.slide3_box{padding: 25px 30px 25px;width: 95%;margin: 0 auto;margin-top: 40px;}
+.slide3_play li{width: 350px;}
+.slide3_play .tag{margin-top: 5px;}
+
+
+/* 우리가 좋아한 LikeSNU 컬렉션 */
+.right_book_list{width: 65%;margin-left: 15px;height: 169px;}
+.card_box{width: 49%;height: 430px;}
+.card3_play .left_book_img a{width: 125px!important; height: 169px!important;}
+.left_book_img01{width: 125px!important; height: 169px!important;} 
+.left_book_img01 img{width: 125px;height: 169px;} 
+.card_cont_box{padding: 0 20px 10px 20px;}
+.card3_play .left_book_img {margin: 0 11px;}
+
+.right_card_box .slick-track{padding-bottom: 5px;}
+.right_book_list li > p{padding: 0;}
+.right_book_list li{height: auto;}
+.card3_play .slick-prev{right: 50px;}
+.card3_play .slick-next{right: 30px;}
+
+
+/* LikeSNU 서울대인의지식활동 패턴을 참고하여, 나만의 독서, 연구, 학계획을 설계해보세요. */
+.bottom_cont{height: 560px;background-size: cover;}
+.bottom_cont .b_cont_list{height: 290px;}
+.bottom_cont h2{word-break: keep-linear;padding: 40px 150px;}
+.main01 .contents_box .main_banner{margin-bottom: 80px;}
+
+/* footer 수정 */
+footer .site-info{padding: 1.875rem;}
+.copyrights{padding: 0 0 0.875rem 0;margin-left: -10px;}
+
+
+/* 홈 - main2 주제 시작 -------------*/
+.main02 .contents_box .main_banner{height: 280px;}
+.main02 .visual_slide{width: 960px;margin: 0 auto;margin-top: 30px;height: auto;padding: 10px 25px;}
+.subject_slide_box{width: 960px;margin: 0 auto;margin-top: 80px;padding-left: 0;}
+.main02 .class_3slide2 .slick-slide{margin:15px 20px;padding: 38px 20px;width:270px!important;}
+.main02 .class_3slide2 .slick-slide::after{clear: both;content: '';display: block;}
+.main02 .class_3slide2 .slick-prev{top: 45%;transform: translateX(-50%);bottom: initial;left: 15px;}
+.main02 .class_3slide2 .slick-next{left:initial;top: 45%;transform: translateX(100%);bottom: initial;right: 50px;}
+.tab_slider2 .slider2 .slick-slide{margin: 0 15px;width: 150px;}
+.main02 .tab_slider2 .right_book_img01 > a{width: 150px;height: 203px;}
+.tab_slider2 .slider2 .slick-list {width: 90%;margin: 0 auto;}
+.main02 .card_box{height: 380px;}
+.subject_left_box{width: 100%;height: auto;background:none;}
+.main02 .left_txt_box{width: 100%;margin-right:0;padding-top: 10px;font-size: 35px;}
+.main02 .left_txt_box .big_tit{padding: 10px 0;font-size: 17px;}
+.main02 .right_slide_box{width: auto!important;padding: 10px 0 0 30px;}
+.subject_left_box > p{font-size: 15px;}
+.subject_right_box{width: 100%;}
+.subject_left_box > h2{font-size: 22px;padding-bottom: 10px;}
+.subject_left_box > p br{display: none;}
+.main02 .class_3slide2 .slick-list{width: 900px;margin: 0 auto; }
+.tab_slider2 .buttons{width: 75%;}
+.tab_slider2 .tabs{width: 95%;margin: 0 auto;}
+.card2_tab{height: auto;margin-bottom: 50px;}
+
+/* main02 - 주제 하단 논문 탭 수정(2024.01.09) 시작 */
+.tab_slider2 .book_slide_wrap .slick-slide{margin: 0 15px;width: 150px;}
+.class_3slide3 li{width: 320px!important;}
+.main02 .tab_slider2 .right_book_img01 > a{width: 150px;height: 203px;}
+.tab_slider2 .slider2 .slick-list {width: 92%;margin: 0 auto;}
+/* main02 - 주제 하단 논문 탭 수정(2024.01.09) 끝 */
+/* 홈 - main2 주제 끝 -------------*/
+
+
+/* 홈 - main3 도서 시작 -------------*/
+/* 상단 슬라이드 */
+.main03 .left_txt_box{padding-left: 0;}
+.main03 .contents_box3{width: 960px;margin: 0 auto;}
+.main03 .right_slide_box{width: 65%;}
+.main03 .slide45_play .slick-slide{width: 200px!important;margin: 0 15px;}
+.main03 .slide5_box li a.slide5_box_img01{width: 200px!important;height: 286px!important;}
+.slide4_txt_box{width: auto;}
+.main03 .slide5_box .tag:last-of-type{margin-top: 10px;}
+.main03 .right_slide_box .slide5_box .slick-prev{left: -340px;}
+.main03 .right_slide_box .slide5_box .slick-next{left: -270px;}
+.main02 .left_txt_box .big_tit{height: 70px; }
+
+/* 서울대 인기대출 도서는? */
+.best_book_left li:nth-child(1){width: 170px;height: 246px;}
+.best_book_left li:nth-child(1) img{max-width: 100%;height: auto;display: inline-block;vertical-align: middle;}
+.best_book_left li:nth-child(2){padding: 15px 0;margin-left: 15px;width: 62%;}
+.best_book_left .best_book_tit{padding: 10px 0;}
+
+/* 2024.01.04 유지나 수정 시작 */
+.best_book_left .best_book_txt{overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;width: 290px;}
+/* 2024.01.04 유지나 수정 끝 */
+
+.best_book_left .best_book_txt br{display: none;}
+.select_book_img{width: 120px;height: 175px;}
+.best_book_box {height: 270px;}
+.best_book_left {width: 52%;}
+.best_book_right {width: 48%;}
+.best_book_right li{padding: 35px 10px;}
+.contents_box .cont{margin-bottom: 50px;}
+.select_top_tit{font-size: 13px;}
+.best_book_left h2{margin-bottom: 15px;padding-right: 0;}
+
+
+/* 이 강의를 수강생이 보고있어요 */
+.main03 .select_slide_box .right_slider3{width: 49%;}
+.main03 .slide3_play .slick-slide{margin: 0 15px!important;width: 180px!important;}
+.main03 .slide3_play li a.slide5_box_img01{width: 180px!important;height: 267px!important;}
+.main03 .slide3_play .slick-prev{left: 0!important;}
+.main03 .slide3_play .slick-next{left: inherit!important;right: 0;transform: translateX(50%);}
+.select_class_list{margin-top: 20px;padding: 50px 30px 20px 30px!important;width: 45%!important;height: 350px!important;}
+.select-box-area{margin: 30px 0!important;}
+.right_slider3{width: 45%;}
+.card_box:nth-of-type(2){margin-right: 0;}
+
+/* 놓치기 아쉬울 SNU 컬렉션 */
+.tab_slider .slider .slick-slide{width: 130px!important;height: 176px!important;margin: 0 9px;}
+.tab_slider .left_book_img > a {width: 130px!important;height: 176px!important;}
+.tab_slider .slider{padding: 0 22px;}
+.tab_slider .tag_box{margin-top: 15px;}
+.tab_slider .buttons{width: 74%;}
+
+.main03 .contents_box .main_banner img{width: 240px;top:50px;}
+.main03 .contents_box .main_banner{margin-bottom: 100px;padding: 35px 40px 35px 50px;}
+
+/* 홈 - main3 도서 끝 -------------*/
+
+
+/* 홈 - main5 강의 시작 -------------*/
+.main05 .class_3slide .slick-prev{left: -330px;}
+.main05 .class_3slide .slick-next{left: -260px;}
+.main05 .visual_slide{min-height: 500px; height: auto;}
+.main05 .search_terms_box {bottom:-15px}
+.main05 .contents_box2{margin-right: 50px;}
+.main05 .contents_box .cont{padding-top:0}
+/* .main05 .contents_box2 .main_banner {width: 40%;padding-left: 50px;height: 180px;} *//*240502수정  */
+/* .main05 .contents_box2 .main_banner .cont_tit{font-size: 18px;} *//*240502수정  */
+/* .main05 .contents_box2 .main_banner a{float: right;} *//*240502수정  */
+.main05 .contents_box2 img{width: 200px;top: 30px;right: -20px;}
+.bottom_center_txt{width: 40%;/* margin-left: 2%; */}/*240502수정  */
+.bottom_center_txt p{font-size: 18px;}
+.main05 .class_3slide{margin-top: 40px;}
+.main05 .class_3slide .slick-slide{margin: 0 10px;padding: 35px 20px; float: left; }
+.search_terms_box h3 {font-size: 18px;}
+.search_terms_box h3::before {top:10px}
+.search_terms_box > ul > li a {padding: 5px 15px; font-size: 16px;}
+.search_terms_box{width: 960px;padding: 10px 10px 15px 10px; height: auto; max-height: 160px;; position:relative}
+.search_terms_box ul{clear: both;padding-top: 45px;width: 100%; padding-left: 0; }
+.search_terms_box h3 {font-size: 20px;}
+.search_terms_box h3::before {top:10px}
+.search_terms_box > ul > li a {padding:5px 8px; font-size: 16px;}
+.search_terms_box span{font-size: 18px;margin: 0 8px;}
+
+/* 강의 - 중간 탭 슬라이드 추가 */
+.main05 .tab_slider4{margin-top: 5px;height: 360px;}
+.main05 .tab_slider4 .slide5_box .slick-slide{width: 140px!important;margin: 0 20px;}
+.main05 .tab_slider4 li a.slide5_box_img01{width: 140px!important;height: 208px!important;}
+.main05 .tab_slider4 .slick-track{margin-top: 0px;}
+.main05 .slider4{width: 95%;margin: 0 auto;}
+.main05 .tab_slider4 .slide5_box .slick-prev{top:36%;left: 0px!important;}
+.main05 .tab_slider4 .slide5_box .slick-next{transform: translateX(100%);right: 30px;top:36%;}
+
+.main05 .tab_slider4 .slide3_box{box-shadow: none;border:0;padding: 0;}
+.main05 .tab_slider4 .slide3_box li{box-shadow: none;border:0;width: 350px;}
+.main05 .tab_slider4 .slide3_box .slick-prev{top:44%;left: 0!important;}
+.main05 .tab_slider4 .slide3_box .slick-next{transform: translateX(100%);right: 20px;top:44%;}
+/* 홈 - main5 강의 끝 -------------*/
+
+
+
+/* 홈 - main4 논문 시작 -------------*/
+.main04 .top_slide3_play{width: 100%;}
+.main04 .top_slide3_play .slick-prev{left: -310px;bottom:-30px;}
+.main04 .top_slide3_play .slick-next{left: -290px;bottom:-30px;}
+
+.main04 .top_slide3_play .slick-slide{height: 260px;}
+.main04 .top_slide3_play .more_view_btn1{bottom: 32px;}
+.main04 .top_slide3_play .more_view_drop1{bottom: 32px;}
+/* 2024.01.27 토 유지나 수정 시작 */
+.main04 .visual_slide{margin-bottom: 50px;}
+/* 2024.01.27 토 유지나 수정 끝 */
+.main04 .left_txt_box{padding-top: 50px;}
+.main04 .contents_box2{margin-right: 0;}
+.main04 .contents_box2 .main_banner{width: 100%;margin-bottom: 0;height: 360px;padding: 10px 40px 35px 50px;background-size: cover;}
+.main04 .contents_box2 .main_banner .cont_tit{font-size: 24px;padding-top:20px;}
+.main04 .top_slide3_play .slick-slide{margin: 0 12px!important;}
+.main04 .top_slide3_play .slick-list{padding-top: 0;}
+.main04 .top_slide3_play li h2 > a{font-size: 22px;}
+
+/* 2023.12.27 수 mian4 - 논문 중간 컨텐츠 책->논문 으로 변경 */
+.main04 .thesis_3box{box-shadow: none;border-radius: 0;border:0;padding: 30px 0px;margin-top: 10px!important;}
+.main04 .thesis_3box .slick-slide{width: 350px; margin: 0 14px; height: 280px;}
+.main04 .thesis_3box .slick-prev{top:45%;left: 0px!important;}
+.main04 .thesis_3box .slick-next{top:45%;right: 0px!important;}
+/* 홈 - main4 논문 끝 -------------*/
+
+
+
+/* sub ----------------------------------------- */
+
+/* Sub - sub3_도서검색_상세 슬라이드 시작 -------------*/
+.sub3-2 .card3_play .left_book_img {width: 125px;height: 169px;}
+.sub3-2 .cont{width: 71%;}
+.sub3-2 .card2{width: 100%;}
+.sub3-2 .slide5_box{width: 95%;margin: 0 auto;padding: 0 16px;}
+.sub3-2 .slide5_box li.slick-slide{margin: 0;}
+.sub3-2 .slide5_box li a.slide5_box_img{width: 140px!important;height: 200px!important;}
+.sub3-2 .slide5_box .slick-prev{left: 0;}
+.sub3-2 .slide5_box .slick-next{right: 18px;}
+.search_filter{width: 250px;}
+.sub3-2 .slide3_box li{width: 310px;}
+/* Sub - sub3_도서검색_상세 슬라이드 끝 -------------*/
+
+/* Sub - sub5_강의검색_상세 슬라이드 시작 -------------*/
+.tab_slider3 .slider3 .slick-list{width: auto;}
+.sub3-2 .card_box {height: 420px;}
+/* Sub - sub5_강의검색_상세 슬라이드 끝 -------------*/
+
+
+
+}
+
+
+
+
+/* 2024.01.11 유지나 수정 시작 */
+@media screen and (max-width:1599px){
+.menu3{bottom:35px;} 
+}
+@media screen and (max-width:1099px){
+.menu3>.sub3{left: 0;right: inherit;transform:translateX(-50%);bottom:30px;}
+}
+@media screen and (max-width:992px){
+.main02 .tab_slider2 .marginTop {padding-top: 60px;}
+/* 더보기 공통 수정 */
+.menu3{bottom:35px;}
+.menu3>.sub3{left: 0;right: inherit;transform:translateX(-50%);bottom:30px;}
+}
+@media screen and (max-width:991px){
+/* 더보기 공통 수정 */
+.menu3{bottom:54px;}
+.menu3>.sub3{left: 0;right: inherit;transform:translateX(-90%);bottom:35px;}
+}
+@media screen and (max-width:768px){
+.main02 .tab_slider2 .marginTop {padding-top: 65px;}
+/* 2024.01.27 토 유지나 수정 시작 */
+.likesnu_slider{height: 473px;}
+/* 2024.01.27 토 유지나 수정 끝 */
+/* 더보기 공통 수정 */
+.menu3>.sub3{left: 0;right: inherit;transform:translateX(-90%);}
+}
+@media screen and (max-width:767px){
+.main02 .LikeSNU_collec .menu1{right: 20px;}
+.main02 .LikeSNU_collec .menu1>.sub1{left:0;right: inherit;transform: translateX(-100%);bottom:0px}
+/* 2024.01.27 토 유지나 수정 시작 */
+.likesnu_slider{height: 422px;}
+.likesnu_slider .slick-slide{margin: 140px 8px 0 8px!important;}
+/* 2024.01.27 토 유지나 수정 끝 */
+/* 더보기 공통 수정 */
+.menu3{bottom:30px;}
+.menu3>.sub3{left: 0;right: inherit;bottom:30px;transform:translateX(-50%);}
+}
+@media screen and (max-width:480px){
+.main02 .tab_slider2 div.tab:nth-child(1) .marginTop {padding-top: 60px;}
+.main02 .tab_slider2 div.tab:nth-child(2) .marginTop {padding-top: 30px;}
+.main02 .tab_slider2 div.tab:nth-child(3) .marginTop {padding-top: 60px;}
+.main02 .tab_slider2 .slider2{height: 280px;}
+.main02 .tab_slider2 .class_3slide3{height: 280px;}
+.main02 .tab_slider2 .thesis_3box2 {height: 280px;}
+}
+/* 2024.01.11 유지나 수정 끝 */
+   
+
+
+
+@media screen and (min-width:768px) and (max-width:991px){
+  
+   
+/* 공통 */
+.quickmenu{display: none;}
+.quikmenu_open{display: none;}
+
+/* main ----------------------------------------- */
+
+/* 홈 - main1 */
+.site-header{margin-bottom: 0;}
+.top_search_box{width: auto;margin: 0 auto;margin: 0 15px;position: relative;height: 120px;}
+.top_5menu{width: 100%; position: absolute;left: 0;top:110px;}
+.main1 ul.tabs1 > li{width: 19.7%;font-size: 16px;}
+.main1 ul.tabs1 > li .li_tit{padding: 9px 20px!important;}
+.main1 ul.tabs1 > li.current .li_tit{padding: 9px 25px!important;}
+.search_wrod{width: 37%;position: absolute;left: 0;top:30px;}
+.search_wrod .tit2{width: 180px;}
+.search_wrod{margin-left: 5px;}
+.search_wrap{width: 59%;position: absolute;right: 0;top:30px;}
+.contents_box{width: auto;margin: 0 auto;margin: 0 15px; padding-top:20px}
+
+/* 비쥬얼 이미지 */
+.visual_txt{font-size: 21px;}
+.main-section.main-contact{margin: 0 15px;}
+.visual_box{padding: 0;}
+.visual_img{height: 250px;}
+.visual_b_txt {right: 15px;}
+.main-section.main-contact::before{height: 250px;}
+
+/* 나만을 위한 맞춤 추천 도서  */
+.contents_box .cont .cont_tit{font-size: 22px;}
+.contents_box .cont .cont_txt{font-size: 16px;}
+.contents_box .cont{margin-bottom: 50px;}
+.main01 .slide5_box{width: 96%;margin: 0 auto;padding-top: 30px;}
+.main01 .slide5_play .slick-slide{width: 203px!important;}
+.slide5_box li a.slide5_box_img{width: 203px!important;height: 291px;}
+.main01 .slide5_play .slick-slide{margin: 0 14px!important;}
+.slide5_box .slick-prev{top: 38%;}
+.slide5_box .slick-next{top: 38%;right: 0;transform: translateX(50%);}
+.tag{margin-top: 12px;margin-right: 3px;padding: 3px 7px;font-size: 13px;}
+.slide5_box li h5{margin-bottom: 0px;font-size: 15px;}
+
+/* 이 논문들은 어떠세요? */
+.slide3_box{padding: 20px 30px 20px;width: 95%;margin: 0 auto;margin-top: 40px;}
+.slide3_play li{width: 350px;}
+.slide3_play .tag{margin-top: 5px;}
+
+
+/* 우리가 좋아한 LikeSNU 컬렉션 */
+.right_book_list{width: calc(100% - 200px);}
+.left_book_img01 img{display: block;width: 100%;height: 100%;}
+.card_box{width: 100%!important;margin-bottom: 20px;} 
+.card_cont_box{padding: 0 35px}
+.card3_play .left_book_img {margin: 0 18px;}
+.right_card_box .tag_box{margin-top: 10px;}
+.right_card_box .slick-track{padding-bottom: 5px;}
+.main01 .left_card_box .tag_box{margin-top: 15px;}
+.right_book_list li > p{padding: 0;}
+.contents_box .main_banner{padding: 30px;}
+.contents_box .main_banner .cont_txt{padding: 5px 40% 0 0;word-break: keep-linear;font-size: 15px;}
+
+
+/* LikeSNU 서울대인의지식활동 패턴을 참고하여, 나만의 독서, 연구, 학계획을 설계해보세요. */
+.bottom_cont ul li:nth-child(2){margin: 0;}
+.bottom_cont .b_cont_list{height: auto;}
+.bottom_cont h2{word-break: keep-linear;padding: 40px 130px;font-size: 22px;line-height: 28px;}
+.bottom_cont ul{height: auto;overflow:inherit;}
+.bottom_cont ul li{width: 100%;}
+.bottom_cont {background: url(/images/bottom_bg01_m.png) no-repeat center;height: 830px;background-size: cover;}
+.bottom_cont .b_cont_list p br{display: none;}
+.bottom_cont .b_cont_list p:last-child{padding-bottom: 0;}
+.main01 .contents_box .main_banner{margin-bottom: 80px;}
+
+
+/* footer 수정 */
+footer .site-info{padding: 1.875rem;}
+.copyrights{padding: 0 0 0.875rem 0;margin-left: -10px;}
+
+
+/* 홈 - main2 주제 시작 -------------*/
+.main02 .select-box-area{margin: 15px 0!important;}
+.main02 .visual_slide{width: auto;margin: 0 auto; margin-left: 15px;margin-right: 15px;margin-top: 20px;height: auto;padding-bottom: 20px!important;}
+.subject_slide_box{width: auto;margin: 0 auto; margin-left: 15px;margin-right: 15px; margin-top: 80px;padding-left: 0;}
+.main02 .class_3slide2 .slick-slide{margin:15px 20px;padding: 38px 20px;width:280px!important;}
+.main02 .class_3slide2 .slick-slide::after{clear: both;content: '';display: block;}
+.main02 .class_3slide2 .slick-prev{top: 45%;transform: translateX(-50%);bottom: initial;left: 15px;}
+.main02 .class_3slide2 .slick-next{left:initial;top: 45%;transform: translateX(100%);bottom: initial;right: 45px;}
+.main02 .class_3slide2 .slick-list{width: 85%;margin: 0 auto;}
+.tab_slider2 .slider2 .slick-slide{margin: 0 15px;width: 170px;}
+.main02 .tab_slider2 .right_book_img01 > a{width: 170px;height: 233px;}
+.tab_slider2 .slider2 .slick-list {width: 87%;margin: 0 auto;}
+.main02 .card_box{height: 400px;}
+.subject_left_box{width: 100%;height: auto;background:none;}
+.main02 .left_txt_box{width: 100%;margin-right:0;padding-top: 30px;font-size: 35px;padding-top: 5px!important;}
+.main02 .left_txt_box .big_tit{padding: 10px 0;font-size: 17px;}
+.main02 .right_slide_box{width: auto!important;padding: 30px 0 0 30px;}
+.main02 .left_txt_box .big_tit{height: 70px; }
+.subject_left_box > p{font-size: 15px;}
+.subject_right_box{width: 100%;}
+.subject_left_box > h2{font-size: 22px;padding-bottom: 10px;}
+.subject_left_box > p br{display: none;}
+.tab_slider2 .buttons{width: auto;}
+.tab_slider2 .tabs{width: 95%;margin: 0 auto;}
+.tab_slider2 .buttons > button{font-size: 19px;padding: 8px 30px;}
+.main02 .contents_box .cont .cont_tit{font-size: 28px;}
+.main02 .contents_box .cont .cont_txt{font-size: 20px;padding: 0;text-align: center;padding: 30px 0;}
+.main02 .contents_box .main_banner{padding: 55px 30px;margin-bottom: 0;}
+.main02 .main_banner {background: url(/images/bottom_bg03_m.png) no-repeat center;margin-bottom: 0;background-size: cover;/* border-radius: 16px; */}/*240502수정  */
+.main02 .tab_slider2 .left_book_img h5 a{line-height: 20px;height: auto;}
+
+/* main02 - 주제 하단 논문 탭 수정(2024.01.09) 시작 */
+/* 2024.01.27 토 유지나 수정 시작 */
+
+.main02 .tab_slider2 .LikeSNU_collec .card_box{}
+.main02 .tab_slider2 .LikeSNU_collec .card_box:nth-of-type(2){}
+.main02 .tab_slider2 .LikeSNU_collec .card_box:nth-of-type(3){}
+.main02 .tab_slider2 .LikeSNU_collec .card_box:nth-of-type(4){}
+/* 2024.01.27 토 유지나 수정 끝 */
+.tab_slider2 .book_slide_wrap .slick-slide{margin: 0 15px;width: 150px;}
+.class_3slide3 li{width: 320px!important;}
+.main02 .tab_slider2 .right_book_img01 > a{width: 150px;height: 203px;}
+.tab_slider2 .slider2 .slick-list {width: 92%;margin: 0 auto;}
+/* main02 - 주제 하단 논문 탭 수정(2024.01.09) 끝 */
+/* 홈 - main2 주제 끝 -------------*/
+
+
+
+/* 홈 - main3 도서 시작 -------------*/
+/* 상단 슬라이드 */
+.main03 .left_txt_box{padding-left: 30px;padding-top: 20px;}
+.main03 .visual_slide{height: auto;padding-bottom: 50px;}
+.main03 .contents_box3{width: auto;  margin: 0 15px;position: relative;}
+.main03 > .visual_slide > .more_view{top:10px;left: 150px;position: absolute;}
+.main03 .left_txt_box .big_tit br{display: none;}
+.main03 .left_txt_box .vs_txt br{display: none;}
+.main03 .right_slide_box{width: 100%;margin: 0 auto;}
+.main03 .slide45_play .slick-slide{width: 230px!important;margin: 0 20px;}
+.main03 .slide5_box li a.slide5_box_img01{width: 230px!important;height:329px!important;}
+.slide4_txt_box{width: auto;}
+.main03 .slide5_box .tag:last-of-type{margin-top: 10px;}
+.main03 .visual_slide .slide5_box .slick-list{width: 95%;margin: 0 auto;}
+.visual_slide .vs_tit{font-size: 28px;}
+.left_txt_box .big_tit{font-size: 23px; }
+.left_txt_box .vs_txt{font-size: 15px; max-width:100%; }
+.skyblue_txt{font-size: 23px;}
+.textbook_tit{padding-top: 10px;}
+
+/* 서울대 인기대출 도서는? */
+.select_top_tit3 {padding: 7px 29px 6px 8px;}
+.best_book_left li:nth-child(1){width: 200px;height: 283px;}
+.best_book_left li:nth-child(1) img{max-width: 100%;height: auto;display: inline-block;vertical-align: middle;}
+.best_book_left li:nth-child(2){padding: 20px 0;margin-left: 20px;width: 62%;}
+
+/* 2024.01.04 유지나 수정 시작 */
+.best_book_left .best_book_txt{overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 6;-webkit-box-orient: vertical;width: 100%;}
+/* 2024.01.04 유지나 수정 끝 */
+
+.best_book_left .best_book_txt br{display: none;}
+.best_book_box {height: 320px;width: 100%;}
+.best_book_right li{padding: 35px 10px;}
+.contents_box .cont{margin-bottom: 50px;}
+.best_book_left h2{margin-bottom: 15px;padding-right: 0;}
+
+
+/* 이 강의를 수강생이 보고있어요 */
+.main03 .right_slider3 .slick-prev{left: inherit!important;}
+.main03 .right_slider3 .slick-next{left: inherit!important;}
+.select_class_list{margin-top: 20px;width: 50%!important;margin-right: 6%!important;height: 350px!important;}
+.select-box-area{margin: 30px 0!important;}
+.right_slider3{width: 41%;}
+.main03 .right_slider3 li h5{width: 100%;}
+.card_box:nth-of-type(2){margin-right: 0;}
+.main03 .slide3_play .slick-slide{width: 200px!important;}
+.main03 .right_slider3 .slide3_play li a.slide5_box_img01{width: 200px!important;height:283px!important;}
+
+/* 놓치기 아쉬울 SNU 컬렉션 */
+.tab_slider .slider .slick-slide{margin: 0 16px;}
+.tab_slider .slider{padding: 0 30px;}
+.tab_slider .tag_box{margin-top: 15px;}
+.tab_slider .buttons{width: 80%;}
+.tab_slider .buttons > button{font-size: 18px;}
+.tab_slider .tabs{padding-top: 40px;}
+.card_txt_tit{font-size: 15px;}
+.card2_tab{height: auto;margin-bottom: 50px;}
+
+.main03 .contents_box .main_banner img{width: 200px;top:80px;}
+.main03 .contents_box .main_banner{margin-bottom: 100px;padding: 35px 40px 35px 30px;}
+/* 홈 - main3 도서 끝 -------------*/
+
+
+
+/* 홈 - main5 강의 시작 -------------*/
+.main05 .class_3slide .slick-prev{left: -340px;}
+.main05 .class_3slide .slick-next{left: -270px;}
+.main05 .visual_slide{height: auto;   margin-bottom: 20px;}
+.main05 .contents_box3{height: auto;position: relative;}
+.main05 .search_terms_box {bottom:-15px}
+.main05 .contents_box2{margin-right: 50px;}
+/* .main05 .contents_box2 .main_banner {width: 40%;padding:40px 30px!important;height: auto;transform: translateX(-10%); border-top-left-radius: 0;border-bottom-left-radius: 0;margin-bottom: 50px!important;} *//*240502수정  */
+/* .main05 .contents_box2 .main_banner .cont_tit{font-size: 18px;} *//*240502수정  */
+/* .main05 .contents_box2 .main_banner a{float: right;} *//*240502수정  */
+.main05 .contents_box2 img{width: 150px;top: 50px;right: -50px;}
+.bottom_center_txt{width: 47%;margin-left: 0%;}
+.bottom_center_txt p{font-size: 16px;}
+.main05 .class_3slide .slick-slide{margin: 0 10px;padding: 30px 20px;}
+.search_terms_box h3 {font-size: 18px;}
+.search_terms_box h3::before {top:10px}
+.search_terms_box > ul > li a {padding: 5px 15px; font-size: 15px;}
+.search_terms_box{width: 100%;padding: 10px 10px 15px 10px; height: auto; position:relative; bottom:-30px}
+.search_terms_box ul{clear: both;padding-top: 45px;width: 100%; padding-left: 0; }
+.search_terms_box h3 {font-size: 20px;}
+.search_terms_box h3::before {top:10px}
+.search_terms_box > ul > li a {padding:5px 8px; font-size: 15px;}
+.search_terms_box span{font-size: 18px;margin: 0 8px;}
+
+
+/* 강의 - 중간 탭 슬라이드 추가 */
+.main05 .tab_slider4{margin-top: 5px;height: 360px;}
+.main05 .tab_slider4 .buttons {width: auto;padding: 15px 8px 15px 0;}
+.main05 .tab_slider4 .slide5_box .slick-slide{width: 140px!important;margin: 0 12px;}
+.main05 .tab_slider4 li a.slide5_box_img01{width: 140px!important;height: 208px!important;}
+.main05 .tab_slider4 .slick-track{margin-top: 0px;}
+.main05 .slider4{width: auto;}
+.main05 .tab_slider4 .slide5_box .slick-prev{top:36%;left: 0px!important;}
+.main05 .tab_slider4 .slide5_box .slick-next{transform: translateX(100%);right: 30px;top:36%;}
+
+.main05 .tab_slider4 .slide3_box{box-shadow: none;border:0;padding: 0;}
+.main05 .tab_slider4 .slide3_box li{box-shadow: none;border:0;width: 300px;padding: 20px 25px;}
+.main05 .tab_slider4 .slide3_box .slick-prev{top:44%;left: 0!important;}
+.main05 .tab_slider4 .slide3_box .slick-next{transform: translateX(100%);right: 30px;top:44%;}
+/* 홈 - main5 강의 끝 -------------*/
+
+
+
+/* 홈 - main4 논문 시작 -------------*/
+
+.main04 .top_slide3_play{margin-top: 10px;width: 100%;}
+.main04 .visual_slide{height: auto;margin-bottom: 0px;background-size: cover;}
+.main04 .left_txt_box{padding-top: 10px;}
+.main04 .contents_box2{margin: 0!important;}
+.main04 .contents_box2 .main_banner{width: 100%;margin-bottom: 0!important;height: 360px;padding: 20px 40px 35px 40px!important;
+transform: none;border-radius: 0;background-size: cover;}
+.main04 .contents_box2 .main_banner .cont_tit{font-size: 24px;padding-top:20px;}
+.main04 .top_slide3_play .slick-slide{margin: 0 12px!important;height: 250px;}
+.main04 .top_slide3_play .slick-list{padding-top: 0;width: 95%;margin: 0 auto;}
+.main04 .top_slide3_play li h2 > a{font-size: 22px;}
+.main04 .search_terms_box{bottom:-15px;}
+
+.main04 .top_slide3_play .more_view_btn1{bottom:32px;}
+.main04 .top_slide3_play .more_view_drop1{bottom:32px;}
+.main04 .top_slide3_play .slick-slide{height: 260px;}
+
+/* 2023.12.27 수 mian4 - 논문 중간 컨텐츠 책->논문 으로 변경 */
+.main04 .right_slider3{width: 37%;}
+.main04 .thesis_3box{box-shadow: none;border-radius: 0;border:0;padding: 30px 0px;margin-top: 10px!important;width: 100%!important;}
+.main04 .thesis_3box .slick-slide{width: 280px; margin: 0 14px; height: 280px;padding: 20px 23px;}
+.main04 .thesis_3box .slick-prev{top:45%;left: 0px!important;}
+.main04 .thesis_3box .slick-next{top:45%;right: 0px!important;}
+.main04 .slide3_box li p{line-height: 21px;}
+.main04 .tag{margin-top: 12px;}
+/* 홈 - main4 논문 끝 -------------*/
+
+
+
+
+/* sub ----------------------------------------- */
+
+/* Sub - sub3_도서검색_상세 슬라이드 시작 -------------*/
+.sub3-2 .card3_play .left_book_img {margin: 0 20px;}
+.sub3-2 .cont{width: 100%;}
+.sub3-2 .card2{width: 100%;}
+.sub3-2 .slide5_box{width: 90%;margin: 0 auto;padding: 0 16px;}
+.sub3-2 .slide5_box li.slick-slide{width: 170px;margin: 0 20px;}
+.sub3-2 .slide5_box li a.slide5_box_img{width: 170px!important;height: 233px;}
+
+.sub3-2 .slide5_box .slick-prev{left: 0;}
+.sub3-2 .slide5_box .slick-next{right: 0px;}
+.search_filter{width: 250px;}
+/* 2023.12.28 유지나 수정 */
+.sub3-2 .slide3_box li{width: 350px;margin: 0 10px;height: 250px;}
+.sub3-2 .slide3_box{width: 90%;}
+.sub3-2 .card_cont_box {padding: 0 40px 0px 40px;}
+.sub3-2 .sub_cont_height{height: auto;}
+.sub3-2 .search_filter{float: none;width: 100%;background: none;border-top: 1px solid #d1d1d1;border-radius: 0;height: auto;}
+.sub3-2 .search_filter_box .card_box{width: 32.3333%;margin-right: 1%;}
+.sub3-2 .search_filter_box .card_box:nth-child(3n){margin-right: 0;}
+.sub3-2 .card_box{width: 100%;height: 480px;display: block!important;margin-bottom: 20px;}
+.sub3-2 .tag_box {float: left;margin-top: 13px;margin-left: 33px;}
+/* Sub - sub3_도서검색_상세 슬라이드 끝 -------------*/
+
+
+/* Sub - sub5_강의검색_상세 슬라이드 시작 -------------*/
+.tab_slider3 .slider3 .slick-list{width: auto;}
+
+/* Sub - sub5_강의검색_상세 슬라이드 끝 -------------*/
+
+
+
+}
+
+
+
+
+
+@media screen and (max-width:768px){
+/* 2024.01.04 유지나 수정 시작 */
+.best_book_left .best_book_txt{width: 100%;}
+/* 2024.01.04 유지나 수정 끝 */
+}
+
+
+
+
+
+
+   
+
+
+
+
+
+@media screen and (min-width:480px) and (max-width:767px){
+
+   
+/* 공통 */
+.quickmenu{display: none;}
+.quikmenu_open{display: none;}
+
+/* main ----------------------------------------- */
+
+/* 홈 - main1 */
+.like-snu-logo {margin-left: 15px;height: 30px;padding-left: 11px;}
+.like-snu-logo img {height: 32px;}
+.site-header{margin-bottom: 0;}
+.search_wrod .sub_menu{top:0;}
+.search_wrod .sub_menu{margin-left: 0;}
+.top_search_box{width: auto;margin: 0 auto;margin: 0 15px;position: relative;height: 160px;}
+.top_5menu{width: 100%; position: absolute;left: 0;top:155px;}
+.main1 ul.tabs1 > li{width: 19.7%;font-size: 16px;}
+.main1 ul.tabs1 > li .li_tit{padding: 9px 10px!important;}
+.main1 ul.tabs1 > li.current .li_tit{padding: 9px 5px!important;}
+.search_wrod{width: 100%;position: absolute;left: 0;top:90px;}
+.search_wrod .tit2{ width: calc(100% - 83px); border-bottom: 0;padding-bottom: 10px;}
+.search_wrod{margin-left: 0px;border-bottom:1px solid #cacaca;}
+.search_wrap{width: 100%;position: absolute;right: 0;top:25px;margin:0;}
+.contents_box{width: auto;margin: 0 auto;margin: 0 15px;}
+
+/* 비쥬얼 이미지 */
+.visual_txt{font-size: 19px;word-break: keep-linear;padding: 30px 50px;}
+.main-section.main-contact{margin: 0 15px;}
+.visual_box{padding: 0;}
+.visual_img{height: 250px;}
+.visual_b_txt {right: 15px;bottom: -34px;padding: 6px 40px 6px 37px;}
+.main-section.main-contact::before{height: 250px;}
+.visual_b_txt span{display: none;}
+.visual_b_txt strong{font-size: 15px;}
+
+
+/* 나만을 위한 맞춤 추천 도서  */
+.contents_box .cont .cont_tit{font-size: 20px;}
+.contents_box .cont .cont_txt{font-size: 14px;}
+.contents_box .cont{margin-bottom: 50px;}
+.main01 .slide5_box{width: 96%;margin: 0 auto;padding-top: 30px;}
+.main01 .slide5_play .slick-slide{width: 203px!important;}
+.slide5_box li a.slide5_box_img{width: 203px!important;height: 291px;}
+.main01 .slide5_play .slick-slide{margin: 0 15px!important;}
+.slide5_box .slick-prev{top: 38%;}
+.slide5_box .slick-next{top: 38%;right: 7px;transform: translateX(50%);}
+.tag{margin-top: 12px;margin-right: 3px;padding: 3px 7px;font-size: 13px;}
+.slide5_box li h5{margin-bottom: 0px;font-size: 15px;}
+.more_view{padding-left: 50px;font-size: 13px;}
+
+/* 이 논문들은 어떠세요? */
+.slide3_box{padding:10px 30px 20px 30px;width: 95%;margin: 0 auto;margin-top: 40px;}
+.slide3_play li{width: 360px;margin: 0 15px;}
+.slide3_play .tag{margin-top: 5px;}
+.main05 .ellipsis4 {margin-bottom: 10px;}
+.main05 .class_3slide li .tag {margin-top: 5px;}
+
+
+/* 우리가 좋아한 LikeSNU 컬렉션 */
+.right_book_list{width: calc(100% - 200px);display: none;}
+.left_book_img01 img{display: block;width: 100%;height: 100%;}
+.card_box{width: 100%!important;height: auto;padding: 20px;border-radius: 20px;margin-bottom: 20px;padding-bottom:40px} 
+.left_book_img01{display: none;}
+.card_box:nth-child(1){margin-bottom: 13px;}
+.card_box a.follow_btn{background: none;color: #000;width: 0; height: 0;font-size: 0;line-height: 0;right: -10px;}
+
+.card_box h2{font-size: 18px;text-align: left;padding: 0;}
+.card_box > p{font-size: 14px;text-align: left;padding: 0;padding-top: 20px;}
+.card_cont_box{padding: 0 22px 0px 22px;display: none;}
+.card3_play .left_book_img {margin: 0 11px;}
+.right_card_box .tag_box{margin-top: 10px;}
+.right_card_box .slick-track{padding-bottom: 5px;}
+.main01 .tag_box{margin: 0;}
+.right_book_list li > p{padding: 0;}
+.share_box{float: none;margin: 0;position: absolute;top:16px;right: 15px;}
+.contents_box .main_banner{padding: 30px;}
+.contents_box .main_banner .cont_tit{font-size: 18px;background-size: 196px;background-position: left -3px;}
+.contents_box .main_banner .cont_txt{padding: 5px 0;word-break: keep-linear;font-size: 14px;}
+.contents_box .main_banner img{width: 190px;top:initial;bottom:-20px;}
+
+
+
+
+/* LikeSNU 서울대인의지식활동 패턴을 참고하여, 나만의 독서, 연구, 학계획을 설계해보세요. */
+.bottom_cont ul li:nth-child(2){margin:30px 0;}
+.bottom_cont .b_cont_list{height: auto;padding: 15px 40px 15px 15px;word-break: keep-all;}
+.bottom_cont h2{word-break: keep-linear;padding: 30px;font-size: 18px;line-height: 22px;}
+.bottom_cont ul{height: auto;overflow:inherit;}
+.bottom_cont ul li{width: 100%;}
+.bottom_cont h3{font-size: 22px;}
+.bottom_cont {background: url(/images/bottom_bg01_m.png) no-repeat center;height: 865px;background-size: cover;}
+.bottom_cont .b_cont_list p br{display: none;}
+.bottom_cont .b_cont_list p:last-child{padding-bottom: 0;font-size: 14px;}
+.bottom_cont ul li .more_view2{font-size: 12px;}
+
+
+/* footer 수정 */
+footer .site-info{padding: 1.875rem;}
+.copyrights{padding: 0 0 0.875rem 0;margin-left: -10px;}
+
+
+
+/* 홈 - main2 주제 시작 -------------*/
+
+/* 상단 해시태그 부분 */
+.main02 .select-box{font-size: 15px;height: 35px;}
+.main02 .select-box-dropDown{top: 45px;}
+.main02 .visual_slide{width: auto;margin: 0 auto; margin-left: 15px;margin-right: 15px;margin-top: 20px!important;height: auto;
+padding: 20px!important;}
+.main02 .visual_slide .vs_tit{font-size: 30px;}
+.main02 .left_txt_box .big_tit{padding: 10px 0;font-size: 15px; height: 60px;}
+.main02 .left_txt_box{width: 100%;margin-right:0;padding-top: 30px;font-size: 30px;}
+.main02 .visual_slide .right_slide_box{width: 100%!important;padding:0px;padding-left: 10px;padding-top: 10px;}
+.main02 .subject_box li span{font-size: 12px;padding: 4px 8px;}
+.main02 .subject_box li{margin-bottom: 20px;}
+.main02 .subject_box li strong {padding-top:0}
+.main02 .visual_slide .visual_b_txt strong{font-size: 15px;}
+.main02 .visual_b_txt{bottom: -42px;padding: 10px 15px 10px 35px;}
+.main02 .visual_slide .more_view{margin-top: 0;margin-left: 20px;}
+
+.subject_slide_box{width: auto;margin: 0 auto; margin-left: 15px;margin-right: 15px; margin-top: 80px;padding-left: 0;}
+.main02 .class_3slide2 .slick-slide{margin:15px 10px;padding: 38px 20px;width: 194px!important;}
+.main02 .class_3slide2 .slick-slide::after{clear: both;content: '';display: block;}
+.main02 .class_3slide2 .slick-prev{top: 45%;transform: translateX(-50%);bottom: initial;left: 5px;}
+.main02 .class_3slide2 .slick-next{left:initial;top: 45%;transform: translateX(100%);bottom: initial;right: 30px;}
+.main02 .class_3slide2 .slick-list{width: 95%;margin: 0 auto;overflow: hidden;min-height: auto;}
+
+
+.tab_slider2 .slider2{margin-top: 40px;}
+.tab_slider2 .slider2 .slick-slide{margin: 0 21px;width: 155px!important;}
+.tab_slider2 .slider2 .slick-prev{left: -15px;}
+.tab_slider2 .slider2 .slick-next{right: -15px;}
+.main02 .tab_slider2 .right_book_img01 > a{width: 155px;height: 210px;}
+.tab_slider2 .slider2 .slick-list {width: 92%;margin: 0 auto;overflow: hidden;}
+.main02 .card_box{height: 380px;}
+.subject_left_box{width: 100%;height: auto;background:none;}
+.subject_slide_box li .tag{font-size: 13px;}
+.subject_slide_box h5{padding-top: 15px;padding-bottom: 10px;}
+.subject_left_box > p{font-size: 15px;word-break: keep-linear;padding: 0 40px 0 0;}
+.subject_right_box{width: 100%;min-height: auto;}
+.main02 .class_3slide2{min-height:auto}
+.subject_left_box > h2{font-size: 22px;padding-bottom: 10px;}
+.subject_left_box > p br{display: none;}
+
+.main02 .tab_slider2 .left_book_img h5 a{line-height: 20px;height: auto;}
+.tab_slider2 .buttons{width: auto;}
+.tab_slider2 .tabs{width: 95%;margin: 0 auto;padding-top: 20px;}
+.tab_slider2 .buttons > button{font-size: 16px;padding: 8px 10px;width: 24%;}
+
+.main02 .contents_box .cont .cont_tit{font-size: 22px;}
+.main02 .contents_box .cont .cont_txt{font-size: 16px;padding: 0;text-align: center;padding: 30px 0;}
+.main02 .contents_box .main_banner{padding: 30px;height: 235px;}
+.main02 .main_banner {background: url(/images/bottom_bg03_m.png) no-repeat center;margin-bottom: 0;background-size: cover;/* border-radius: 16px; */}/*240502수정  */
+.main02 .contents_box .main_banner a{margin: 0 auto;}
+.card2_tab{margin-bottom: 50px;}
+
+.menu1>.sub1{width: 190px;}
+.menu1>.sub1 li>a{padding:0 8px;}
+
+
+/* main02 - 주제 하단 논문 탭 수정(2024.01.09) 시작 */
+/* 2024.01.27 토 유지나 수정 시작 */
+.main02 .LikeSNU_collec .more_view_drop1{right: inherit;left: 0;transform: translateX(-90%);}
+.main02 .LikeSNU_collec .card_box .tag_box{margin-top: 5px;}
+.main02 .tab_slider2 .LikeSNU_collec .card_box{}
+.main02 .tab_slider2 .LikeSNU_collec .card_box:nth-of-type(2){}
+.main02 .tab_slider2 .LikeSNU_collec .card_box:nth-of-type(3){}
+.main02 .tab_slider2 .LikeSNU_collec .card_box:nth-of-type(4){}
+.likesnu_slider .slick-prev{left: -60px;}
+.likesnu_slider .slick-next{right: -60px;}
+/* 2024.01.27 토 유지나 수정 끝 */
+.main02 .tab_slider2 .thesis_3box2{margin-top: 0px;}
+.main02 .tab_slider2 .thesis_3box2 li{width: 290px!important;height: 250px;}
+.main02 .tab_slider2 .class_3slide3 li{width: 280px!important;}
+.tab_slider2 .book_slide_wrap .slick-slide{margin: 0 15px;width: 150px;}
+.main02 .tab_slider2 .right_book_img01 > a{width: 150px;height: 203px;}
+.tab_slider2 .slider2 .slick-list {width: 92%;margin: 0 auto;}
+
+/* main02 - 주제 하단 논문 탭 수정(2024.01.09) 끝 */
+/* 홈 - main2 주제 끝 -------------*/
+
+
+
+
+/* 홈 - main3 도서 시작 -------------*/
+/* 상단 슬라이드 */
+.main03 .left_txt_box{padding-left: 10px;padding-top: 20px;}
+.main03 .visual_slide{height: auto;/* padding-bottom: 50px; */}
+.main05 .contents_box .cont{padding-top:0}
+.main03 .contents_box3{width: auto;  margin: 0 15px;position: relative;}
+.main03 > .visual_slide > .more_view{top:10px;left: 150px;position: absolute;}
+.main03 .left_txt_box .big_tit br{display: none;}
+.main03 .left_txt_box .vs_txt br{display: none;}
+.main03 .right_slide_box{width: 100%;margin: 0 auto;}
+.main03 .slide45_play .slick-slide{width: 203px!important;margin: 0 20px;}
+.main03 .slide5_box li a.slide5_box_img01{width: 203px!important;height:291px!important;}
+.slide4_txt_box{width: auto;}
+.main03 .slide5_box .tag:last-of-type{margin-top: 10px;}
+.main03 .visual_slide .slide5_box .slick-prev{right: 60px;left: inherit;top:-220px; }
+.main03 .visual_slide .slide5_box .slick-next{right: 20px;left: inherit;top:-220px;}
+.main03 .visual_slide .slide5_box .slick-list{width: 100%;margin: 0 auto;}
+.main03 .slide45_play{margin-top: 0;}
+.visual_slide .vs_tit{font-size: 28px;}
+.left_txt_box .big_tit{font-size: 23px;}
+.left_txt_box .vs_txt{font-size: 15px;max-width:100%;}
+.skyblue_txt{font-size: 23px;}
+.textbook_tit{padding-top: 10px;}
+
+/* 서울대 인기대출 도서는? */
+.select_top_tit3 {padding: 7px 29px 6px 8px;}
+.best_book_left li:nth-child(1){width: 150px;height: 212px;}
+.best_book_left li:nth-child(1) img{max-width: 100%;height: auto;display: inline-block;vertical-align: middle;}
+.best_book_left li:nth-child(2){padding: 5px 0;margin-left: 15px;width: 64%;}
+.best_book_left .best_book_txt{overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;}
+.best_book_left .best_book_txt br{display: none;}
+.best_book_left .best_book_tit{padding: 5px 0 10px 0;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
+.best_book_box {height: 260px;width: 100%;}
+.best_book_left{height: 260px;}
+.best_book_right li{padding: 35px 10px;}
+.contents_box .cont{margin-bottom: 50px;}
+.best_book_left h2{margin-bottom: 10px;padding-right: 0;}
+.best_book_right li .book_right_tit{font-size: 14px;}
+
+/* 이 강의를 수강생이 보고있어요 */
+.main03 .right_slider3 .slick-prev{left: inherit!important;}
+.main03 .right_slider3 .slick-next{left: inherit!important;}
+.main04 .thesis_3box .slick-next{right: 23px;}
+.select_class_list{margin-top: 20px;width: 100%!important;margin-right: 7%!important;;height: auto!important;
+background-size: cover!important;;border-radius: 30px!important;;padding: 30px 40px!important;}
+.right_slider3{width: 100%;margin-top: 20px;}
+.main03 .right_slider3 ul{width: 95%;margin: 0 auto;}
+.card_box:nth-of-type(2){margin-right: 0;}
+.main03 .slide3_play .slick-slide{width: 200px!important;}
+.main03 .slide3_play .slick-track{margin-top: 10px;margin-bottom: -10px;}
+.main03 .right_slider3 .slide3_play li{height: auto;}
+.main03 .right_slider3 .slide3_play li a.slide5_box_img01{width: 200px!important;height:283px!important;}
+.select_top_tit{font-size: 13px;padding: 6px 15px 6px 2px;}
+.select_book_img{width: 120px;height: 181px;}
+
+
+/* 놓치기 아쉬울 SNU 컬렉션 */
+.tab_slider .slider .slick-slide{margin: 0 15px;}
+.tab_slider .slider{padding: 0 20px;display: none;}
+.tab_slider .tag_box{margin-top: 15px;margin-left: 0;}
+.tab_slider .buttons{width: 100%;padding: 0;}
+.tab_slider .buttons > button{font-size: 13px;letter-spacing: -0.1px;}
+.tab_slider .tabs{padding-top: 30px;}
+.card_txt_tit{font-size: 15px;}
+.card2_tab{height: auto;margin-bottom: 40px;}
+.tab_slider .tabs .more_view{right: 0;top:100px;}
+.tab_slider .slider .slick-next {right: 28px;top: -45px;}
+.tab_slider .slider .slick-prev {right: 48px;top: -45px;}
+
+
+.main03 .contents_box .main_banner img{width: 150px;top:120px;}
+.main03 .contents_box .main_banner{margin-bottom: 100px;padding: 35px 40px 35px 30px;}
+.main03 .contents_box .main_banner .red_bg{font-size: 18px;}
+
+/* 홈 - main3 도서 끝 -------------*/
+
+
+/* 홈 - main5 강의 시작 -------------*/
+.main05 .visual_slide{height: auto; margin: 50px 0 20px;}
+.main05 .contents_box3{height: 650px;position: relative;margin-bottom: 70px;}
+.main05 .contents_box3::after{clear: both;display: block;content: '';}
+.main05 .search_terms_box {bottom:-15px; overflow: hidden;}
+.main05 .contents_box2{margin-right: 10px;}
+.main05 .contents_box2 {margin: 0!important;margin-right: 10px!important;}
+.main05 .contents_box2 .main_banner {width: 100%;padding:40px 30px!important;/* height: 200px;margin-bottom: 50px; */ transform:none;border-top-left-radius: 0;border-bottom-left-radius: 0;}/*240502수정  */
+/* .main05 .contents_box2 .main_banner .cont_tit{font-size: 18px;text-align: left;margin-top: 0;padding-left: 0px;} *//*240502수정  */
+/* .main05 .contents_box2 .main_banner a{float: none;position: absolute;float: none;position: absolute;left: 20px;right: inherit;top: 60px;padding: 6px 15px;} *//*240502수정  */
+.main05 .contents_box2 img{width: 160px;top: 30px;right: 0px;bottom:inherit;}
+/* .bottom_center_txt{width: auto;margin-left: 0%;padding-top: 0;position: absolute;top:130px;left: 30px;} *//*240502수정  */
+.bottom_center_txt p{font-size: 16px;text-align: left;word-break: keep-all;}
+.main05 .class_3slide .slick-slide{margin: 0 10px;padding: 30px 20px;height: 320px;}
+.main05 .ellipsis4{font-size: 14px;height: 80px;}
+
+.main05 .class_3slide li h2{font-size: 18px;}
+.main05 .class_3slide li h2 a {overflow: hidden;text-overflow: ellipsis;display: -webkit-box;
+-webkit-line-clamp: 2;-webkit-box-orient: vertical;height: 48px;line-height: 23px;}
+
+
+.search_terms_box h3::before {top:10px}
+.search_terms_box > ul > li a {padding: 5px 15px; font-size: 15px;}
+.search_terms_box h3 {font-size: 18px;}
+.search_terms_box h3::before {top:10px}
+.search_terms_box > ul > li a {padding: 5px 10px; font-size: 14px;}
+.search_terms_box{width: 100%;padding: 10px 10px 15px 10px; height: auto; position:relative; bottom:-30px}
+.search_terms_box ul{clear: both;padding-top: 45px;width: 100%; padding-left: 0; }
+.search_terms_box h3 {font-size: 20px;}
+.search_terms_box h3::before {top:10px}
+.search_terms_box > ul > li a {padding:5px 8px; font-size: 16px;}
+.search_terms_box span{font-size: 16px;margin: 0 4px;padding: 8px 12px;}
+
+.main05 .visual_slide .class_3slide {margin-top: 0;}
+.main05 .left_txt_box .big_tit{padding-bottom: 0;}
+
+/* 강의 - 중간 탭 슬라이드 추가 */
+.main05 .tab_slider4{margin-top: 20px;height: 380px;}
+.main05 .select_slide_box{margin-bottom: 0;}
+.main05 .tab_slider4 .slide5_box .slick-slide{width: 140px!important;margin: 0 12px;}
+.main05 .tab_slider4 li a.slide5_box_img01{width: 140px!important;height: 208px!important;}
+.main05 .tab_slider4 .slick-track{margin-top: 0px;}
+.main05 .slider4{width: auto;}
+.main05 .tab_slider4 .slide5_box .slick-prev{top:36%;left: 0px!important;}
+.main05 .tab_slider4 .slide5_box .slick-next{transform: translateX(100%);right: 30px;top:36%;}
+
+.main05 .tab_slider4 .slide3_box{box-shadow: none;border:0;padding: 0;}
+.main05 .tab_slider4 .slide3_box li{box-shadow: none;border:0;width: 300px;padding: 20px 30px;margin: 0 12px;height: 250px;}
+.main05 .tab_slider4 .slide3_box .slick-prev{top:44%;left: 0!important;}
+.main05 .tab_slider4 .slide3_box .slick-next{transform: translateX(100%);right: 30px;top:44%;}
+/* 홈 - main5 강의 끝 -------------*/
+
+
+
+/* 홈 - main4 논문 시작 -------------*/
+.main04 .top_slide3_play .slick-prev{right: 60px;left: inherit;top:-130px;bottom:inherit;}
+.main04 .top_slide3_play .slick-next{right: 40px;left: inherit;top:-130px;bottom:inherit;}
+.main04 .top_slide3_play{margin-top: 10px;width: 100%;}
+.main04 .top_slide3_play h2{height: 50px;}
+.main04 .visual_slide{height: auto;background-size: cover;padding-bottom: 0px;margin-bottom: 15px;}
+.main04 .left_txt_box{padding-top: 10px;}
+.main04 .contents_box2{margin: 0!important;}
+.main04 .contents_box2 .main_banner > a{position: inherit;right: inherit;top: inherit;margin-top: 10px;left: 0;}
+.main04 .contents_box2 .main_banner{width: 100%;margin-bottom: 0;height: 340px;padding: 20px 40px 35px 30px!important;
+transform: none;border-radius: 0;background-size: cover;}
+.main04 .contents_box2 .main_banner .cont_tit{font-size: 22px;padding-top:20px;}
+.main04 .top_slide3_play .slick-slide{margin: 0 10px!important;padding: 30px 20px;height: auto;}
+.main04 .top_slide3_play .slick-list{padding-top: 0;}
+
+.main04 .top_slide3_play li h2 > a{font-size: 18px;height: 45px;line-height: 22px;}
+
+.main04 .top_slide3_play li h3{font-size: 14px;margin-top: 10px;}
+.main04 .top_slide3_play li p{font-size: 13px;height: 47px;line-height: 15px;}
+.main04 .search_terms_box{bottom:-15px;}
+
+.main04 .top_slide3_play .more_view_btn1{right: 10px;bottom:30px;}
+.main04 .top_slide3_play .more_view_drop1 {transform: translateX(94%);bottom:30px;}
+
+.main04 .thesis_3box{margin-top: 0!important;width: 100%!important;padding: 10px 20px 40px 20px;}
+.main04 .thesis_3box .slick-slide{height: 270px;}
+
+/* 홈 - main4 논문 끝 -------------*/
+
+
+
+/* sub ----------------------------------------- */
+
+/* Sub - sub3_도서검색_상세 슬라이드 시작 -------------*/
+.sub3-2 .card3_play .left_book_img {margin: 0 16px;}
+.sub3-2 .cont{width: 100%;}
+.sub3-2 .card2{width: 100%;}
+.sub3-2 .slide5_box{width: 90%;margin: 0 auto;padding: 0 16px;}
+.sub3-2 .slide5_box li.slick-slide{width: 170px;margin: 0 11px;}
+.sub3-2 .slide5_box li a.slide5_box_img{width: 170px!important;height: 233px;}
+
+.sub3-2 .slide5_box .slick-prev{left: 0;}
+.sub3-2 .slide5_box .slick-next{right: 0px;}
+.search_filter{width: 250px;}
+/* 2023.12.28 유지나 수정 */
+.sub3-2 .slide3_box li{width: 350px;margin: 0 10px;height: 250px;}
+.sub3-2 .slide3_box{width: 90%;}
+.sub3-2 .card_cont_box {padding: 0 40px 0px 40px;}
+.sub3-2 .sub_cont_height{height: auto;}
+.sub3-2 .search_filter{float: none;width: 100%;background: none;border-top: 1px solid #d1d1d1;border-radius: 0;height: auto;}
+.sub3-2 .search_filter_box .card_box{width: 48.3333%;margin-right: 2%;}
+.sub3-2 .search_filter_box .card_box:nth-child(2n){margin-right: 0;}
+.sub3-2 .card_box{width: 100%;height: auto;}
+.sub3-2 .tag_box {float: left;margin-top: 13px;margin-left: 0;}
+/* 2023.12.28 유지나 수정 */
+.sub3-2 .card_box .share_box{margin-top: 0;}
+/* Sub - sub3_도서검색_상세 슬라이드 끝 -------------*/
+
+
+/* Sub - sub5_강의검색_상세 슬라이드 시작 -------------*/
+#scontents .left_book_img01{display: block;}
+#scontents .right_book_list{display: block;}
+.tab_slider3 .slider3 .slick-list{width: auto;}
+.sub3-2 .left_card_box {height: auto;}
+/* Sub - sub5_강의검색_상세 슬라이드 끝 -------------*/
+
+
+}
+
+
+
+/* main02 - 주제 하단 논문 탭 수정(2024.01.09) 시작 */
+@media screen and (max-width:767px){
+/* 2024.01.27 토 유지나 수정 시작 */
+.main02 .LikeSNU_collec .more_view_drop1{right: inherit;left: 0;transform: translateX(-90%);}
+.main02 .LikeSNU_collec .card_box .tag_box{margin-top: 5px;}
+.main02 .tab_slider2 .LikeSNU_collec .card_box{height: 200px;}
+.main02 .tab_slider2 .LikeSNU_collec .card_box:nth-of-type(2){}
+.main02 .tab_slider2 .LikeSNU_collec .card_box:nth-of-type(3){}
+.main02 .tab_slider2 .LikeSNU_collec .card_box:nth-of-type(4){}
+.main02 .LikeSNU_collec .sub_card_box{margin: 0px 20px;}
+.main02 .LikeSNU_collec .sub_card_box .card_box{margin:70px 8px 0 8px!important;}
+.likesnu_slider .slick-prev{left: -35px;}
+.likesnu_slider .slick-next{right: -35px;}
+/* 2024.01.27 토 유지나 수정 끝 */
+.main02 .tab_slider2 .thesis_3box2{margin-top: 0px;}
+.main02 .tab_slider2 .thesis_3box2 li{width: 290px!important;height: 250px;margin: 0 12px;}
+.main02 .tab_slider2 .class_3slide3 li{width: 270px!important;}
+
+.main02 .tab_slider2 .thesis_3box2 {box-shadow: none;border: 0;padding: 0;margin-top: 0px;width: 100%;padding: 0 10px;}
+.main02 .tab_slider2 .thesis_3box2 li {box-shadow: none;border: 0;}
+.main02 .tab_slider2 .thesis_3box2 li h2{padding: 0;text-align: left;}
+.main02 .tab_slider2 .class_3slide3 li h2{padding: 0;text-align: left;}
+.main02 .tab_slider2 .class_3slide3{margin-top: 0px;padding:0 10px;}
+
+.main02 .tab_slider2 .sub1 li{background: none;padding: 0;height: auto;margin: 0;border: 0;}
+.main02 .tab_slider2 .sub1 li:hover{transform:none;}
+.main02 .thesis_3box2 .menu1 {width: auto;}
+.main02 .class_3slide3 .menu1 {width: auto;}
+.main02 .thesis_3box2 .menu1>.sub1 {right: inherit;left: 0; transform: translateX(20%);bottom: 20px;}
+.main02 .class_3slide3 .menu1>.sub1 {right: inherit;left:0;transform: translateX(15%);bottom: 40px;}
+.main02 .class_3slide3 .slick-prev{left: -15px;}
+.main02 .class_3slide3 .slick-next{right: -15px;}
+.main02 .thesis_3box2 .slick-prev{left: -15px;}
+.main02 .thesis_3box2 .slick-next{right: -15px;}
+}
+
+@media screen and (max-width:480px){
+.main02 .LikeSNU_collec .more_view_drop1{right: inherit;left: 0;transform: translateX(-90%);}
+/* 2024.01.27 토 유지나 수정 시작 */
+.main02 .LikeSNU_collec .card_box .tag_box{margin-top: 5px;}
+.main02 .tab_slider2 .LikeSNU_collec .card_box{height: 200px;}
+.main02 .tab_slider2 .LikeSNU_collec .card_box:nth-of-type(2){}
+.main02 .tab_slider2 .LikeSNU_collec .card_box:nth-of-type(3){}
+.main02 .tab_slider2 .LikeSNU_collec .card_box:nth-of-type(4){}
+.main02 .LikeSNU_collec .sub_card_box{margin: 0px 20px;}
+.main02 .LikeSNU_collec .sub_card_box .card_box{margin:70px 8px 0 8px!important;}
+.likesnu_slider .slick-prev{left: -35px;}
+.likesnu_slider .slick-next{right: -35px;}
+.likesnu_slider{height: 380px;}
+
+/* 2024.01.27 토 유지나 수정 끝 */
+.main02 .tab_slider2 .thesis_3box2{margin-top: 0px;}
+.main02 .tab_slider2 .thesis_3box2 li{width: 290px!important;height: 250px;margin: 0 12px;}
+.main02 .tab_slider2 .class_3slide3 li{width: 270px!important;}
+
+.main02 .tab_slider2 .thesis_3box2 {box-shadow: none;border: 0;padding: 0;margin-top: 30px;width: 100%;padding: 0 10px;}
+.main02 .tab_slider2 .thesis_3box2 li {box-shadow: none;border: 0;}
+.main02 .tab_slider2 .thesis_3box2 li h2{padding: 0;text-align: left;}
+.main02 .tab_slider2 .class_3slide3 li h2{padding: 0;text-align: left;}
+.main02 .tab_slider2 .class_3slide3{margin-top: 0px;padding:0 10px;}
+
+.main02 .tab_slider2 .sub1 li{background: none;padding: 0;height: auto;margin: 0;border: 0;}
+.main02 .tab_slider2 .sub1 li:hover{transform:none;}
+.main02 .thesis_3box2 .menu1 {width: auto;}
+.main02 .class_3slide3 .menu1 {width: auto;}
+.main02 .thesis_3box2 .menu1>.sub1 {right: inherit;left: 0; transform: translateX(20%);bottom: 20px;}
+.main02 .class_3slide3 .menu1>.sub1 {right: inherit;left:0;transform: translateX(15%);bottom: 40px;}
+.main02 .class_3slide3 .slick-prev{left: -15px;}
+.main02 .class_3slide3 .slick-next{right: -15px;}
+.main02 .thesis_3box2 .slick-prev{left: -15px;}
+.main02 .thesis_3box2 .slick-next{right: -15px;}
+
+/* 2024.01.11 유지나 -  논문 메인 더보기 수정 시작 */
+.main05 .class_3slide .slick-slide {position: relative;}
+.main05 .class_3slide .slick-slide .more_view_btn1{position: absolute;bottom: 30px;right: 15px;top:inherit;}
+.main05 .class_3slide .slick-slide .more_view_drop1{left: 0;right: inherit; bottom:30px;transform: translateX(95%);}
+.main05 .class_3slide .slick-slide .more_view_drop1 li{border:0;background: none;margin: 0;padding: 0;height: auto;float: none;width: auto;}
+/* 2024.01.11 유지나 -  논문 메인 더보기 수정 끝*/
+
+}
+
+@media screen and (max-width:479px){
+.main02 .tab_slider2 .thesis_3box2 li{width: 230px!important;height: 250px;margin: 0 12px;padding: 30px 20px;}
+.main02 .tab_slider2 .class_3slide3 li{width: 230px!important;padding: 40px 20px;margin-top: 10px;}
+
+.main02 .tab_slider2 .thesis_3box2 {box-shadow: none;border: 0;padding: 0;margin-top: 30px;width: 100%;padding: 0px;}
+.main02 .tab_slider2 .thesis_3box2 li {box-shadow: none;border: 0;}
+.main02 .tab_slider2 .thesis_3box2 li h2{padding: 0;text-align: left;}
+.main02 .tab_slider2 .class_3slide3 li h2{padding: 0;text-align: left;}
+.main02 .tab_slider2 .class_3slide3{margin-top: 0px;}
+
+.main02 .tab_slider2 .sub1 li{background: none;padding: 0;height: auto;margin: 0;border: 0;}
+.main02 .tab_slider2 .sub1 li:hover{transform:none;}
+.main02 .thesis_3box2 .menu1 {width: auto;}
+.main02 .class_3slide3 .menu1 {width: auto;}
+.main02 .thesis_3box2 .menu1>.sub1 {right: inherit;left: 0; transform: translateX(20%);bottom: 60px;}
+.main02 .class_3slide3 .menu1>.sub1 {right: inherit;left:0;transform: translateX(15%);bottom: 65px;}
+.main02 .class_3slide3 .slick-prev{left: -15px;width: 40px;height: 40px;background-size: cover;}
+.main02 .class_3slide3 .slick-next{right: -15px;width: 40px;height: 40px;background-size: cover;}
+.main02 .thesis_3box2 .slick-prev{left: -15px;}
+.main02 .thesis_3box2 .slick-next{right: -15px;}
+
+/* 2024.01.11 유지나 -  논문 메인 더보기 수정 시작 */
+.main05 .class_3slide .slick-slide {position: relative;}
+.main05 .class_3slide .slick-slide .more_view_btn1{position: absolute;bottom: 22px;right: 20px;top:inherit;}
+.main05 .class_3slide .slick-slide .more_view_drop1{left: 0;right: inherit; bottom:50px;transform: translateX(95%);}
+.main05 .class_3slide .slick-slide .more_view_drop1 li{border:0;background: none;margin: 0;padding: 0;height: auto;float: none;width: auto;}
+/* 2024.01.11 유지나 -  논문 메인 더보기 수정 끝*/
+
+/* 2024.01.27 토 유지나 수정 시작 */
+.main02 .likesnu_slider .slick-slide{width: 240px!important;}
+.main02 .LikeSNU_collec .card_box .tag_box{margin-top: 0;}
+.main02 .LikeSNU_collec .sub_card_box{margin:0 10px;}
+.main02 .LikeSNU_collec .sub_card_box .card_box{margin: 70px 8px 0 8px!important;height: 200px;}
+.likesnu_slider .slick-prev{left: -25px;width: 40px;height: 40px;background-size: cover;}
+.likesnu_slider .slick-next{right: -25px;width: 40px;height: 40px;background-size: cover;}
+.menu1>.sub1{width: 195px;}
+.menu1>.sub1 li>a{padding: 0 10px;}
+/* 2024.01.27 토 유지나 수정 끝 */
+
+}
+/* main02 - 주제 하단 논문 탭 수정(2024.01.09) 끝 */
+
+   
+
+
+
+/* main4 - 논문 530 사이즈 밑으로 더보기 왼쪽으로 수정 */
+@media screen and (max-width:531px){
+.main04 .top_slide3_play .more_view_drop1 {transform: translateX(100%);bottom:50px;left: 40px;right: inherit;}
+.menu3>.sub3{left: 0;right: inherit;bottom:30px;transform:translateX(-50%);}
+}
+@media screen and (max-width:525px){
+.main04 .top_slide3_play .more_view_drop1 {transform: translateX(100%);bottom:50px;left: 30px;right: inherit;}
+}
+@media screen and (max-width:500px){
+.main04 .top_slide3_play .more_view_drop1 {transform: translateX(100%);bottom:50px;left: 10px;right: inherit;}
+.menu3>.sub3{left: 0;right: inherit;bottom:30px;transform:translateX(-55%);}
+}
+@media screen and (max-width:479px){
+.menu3{bottom:28px;}
+}
+@media screen and (max-width:450px){
+.main04 .top_slide3_play .more_view_drop1 {transform: translateX(90%);bottom:50px;left: 0;right: inherit;}
+.main05 .class_3slide .slick-slide .more_view_drop1{left: 0;right: inherit; bottom:50px;transform: translateX(85%);}
+}
+@media screen and (max-width:430px){
+.main04 .top_slide3_play .more_view_drop1 {transform: translateX(75%);bottom:50px;left: 0;right: inherit;}
+.main05 .class_3slide .slick-slide .more_view_drop1{left: 0;right: inherit; bottom:50px;transform: translateX(75%);}
+
+}
+@media screen and (max-width:400px){
+.main04 .top_slide3_play .more_view_drop1 {transform: translateX(60%);bottom:50px;left: 5px;right: inherit;}
+.main05 .class_3slide .slick-slide .more_view_drop1{left: 0;right: inherit; bottom:50px;transform: translateX(65%);}
+.menu3>.sub3{left: 0;right: inherit;bottom:30px;transform:translateX(-70%);}
+}
+@media screen and (max-width:380px){
+.main04 .top_slide3_play .more_view_drop1 {transform: translateX(50%);bottom:50px;left: 5px;right: inherit;}
+.main05 .class_3slide .slick-slide .more_view_drop1{left: 0;right: inherit; bottom:50px;transform: translateX(52%);}
+}
+@media screen and (max-width:361px){
+.main04 .top_slide3_play .more_view_drop1 {transform: translateX(45%);bottom:50px;left: 0px;right: inherit;}
+.main05 .class_3slide .slick-slide .more_view_drop1{left: 0;right: inherit; bottom:50px;transform: translateX(45%);}
+.menu3>.sub3{left: 0;right: inherit;bottom:30px;transform:translateX(-80%);}
+}
+@media screen and (max-width:341px){
+.main04 .top_slide3_play .more_view_drop1 {transform: translateX(40%);bottom:50px;left: 0;right: inherit;}
+.main05 .class_3slide .slick-slide .more_view_drop1{left: 0;right: inherit; bottom:50px;transform: translateX(38%);}
+.menu3>.sub3{left: 0;right: inherit;bottom:30px;transform:translateX(-85%);}
+}
+
+
+
+
+
+@media screen and (min-width:341px) and (max-width:479px){
+   
+body{overflow-x: hidden;}
+
+/* 공통 */
+.quickmenu{display: none;}
+.quikmenu_open{display: none;}
+
+/* main ----------------------------------------- */
+
+/* 홈 - main1 */
+.like-snu-logo {margin-left: 10px;height: 30px;padding-left: 11px;}
+.like-snu-logo img {height: 32px;}
+.site-header{margin-bottom: 0;}
+.top_search_box{width: auto;margin: 0 auto;margin: 0 10px;position: relative;height: 160px;}
+.top_5menu{width: 100%; position: absolute;left: 0;top:155px;}
+.main1 ul.tabs1 > li{width: 19.7%;font-size: 13px;}
+.main1 ul.tabs1 > li .li_tit{padding: 9px 15px!important;}
+.main1 ul.tabs1 > li:first-child .li_tit{letter-spacing: -0.5px;}
+.main1 ul.tabs1 > li.current .li_tit{ width: 60px; padding: 9px 5px!important;}
+.search_wrod{width: 100%;position: absolute;left: 0;top:90px;}
+.search_wrod .tit2{ width: calc(100% - 83px); border-bottom: 0;padding-bottom: 10px;}
+.search_wrod{margin-left: 0px;border-bottom:1px solid #cacaca;}
+.search_wrap{width: 100%;position: absolute;right: 0;top:25px;margin:0;}
+.contents_box{width: auto;margin: 0 auto;margin: 0 10px;}
+.search_wrod .sub_menu{top:0;}
+
+/* 비쥬얼 이미지 */
+.visual_txt{font-size: 19px;word-break: keep-linear;padding: 30px 50px;}
+.main-section.main-contact{margin: 0 10px;}
+.visual_box{padding: 0;margin-bottom: 70px;}
+.visual_img{height: 200px;}
+.visual_b_txt {right: 10px;bottom: -34px;padding: 6px 40px 6px 37px;}
+.main-section.main-contact::before{height: 200px;}
+.visual_b_txt span{display: none;}
+.visual_b_txt strong{font-size: 15px;}
+
+
+/* 나만을 위한 맞춤 추천 도서  */
+.contents_box .cont .cont_tit{font-size: 18px;}
+.contents_box .cont .cont_txt{font-size: 14px;word-break: keep-all;padding: 0 20px 0 0;}
+.contents_box .cont{margin-bottom: 50px;}
+.main01 .slide5_box{width: 96%;margin: 0 auto;padding-top: 20px;height: 430px;}
+.main01 .slide5_box::after{clear: both;display: block;content: '';}
+.main01 .slide5_play .slick-slide{width: 135px!important;}
+.slide5_box li a.slide5_box_img{width: 135px!important;height: 193px;}
+.main01 .slide5_play .slick-slide{margin: 0 10px!important;}
+.slide5_box .slick-prev{top: 30%;width: 40px;height: 40px;background-size: cover;}
+.slide5_box .slick-next{top: 30%;width: 40px;height: 40px;right: 8px;transform: translateX(50%);background-size: cover;}
+.tag{margin-top: 12px;margin-right: 3px;padding: 3px 7px;font-size: 13px;}
+.slide3_box .tag{margin-top:5px}
+.slide5_box .tag:last-child{margin-bottom: 30px;}
+.slide5_box li h5{margin-bottom: 0px;font-size: 15px;width: 92%;}
+.more_view{padding-left: 20px;font-size: 13px;}
+.more_view::after{background-position: -11px 6px;}
+
+/* 이 논문들은 어떠세요? */
+.slide3_box{padding:10px 30px 20px 30px;width: 95%;margin: 0 auto;margin-top: 20px;}
+.slide3_play li{width: 240px;margin: 0 10px;padding: 20px;height: 245px;}
+/*.slide3_play .tag{margin-top: 20px;} */
+.slide3_box li h2{height: 50px;line-height: 22px;}
+.slide3_box li h2 > a{font-size: 18px;}
+.slide3_box li h3{font-size: 15px;word-break: keep-all;}
+.slide3_box li p{font-size: 15px;word-break: keep-all;height: 38px; margin: 10px 0;}
+.slide3_box .slick-prev{top: 45%;width: 40px;height: 40px;background-size: cover;}
+.slide3_box .slick-next{top: 45%;width: 40px;height: 40px;right: 4px;transform: translateX(50%);background-size: cover;}
+
+/* 우리가 좋아한 LikeSNU 컬렉션 */
+.right_book_list{width: calc(100% - 200px);display: none;}
+.left_book_img01 img{display: block;width: 100%;height: 100%;}
+.card_box{width: 100%;height: auto;padding: 20px;border-radius: 20px;margin-bottom: 20px; padding-bottom:40px} 
+.left_book_img01{display: none;}
+.card_box:nth-child(1){margin-bottom: 13px;}
+.main01 .right_card_box:nth-of-type(1){width: 100%;}
+.card_box a.follow_btn{background: none;color: #000;width: 0; height: 0;font-size: 0;line-height: 0;right: -10px;}
+.card_box h2{font-size: 18px;text-align: left;padding: 0;}
+.card_box > p{font-size: 14px;text-align: left;padding: 0;padding-top: 20px;}
+.card_cont_box{padding: 0 22px 0px 22px;display: none;}
+.card3_play .left_book_img {margin: 0 11px;}
+.right_card_box .tag_box{margin-top: 10px;}
+.right_card_box .slick-track{padding-bottom: 5px;}
+.main01 .tag_box{margin: 0;}
+.right_book_list li > p{padding: 0;}
+.share_box{}
+.contents_box .main_banner{padding: 15px;}
+.contents_box .main_banner .cont_tit{font-size: 17px;background-size: 191px;background-position: left -12px;}
+.contents_box .main_banner .cont_txt{padding: 5px 0;word-break: keep-linear;font-size: 14px;}
+.contents_box .main_banner img{width: 150px;top:initial;bottom:-10px;}
+
+.card_box .share_box {/* bottom: 36px; *//* top: 55%; */right: 20px;bottom:10px;margin-right: 0;}
+
+/* LikeSNU 서울대인의지식활동 패턴을 참고하여, 나만의 독서, 연구, 학계획을 설계해보세요. */
+.bottom_cont ul li:nth-child(2){margin:30px 0;}
+.bottom_cont .b_cont_list{height: auto;padding: 15px 40px 15px 15px;word-break: keep-linear;}
+.bottom_cont h2{word-break: keep-linear;padding: 30px;font-size: 18px;line-height: 22px;}
+.bottom_cont ul{height: auto;overflow:inherit;}
+.bottom_cont ul li{width: 100%;}
+.bottom_cont h3{font-size: 22px;}
+.bottom_cont {background: url(/images/bottom_bg01_m.png) no-repeat center;height: 990px;background-size: cover;}
+.bottom_cont .b_cont_list p br{display: none;}
+.bottom_cont .b_cont_list p:last-child{padding-bottom: 0;font-size: 14px;overflow: hidden;text-overflow: ellipsis;
+display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;}
+.bottom_cont ul li .more_view2{font-size: 12px;}
+.main01 .main_banner{margin-bottom: 40px!important;}
+
+/* footer 수정 */
+footer .site-info{padding: 1.875rem;}
+.copyrights{padding: 0 0 0.875rem 0;margin-left: -10px;}
+
+
+/* 홈 - main2 주제 시작 -------------*/
+
+/* 상단 해시태그 부분 */
+.main02 .subject_box strong::after{content: '';}
+.main02 .visual_slide .more_view{margin-left: 10px;margin-top: 0;}
+.main02 .select-box{font-size: 15px;height: 35px;}
+.main02 .select-box-dropDown{top: 45px;}
+.main02 .visual_slide{width: auto;margin: 0 auto; margin-left: 15px;margin-right: 15px;margin-top: 20px!important;height: auto;padding: 20px;
+padding-bottom: 30px!important;}
+.main02 .visual_slide .vs_tit{font-size: 30px;}
+.main02 .left_txt_box .big_tit{padding: 10px 0;font-size: 15px; height: 50px;}
+.main02 .left_txt_box{width: 100%;margin-right:0;padding-top: 30px;font-size: 30px;}
+.main02 .right_slide_box{width: auto!important;padding:0px;padding-left: 0px;margin-top: 10px;}
+.main02 .subject_box li span{font-size: 12px;padding: 4px 8px;margin-right: 5px;}
+.main02 .subject_box li{margin-bottom: 10px;overflow: hidden;padding-bottom: 5px;}
+.main02 .visual_slide .visual_b_txt strong{font-size: 15px;}
+.main02 .visual_b_txt{bottom: -42px;padding: 10px 14px 10px 35px;}
+.main02 .subject_box li strong{float: left;font-size: 15px;}
+.main02 .subject_box li a:nth-of-type(1){clear: both;}
+.main02 .subject_box li a{float: left;margin-top: 10px;}
+.main02 .visual_slide .more_view{margin-top: 1px;margin-left: 35px;font-size: 13px;}
+
+
+.subject_slide_box{width: auto;margin: 0 auto; margin-left: 15px;margin-right: 15px; margin-top: 80px;padding-left: 0;}
+.main02 .class_3slide2 .slick-slide{margin:15px 10px;padding: 38px 20px;width: 200px!important;}
+.main02 .class_3slide2 .slick-slide::after{clear: both;content: '';display: block;}
+.main02 .class_3slide2 .slick-prev{top: 45%;transform: translateX(-50%);bottom: initial;left: 5px;width: 40px;height: 40px;}
+.main02 .class_3slide2 .slick-next{left:initial;top: 45%;transform: translateX(100%);bottom: initial;right: 30px;width: 40px;height: 40px;}
+.main02 .class_3slide2 .slick-list{width: 95%;margin: 0 auto;overflow: hidden;height: auto;}
+
+
+.tab_slider2 .slider2{margin-top: 40px;}
+.tab_slider2 .slider2 .slick-slide{margin: 0 24px;width: 140px!important;}
+/* 2024.01.11 유지나 수정 시작 */
+.tab_slider2 .slider2 .slick-prev{left: -15px;width: 40px;height: 40px;background-size: cover;}
+.tab_slider2 .slider2 .slick-next{right: -15px;width: 40px;height: 40px;background-size: cover;}
+/* 2024.01.11 유지나 수정 끝 */
+.main02 .tab_slider2 .right_book_img01 > a{width: 160px;height: 216px;}
+.tab_slider2 .slider2 .slick-list {width: 90%;margin: 0 auto;overflow: hidden;}
+.main02 .card_box{height: 380px;}
+.subject_left_box{width: 100%;height: auto;background:none;padding-top: 10px;}
+.subject_slide_box li .tag{font-size: 13px;}
+.subject_slide_box h5{padding-top: 15px;padding-bottom: 10px;}
+.subject_left_box > p{font-size: 15px;word-break: keep-linear;}
+.subject_right_box{width: 100%;min-height: auto;}
+.main02 .class_3slide2{min-height: auto;}
+.subject_left_box > h2{font-size: 22px;padding-bottom: 10px;}
+.subject_left_box > p br{display: none;}
+
+.main02 .tab_slider2 .left_book_img h5 a{line-height: 20px;height: 40px;}
+.tab_slider2 .buttons{width: auto;padding: 0;}
+.tab_slider2 .tabs{width: 95%;margin: 0 auto;padding-top: 20px;}
+.tab_slider2 .buttons > button{font-size: 12px;padding: 8px 10px;width: 24%;}
+
+.main02 .contents_box .cont .cont_tit{font-size: 17px;}
+.main02 .contents_box .cont .cont_txt{font-size: 14px;padding: 0;text-align: center;padding: 30px 0;}
+.main02 .contents_box .main_banner{padding: 35px 0!important;height: 210px;}
+.main02 .main_banner {background: url(/images/bottom_bg03_m.png) no-repeat center;margin-bottom: 0;background-size: cover;border-radius: 16px;}
+.main02 .contents_box .main_banner a{margin: 0 auto;}
+.card2_tab{margin-bottom: 30px;}
+
+.main02 .tab_slider2 .left_book_img h5{width: 90%;}
+.menu1>.sub1{bottom:37px;transform: translateX(47%);}
+.menu1{width: 5%;}
+/* 홈 - main2 주제 끝 -------------*/
+
+/* 홈 - main3 도서 시작 -------------*/
+/* 상단 슬라이드 */
+.main03 .left_txt_box{padding-left: 0px;padding-top: 20px;}
+.main03 .visual_slide{height: auto;padding-bottom: 0px;margin-top: 40px;}
+.main03 .contents_box3{width: auto;  margin: 0 15px;position: relative;}
+.main03 > .visual_slide > .more_view{top:10px;left: 150px;position: absolute;}
+.main03 .left_txt_box .big_tit br{display: none;}
+.main03 .left_txt_box .vs_txt br{display: none;}
+.main03 .right_slide_box{width: 100%;margin: 0 auto; margin-top: 0px;}
+.main03 .slide45_play .slick-slide{width: 203px!important;margin: 0 20px;}
+.main03 .slide5_box li a.slide5_box_img01{width: 203px!important;height:291px!important;}
+.slide4_txt_box{width: auto;}
+.main03 .slide5_box .tag:last-of-type{margin-top: 10px;}
+.main03 .visual_slide .slide5_box .slick-prev{right: 60px;left: inherit;top:-240px; }
+.main03 .visual_slide .slide5_box .slick-next{right: 20px;left: inherit;top:-240px;}
+.main03 .visual_slide .slide5_box .slick-list{width: 100%;margin: 0 auto;}
+.visual_slide .vs_tit{font-size: 25px;}
+.left_txt_box .big_tit{font-size: 20px;line-height: normal;}
+.left_txt_box .vs_txt{font-size: 15px;}
+.skyblue_txt{font-size: 23px;}
+.main03 .contents_box .cont .cont_txt{padding-top: 10px;}
+.textbook_tit{padding-top: 10px;}
+
+.main03 .slide45_play .more_view_drop1{bottom:48px;transform: translateX(40%);}
+
+/* 서울대 인기대출 도서는? */
+.select_top_tit3 {padding: 7px 29px 6px 8px;}
+.best_book_left li:nth-child(1){width: 200px;text-align: center;margin: 0 auto;display: table;float: none;height: auto;padding-bottom: 10px;}
+.best_book_left li:nth-child(1) img{max-width: 100%;height: auto;display: inline-block;vertical-align: middle;}
+.best_book_left li:nth-child(2){padding: 10px 0;margin-left: 0px;width: 95%; margin: 0 auto;}
+.best_book_left .best_book_txt{overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;}
+.best_book_left .best_book_txt br{display: none;}
+.best_book_left .best_book_tit{padding: 10px 0;}
+.best_book_box {height: auto;width: 100%;}
+.best_book_left{height: auto;}
+.best_book_right li{padding: 35px 10px 30px 10px; width: 100%;border-right: 0;}
+.best_book_right li:nth-child(2){border-top:1px solid #e2e2e2; border-bottom: 1px solid #e2e2e2;}
+.contents_box .cont{margin-bottom: 20px;}
+.best_book_left h2{margin-bottom: 15px;padding-right: 0;}
+.best_book_right li .book_right_tit{font-size: 14px;}
+
+/* 이 강의를 수강생이 보고있어요 */
+.select_slide_box{margin-bottom: 0!important;}
+.main03 .right_slider3 .slick-prev{left:20px;}
+.main03 .right_slider3 .slick-next{left: inherit!important;}
+.select_class_list{margin-top: 20px;width: 100%!important;margin-right: 7%!important;
+height: auto!important;background-size: cover!important;border-radius: 25px!important;padding: 25px 25px!important;}
+.right_slider3{width: 100%;margin-top: 20px;}
+.main03 .right_slider3 ul{width: 95%;}
+.card_box:nth-of-type(2){margin-right: 0;}
+.main03 .slide3_play .slick-slide{width: 200px!important;}
+.main03 .slide3_play .slick-track{margin-top: 0px;}
+.main03 .right_slider3 .slide3_play li{height: auto;}
+.main03 .right_slider3 .slide3_play li a.slide5_box_img01{width: 200px!important;height:283px!important;}
+.select_top_tit{font-size: 15px;padding: 6px 15px 6px 2px;}
+.main04 .thesis_3box .slick-next{right: 23px;}
+
+/* 놓치기 아쉬울 SNU 컬렉션 */
+.tab_slider .slider .slick-slide{margin: 0 15px;}
+.tab_slider .slider{padding: 0 20px;display: none;}
+.tab_slider .tag_box{margin-top: 15px;margin-left: 0;}
+.tab_slider .buttons{width: 100%;padding: 0;}
+.tab_slider .buttons > button{font-size: 13px;letter-spacing: -0.1px;}
+.tab_slider .tabs{padding-top: 30px;}
+.card_txt_tit{font-size: 15px;}
+.card2_tab{height: auto;margin-bottom: 40px;}
+.tab_slider .tabs .more_view{right: 0;top:120px;}
+.tab_slider .slider .slick-next {right: 28px;top: -45px;}
+.tab_slider .slider .slick-prev {right: 48px;top: -45px;}
+
+
+.main03 .contents_box .main_banner img{width: 130px;top:150px;right: -5px;}
+.main03 .contents_box .main_banner{margin-bottom: 100px;padding: 18px 40px 35px 30px;}
+.main03 .contents_box .main_banner .red_bg{font-size: 18px;}
+.main03 .contents_box .main_banner .red_bg::after {width: 20px; background-size:20px;top:-10px;right: 0;}
+.main03 .contents_box .main_banner a{margin-top: 12px;}
+
+
+
+/* 홈 - main5 강의 시작 -------------*/
+.main05 .class_3slide .slick-prev{left: -340px;}
+.main05 .class_3slide .slick-next{left: -270px;}
+
+.main05 .contents_box3{height: auto;position: relative;}
+.main05 .search_terms_box {bottom:-15px; max-height: 270px; overflow: hidden;}
+.main05 .contents_box3::after{clear: both;display: block;content: '';}
+.main05 .contents_box2 {margin: 0!important;margin-right: 10px!important;}
+.main05 .contents_box2 .main_banner {width: 100%;padding:30px 20px!important;height: 220px;margin-bottom: 70px;padding: 30px 20px!important;
+border-top-left-radius: 0;border-bottom-left-radius: 0;}
+.main05 .contents_box2 .main_banner .cont_tit{font-size: 18px;text-align: left;margin-top: 0;}
+.main05 .contents_box2 .main_banner a{float: none;position: absolute;left: 10px; right: inherit;top:70px;padding: 6px 15px;}
+.main05 .contents_box2 img{width: 150px;top: inherit;;right: 0px;bottom:40px;}
+.bottom_center_txt{width: auto;margin-left: 0%;padding-top: 0;position: absolute;top:120px;left: 20px;}
+.bottom_center_txt p{font-size: 16px;text-align: left;word-break: keep-all; margin-top: 15px}
+.main05 .class_3slide .slick-slide{margin: 0 5px;padding:20px;height: auto;}
+.main05 .ellipsis4{font-size: 14px;height: 80px;}
+
+.main05 .class_3slide li h2{font-size: 18px;}
+.main05 .class_3slide li h2 a {overflow: hidden;text-overflow: ellipsis;display: -webkit-box;
+-webkit-line-clamp: 2;-webkit-box-orient: vertical;height: 48px;line-height: 23px;}
+
+.search_terms_box h3::before {top:10px}
+.search_terms_box > ul > li a {padding: 5px 15px; font-size: 15px;}
+.search_terms_box h3 {font-size: 18px;}
+.search_terms_box h3::before {top:10px}
+.search_terms_box > ul > li a {padding: 5px 10px; font-size: 14px;}
+.search_terms_box{width: 100%;padding: 10px 10px 15px 10px; height: auto; position:relative; bottom:-30px}
+.search_terms_box ul{clear: both;padding-top: 45px;width: 100%; padding-left: 0; }
+.search_terms_box h3 {font-size: 20px;}
+.search_terms_box h3::before {top:10px}
+.search_terms_box > ul > li a {padding:5px 8px; font-size: 16px;}
+.search_terms_box span{font-size: 16px;margin: 0 4px;padding: 8px 12px;}
+.main05 .visual_slide .class_3slide .slick-prev{right: 60px;left: inherit; }
+.main05 .visual_slide .class_3slide .slick-next{right: 00px;left: inherit;}
+.main05 .main_banner{width: 100%;}
+.main05 .left_txt_box .big_tit{padding-bottom: 0; font-size: 18px;}
+.main05 .class_3slide{margin-top: 0;}
+.main05 .select_slide_box{padding-top: 10px!important;margin-bottom: 0;}
+.main05 .right_slider3{margin-top: 0;}
+
+/* 강의 - 중간 탭 슬라이드 추가 */
+.main05 .tab_slider4{margin-top: 20px;height: 370px;}
+.main05 .tab_slider4 .slide5_box .slick-slide{width: 140px!important;margin: 0 12px;}
+.main05 .tab_slider4 li a.slide5_box_img01{width: 140px!important;height: 208px!important;}
+.main05 .tab_slider4 .slick-track{margin-top: 0px;}
+.main05 .slider4{width: 86%!important;margin: 0 auto;}
+.main05 .tab_slider4 .slide5_box .slick-prev{top:36%;left: 0px!important;}
+.main05 .tab_slider4 .slide5_box .slick-next{transform: translateX(100%);right: 30px;top:36%;}
+
+.main05 .tab_slider4 .slide3_box{box-shadow: none;border:0;padding: 0;}
+.main05 .tab_slider4 .slide3_box li{box-shadow: none;border:0;width: 270px;padding: 20px 30px;margin: 0 7px;height: 230px;}
+.main05 .tab_slider4 .slide3_box .slick-prev{top:44%;left: 0!important;}
+.main05 .tab_slider4 .slide3_box .slick-next{transform: translateX(100%);right: 30px;top:44%;}
+/* 홈 - main5 강의 끝 -------------*/
+
+
+/* 홈 - main4 논문 시작 -------------*/
+.main04 .top_slide3_play .slick-prev{right: 30px;left: inherit;top:-190px;bottom:inherit;}
+.main04 .top_slide3_play .slick-next{right: 20px;left: inherit;top:-190px;bottom:inherit;}
+.main04 .top_slide3_play{margin-top: 0px;width: 100%;}
+.main04 .top_slide3_play h2{height: 50px;}
+.main04 .visual_slide{height: auto;margin-bottom: 50px;background-size: cover;padding-bottom: 0;margin-bottom: 15px;}
+.main04 .left_txt_box{padding-top: 10px;}
+.main04 .top_slide3_play .slick-slide{margin: 0 8px!important;padding: 25px 15px;height: 215px;}
+
+.main04 .top_slide3_play li h2 {height: 43px;}
+.main04 .top_slide3_play li h2 > a{font-size: 16px;height: 45px;}
+.main04 .top_slide3_play li h3{font-size: 13px;margin-top: 5px;}
+.main04 .top_slide3_play li p{font-size: 12px;line-height: 16px!important;height: 51px;}
+.main04 .search_terms_box{bottom:-15px;}
+
+.main04 .contents_box2 .main_banner > a{position: inherit;right: inherit;top: inherit;margin-top: 10px;left: inherit;}
+.main04 .contents_box2 .main_banner{width: 100%;margin-bottom: 0!important;height: 300px;padding: 20px 20px 35px 20px!important;
+transform: none;border-radius: 0;background-size: cover;}
+.main04 .contents_box2 .main_banner .cont_tit{font-size: 18px;padding-top:20px;}
+
+.main04 .top_slide3_play .more_view_btn1{right: 5px;bottom:20px;}
+
+.main04 .thesis_3box{margin-top: 0!important;width: 100%!important;padding:30px 20px 40px 20px;}
+.main04 .thesis_3box .slick-slide{height: 250px;width: 280px;}
+.main04 .slide3_box li p{line-height: 21px;}
+/* 홈 - main4 논문 끝 -------------*/
+
+
+
+/* sub ----------------------------------------- */
+
+/* Sub - sub3_도서검색_상세 슬라이드 시작 -------------*/
+.sub3-2 .card3_play .left_book_img {margin: 0 16px;}
+.sub3-2 .cont{width: 100%;}
+.sub3-2 .card2{width: 100%;}
+.sub3-2 .slide5_box{width: 90%;margin: 0 auto;padding: 0 16px;height: 400px;}
+.sub3-2 .slide5_box li.slick-slide{width: 170px!important;margin: 0 15px;}
+.sub3-2 .slide5_box li a.slide5_box_img{width: 170px!important;height: 233px;}
+
+.sub3-2 .slide5_box .slick-prev{left: 0;}
+.sub3-2 .slide5_box .slick-next{right: 0px;}
+.search_filter{width: 250px;}
+/* 2023.12.28 유지나 수정 */
+.sub3-2 .slide3_box li{width: 350px;margin: 0 10px;height: 250px;}
+.sub3-2 .slide3_box{width: 90%;}
+.sub3-2 .card_cont_box {padding: 0 40px 0px 40px;}
+.sub3-2 .sub_cont_height{height: auto;}
+.sub3-2 .search_filter{float: none;width: 100%;background: none;border-top: 1px solid #d1d1d1;border-radius: 0;height: auto;}
+.sub3-2 .search_filter_box .card_box{width: 100%;margin-right: 0%;}
+.sub3-2 .search_filter_box .card_box:nth-child(2n){margin-right: 0;}
+.sub3-2 .card_box{width: 100%;height: auto;}
+.sub3-2 .tag_box {float: left;margin-top: 13px;margin-left: 0px;}
+/* 2023.12.28 유지나 수정 */
+.sub3-2 .card_box .share_box{margin-top: 0;}
+/* Sub - sub3_도서검색_상세 슬라이드 끝 -------------*/
+
+
+/* Sub - sub5_강의검색_상세 슬라이드 시작 -------------*/
+#scontents .left_book_img01{display: block;}
+#scontents .right_book_list{display: block;}
+.tab_slider3 .slider3 .slick-list{width: auto;}
+.sub3-2 .left_card_box {height: auto;}
+.sub5-2 .tab_slider3 .buttons > button.active{padding: 0 6px;}
+.sub5-2 .tab_slider3 .buttons > button{padding: 0 6px;}
+/* Sub - sub5_강의검색_상세 슬라이드 끝 -------------*/
+
+
+}
+
+
+
+
+
+/* main1 하단 컨텐츠 배경 사이즈 줄이기 */
+@media screen and (min-width:620px) and (max-width:767px){
+.bottom_cont{height: 770px!important;}
+}
+@media screen and (min-width:591px) and (max-width:619px){
+.bottom_cont{height: 800px!important;}
+}
+@media screen and (min-width:547px) and (max-width:590px){
+.bottom_cont{height: 810px!important;}
+}
+@media screen and (min-width:503px) and (max-width:530px){
+.bottom_cont{height: 840px!important;}
+}
+@media screen and (min-width:450px) and (max-width:479px){
+.bottom_cont{height: 870px!important;}
+}
+@media screen and (min-width:420px) and (max-width:449px){
+.bottom_cont{height: 900px!important;}
+}
+@media screen and (min-width:400px) and (max-width:419px){
+.bottom_cont{height: 950px!important;}
+}
+@media screen and (min-width:370px) and (max-width:399px){
+.bottom_cont{height: 990px!important;}
+}
+
+
+
+
+
+
+
+
+/* 340 사이즈 밑으로 min-width overflow:scroll */
+
+
+@media screen and (max-width: 340px){
+	
+   /* 공통 */
+.quickmenu{display: none;}
+.quikmenu_open{display: none;}
+
+body{min-width: 340px;overflow: scroll;}
+
+/* main ----------------------------------------- */
+
+/* 홈 - main1 */
+.like-snu-logo {margin-left: 10px;height: 30px;padding-left: 11px;}
+.like-snu-logo img {height: 32px;}
+.site-header{margin-bottom: 0;}
+.top_search_box{width: auto;margin: 0 auto;margin: 0 10px;position: relative;height: 160px;}
+.top_5menu{width: 100%; position: absolute;left: 0;top:155px;}
+.main1 ul.tabs1 > li{width: 19.7%;font-size: 13px;}
+.main1 ul.tabs1 > li .li_tit{padding: 9px 15px!important;}
+.main1 ul.tabs1 > li:first-child .li_tit{letter-spacing: -0.5px;}
+.main1 ul.tabs1 > li.current .li_tit{ width: 60px; padding: 9px 5px!important;}
+.search_wrod{width: 100%;position: absolute;left: 0;top:90px;}
+.search_wrod .tit2{ width: calc(100% - 83px); border-bottom: 0;padding-bottom: 10px;}
+.search_wrod{margin-left: 0px;border-bottom:1px solid #cacaca;}
+.search_wrap{width: 100%;position: absolute;right: 0;top:25px;margin:0;}
+.contents_box{width: auto;margin: 0 auto;margin: 0 10px;}
+.search_wrod .sub_menu{top:0;}
+
+/* 비쥬얼 이미지 */
+.visual_txt{font-size: 19px;word-break: keep-linear;padding: 30px 50px;}
+.main-section.main-contact{margin: 0 10px;}
+.visual_box{padding: 0;margin-bottom: 70px;}
+.visual_img{height: 200px;}
+.visual_b_txt {right: 10px;bottom: -34px;padding: 6px 40px 6px 37px;}
+.main-section.main-contact::before{height: 200px;}
+.visual_b_txt span{display: none;}
+.visual_b_txt strong{font-size: 15px;}
+
+
+/* 나만을 위한 맞춤 추천 도서  */
+.contents_box .cont .cont_tit{font-size: 18px;}
+.contents_box .cont .cont_txt{font-size: 14px;word-break: keep-linear;padding: 0 20px 0 0;}
+.contents_box .cont{margin-bottom: 50px;}
+.main01 .slide5_box{width: 96%;margin: 0 auto;padding-top: 20px;height: 380px;}
+.main01 .slide5_box::after{clear: both;display: block;content: '';}
+.main01 .slide5_play .slick-slide{width: 135px!important;}
+.slide5_box li a.slide5_box_img{width: 135px!important;height: 193px;}
+.main01 .slide5_play .slick-slide{margin: 0 10px!important;}
+.slide5_box .slick-prev{top: 30%;width: 40px;height: 40px;background-size: cover;}
+.slide5_box .slick-next{top: 30%;width: 40px;height: 40px;right: 8px;transform: translateX(50%);background-size: cover;}
+.tag{margin-top: 12px;margin-right: 3px;padding: 3px 7px;font-size: 13px;}
+.slide5_box .tag:last-child{margin-bottom: 30px;}
+.slide5_box li h5{margin-bottom: 0px;font-size: 15px;}
+.more_view{padding-left: 20px;font-size: 13px;}
+.more_view::after{background-position: -11px 6px;}
+
+/* 이 논문들은 어떠세요? */
+.slide3_box{padding:10px 30px 20px 30px;width: 95%;margin: 0 auto;margin-top: 20px;}
+.slide3_play li{width: 240px;margin: 0 10px;padding: 20px;height: 245px;}
+.slide3_box li p{font-size: 15px;word-break: keep-all;height: 38px; margin: 10px 0;}
+.slide3_play .tag{margin-top: 5px;}
+.slide3_box li h2{height: 50px;line-height: 22px;}
+.slide3_box li h2 > a{font-size: 18px;}
+.slide3_box li h3{font-size: 16px;word-break: keep-all;}
+.slide3_box li p{font-size: 15px;word-break: keep-all;}
+.slide3_box .slick-prev{top: 45%;width: 40px;height: 40px;background-size: cover;}
+.slide3_box .slick-next{top: 45%;width: 40px;height: 40px;right: 4px;transform: translateX(50%);background-size: cover;}
+
+/* 우리가 좋아한 LikeSNU 컬렉션 */
+.right_book_list{width: calc(100% - 200px);display: none;}
+.left_book_img01 img{display: block;width: 100%;height: 100%;}
+.card_box{width: 100%;height: auto;padding: 20px;border-radius: 20px;margin-bottom: 10px; padding-bottom: 40px;}
+.left_book_img01{display: none;}
+.card_box:nth-child(1){margin-bottom: 13px;}
+.main01 .right_card_box:nth-of-type(1){width: 100%;}
+.card_box a.follow_btn{background: none;color: #000;width: 0; height: 0;font-size: 0;line-height: 0;right: -10px;}
+.card_box h2{font-size: 18px;text-align: left;padding: 0;}
+.card_box > p{font-size: 14px;text-align: left;padding: 0;padding-top: 20px;}
+.card_cont_box{padding: 0 22px 0px 22px;display: none;}
+.card3_play .left_book_img {margin: 0 11px;}
+.right_card_box .tag_box{margin-top: 10px;}
+.right_card_box .slick-track{padding-bottom: 5px;}
+.main01 .tag_box{margin: 0;}
+.right_book_list li > p{padding: 0;}
+.share_box{float: none;margin: 0;position: absolute;top:16px;right: 15px;}
+.contents_box .main_banner{padding: 15px;}
+.contents_box .main_banner .cont_tit {font-size: 17px;background-size: 191px;background-position: left -12px;}
+.contents_box .main_banner .cont_txt{padding: 5px 0;word-break: keep-linear;font-size: 14px;}
+.contents_box .main_banner img{width: 150px;top:initial;bottom:-20px;}
+
+.card_box .share_box {/* bottom: 36px; *//* top: 55%; */right: 20px;bottom:10px;margin-right: 0; top:75%}
+
+/* LikeSNU 서울대인의지식활동 패턴을 참고하여, 나만의 독서, 연구, 학계획을 설계해보세요. */
+.bottom_cont ul li:nth-child(2){margin:30px 0;}
+.bottom_cont .b_cont_list{height: auto;padding: 15px 40px 15px 15px;word-break: keep-linear;}
+.bottom_cont h2{word-break: keep-linear;padding: 30px;font-size: 18px;line-height: 22px;}
+.bottom_cont ul{height: auto;overflow:inherit;}
+.bottom_cont ul li{width: 100%;}
+.bottom_cont h3{font-size: 22px;}
+.bottom_cont {background: url(/images/bottom_bg01_m.png) no-repeat center;height: 990px;background-size: cover;}
+.bottom_cont .b_cont_list p br{display: none;}
+.bottom_cont .b_cont_list p:last-child{padding-bottom: 0;font-size: 14px;overflow: hidden;text-overflow: ellipsis;
+display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;}
+.bottom_cont ul li .more_view2{font-size: 12px;}
+
+
+/* footer 수정 */
+footer .site-info{padding: 1.875rem;}
+.copyrights{padding: 0 0 0.875rem 0;margin-left: -10px;}
+
+
+
+/* 홈 - main2 주제 시작 -------------*/
+
+/* 상단 해시태그 부분 */
+.main02 .subject_box strong::after{content: '';}
+.main02 .visual_slide .more_view{margin-left: 10px;margin-top: 0;}
+.main02 .select-box{font-size: 15px;height: 35px;}
+.main02 .select-box-dropDown{top: 45px;}
+.main02 .visual_slide{width: auto;margin: 0 auto; margin-left: 15px;margin-right: 15px;margin-top: 20px!important;height: auto;padding: 20px;
+padding-bottom: 20px!important;}
+.main02 .visual_slide .vs_tit{font-size: 30px;}
+.main02 .left_txt_box .big_tit{padding: 10px 0;font-size: 15px; height: 50px;}
+.main02 .left_txt_box{width: 100%;margin-right:0;padding-top: 30px;font-size: 30px;}
+.main02 .right_slide_box{width: auto!important;padding:0px;padding-left: 0px;margin-top: 10px;}
+.main02 .subject_box li span{font-size: 12px;padding: 4px 8px;margin-right: 5px;}
+.main02 .subject_box li{margin-bottom: 10px;overflow: hidden;padding-bottom: 5px;}
+.main02 .visual_slide .visual_b_txt strong{font-size: 15px;}
+.main02 .visual_b_txt{bottom: -42px;padding: 10px 14px 10px 35px;}
+.main02 .subject_box li strong{float: left;font-size: 15px;}
+.main02 .subject_box li a:nth-of-type(1){clear: both;}
+.main02 .subject_box li a{float: left;margin-top: 10px;}
+.main02 .visual_slide .more_view{margin-top: 1px;margin-left: 12px;font-size: 13px;}
+
+
+.subject_slide_box{width: auto;margin: 0 auto; margin-left: 15px;margin-right: 15px; margin-top: 80px;padding-left: 0;}
+.main02 .class_3slide2 .slick-slide{margin:15px 10px;padding: 38px 20px;width: 200px!important;}
+.main02 .class_3slide2 .slick-slide::after{clear: both;content: '';display: block;}
+.main02 .class_3slide2 .slick-prev{top: 45%;transform: translateX(-50%);bottom: initial;left: 5px;width: 40px;height: 40px;}
+.main02 .class_3slide2 .slick-next{left:initial;top: 45%;transform: translateX(100%);bottom: initial;right: 30px;width: 40px;height: 40px;}
+.main02 .class_3slide2 .slick-list{width: 95%;margin: 0 auto;overflow: hidden;min-height: 400px;}
+
+
+.tab_slider2 .slider2{margin-top: 40px;}
+.tab_slider2 .slider2 .slick-slide{margin: 0 24px;width: 140px!important;}
+.tab_slider2 .slider2 .slick-prev{left: -15px;width: 40px;height: 40px;background-size: cover;}
+.tab_slider2 .slider2 .slick-next{right: -15px;width: 40px;height: 40px;background-size: cover;}
+.main02 .tab_slider2 .right_book_img01 > a{width: 160px;height: 216px;}
+.tab_slider2 .slider2 .slick-list {width: 90%;margin: 0 auto;overflow: hidden;}
+.main02 .card_box{height: 380px;}
+.subject_left_box{width: 100%;height: auto;background:none;padding-top: 10px;}
+.subject_slide_box li .tag{font-size: 13px;}
+.subject_slide_box h5{padding-top: 15px;padding-bottom: 10px;}
+.subject_left_box > p{font-size: 15px;word-break: keep-linear;}
+.subject_right_box{width: 100%;min-height: 400px;}
+.main02 .class_3slide2{min-height: 400px;}
+.subject_left_box > h2{font-size: 22px;padding-bottom: 10px;}
+.subject_left_box > p br{display: none;}
+
+.main02 .tab_slider2 .left_book_img h5 a{line-height: 20px;height: 40px;}
+.tab_slider2 .buttons{width: auto;}
+.tab_slider2 .tabs{width: 95%;margin: 0 auto;padding-top: 20px;}
+.tab_slider2 .buttons > button{font-size: 12px;padding: 8px 10px;width: 24%;}
+
+.main02 .contents_box .cont .cont_tit{font-size: 17px;}
+.main02 .contents_box .cont .cont_txt{font-size: 14px;padding: 0;text-align: center;padding: 30px 0;}
+.main02 .contents_box .main_banner{padding: 35px 0!important;height: 210px;}
+.main02 .main_banner {background: url(/images/bottom_bg03_m.png) no-repeat center;margin-bottom: 0;background-size: cover;border-radius: 16px;}
+.main02 .contents_box .main_banner a{margin: 0 auto;}
+.card2_tab{margin-bottom: 30px;}
+
+.main02 .tab_slider2 .left_book_img h5{width: 90%;}
+.menu1>.sub1{bottom:37px;transform: translateX(47%);}
+.menu1{width: 5%;}
+/* 홈 - main2 주제 끝 -------------*/
+
+
+
+/* 홈 - main3 도서 시작 -------------*/
+/* 상단 슬라이드 */
+.main03 .left_txt_box{padding-left: 0px;padding-top: 20px;}
+.main03 .visual_slide{height: auto;padding-bottom: 0px;margin-top: 40px;}
+.main03 .contents_box3{width: auto;  margin: 0 15px;position: relative;}
+.main03 > .visual_slide > .more_view{top:10px;left: 150px;position: absolute;}
+.main03 .left_txt_box .big_tit br{display: none;}
+.main03 .left_txt_box .vs_txt br{display: none;}
+.main03 .right_slide_box{width: 100%;margin: 0 auto; margin-top:0px}
+.main03 .slide3_box .slick-list {padding-top:0}
+.main03 .slide45_play .slick-slide{width: 203px!important;margin: 0 20px;}
+.main03 .slide5_box li a.slide5_box_img01{width: 203px!important;height:291px!important;}
+.slide4_txt_box{width: auto;}
+.main03 .slide5_box .tag:last-of-type{margin-top: 10px;}
+.main03 .visual_slide .slide5_box .slick-prev{right: 60px;left: inherit;top:-220px; }
+.main03 .visual_slide .slide5_box .slick-next{right: 20px;left: inherit;top:-220px;}
+.main03 .visual_slide .slide5_box .slick-list{width: 100%;margin: 0 auto;}
+.visual_slide .vs_tit{font-size: 25px;}
+.left_txt_box .big_tit{font-size: 18px;}
+.left_txt_box .vs_txt{font-size: 15px;}
+.skyblue_txt{font-size: 23px;}
+.main03 .contents_box .cont .cont_txt{padding-top: 10px;}
+.textbook_tit{padding-top: 10px;}
+
+.main03 .slide45_play .more_view_drop1{bottom:48px;transform: translateX(40%);}
+
+
+/* 서울대 인기대출 도서는? */
+.select_top_tit3 {padding: 7px 29px 6px 8px;}
+.best_book_left li:nth-child(1){width: 200px;text-align: center;margin: 0 auto;display: table;float: none;height: auto;padding-bottom: 10px;}
+.best_book_left li:nth-child(1) img{max-width: 100%;height: auto;display: inline-block;vertical-align: middle;}
+.best_book_left li:nth-child(2){padding: 10px 0;margin-left: 0px;width: 95%; margin: 0 auto;}
+.best_book_left .best_book_txt{overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;}
+.best_book_left .best_book_txt br{display: none;}
+.best_book_left .best_book_tit{padding: 10px 0;}
+.best_book_box {height: auto;width: 100%;}
+.best_book_left{height: auto;}
+.best_book_right li{padding: 35px 10px 30px 10px; width: 100%;}
+.best_book_right li:nth-child(2){border-top:1px solid #e2e2e2; border-bottom: 1px solid #e2e2e2;}
+.contents_box .cont{margin-bottom: 50px;}
+.best_book_left h2{margin-bottom: 15px;padding-right: 0;}
+.best_book_right li .book_right_tit{font-size: 14px;}
+
+/* 이 강의를 수강생이 보고있어요 */
+.select_slide_box{margin-bottom: 0!important;}
+.main03 .right_slider3 .slick-prev{left:20px;}
+.main03 .right_slider3 .slick-next{left: inherit!important;}
+.main04 .thesis_3box .slick-next{right: 23px;}
+.select_class_list{margin-top: 20px;width: 100%!important;margin-right: 7%!important;
+height: auto!important;background-size: cover!important;border-radius: 25px!important;padding: 25px 25px!important;}
+.right_slider3{width: 100%;margin-top: 20px;}
+.main03 .right_slider3 ul{width: 95%;}
+.card_box:nth-of-type(2){margin-right: 0;}
+.main03 .slide3_play .slick-slide{width: 200px!important;}
+.main03 .slide3_play .slick-track{margin-top: 0px;}
+.main03 .right_slider3 .slide3_play li{height: auto;}
+.main03 .right_slider3 .slide3_play li a.slide5_box_img01{width: 200px!important;height:283px!important;}
+.select_top_tit{font-size: 15px;padding: 6px 15px 6px 2px;}
+
+/* 놓치기 아쉬울 SNU 컬렉션 */
+.tab_slider .slider .slick-slide{margin: 0 15px;}
+.tab_slider .slider{padding: 0 20px;display: none;}
+.tab_slider .tag_box{margin-top: 15px;margin-left: 0;}
+.tab_slider .buttons{width: 100%;padding: 0;}
+.tab_slider .buttons > button{font-size: 13px;letter-spacing: -0.1px;}
+.tab_slider .tabs{padding-top: 30px;}
+.card_txt_tit{font-size: 15px;}
+.card2_tab{height: auto;margin-bottom: 50px;}
+.tab_slider .tabs .more_view{right: 0;top:135px;}
+.tab_slider .slider .slick-next {right: 28px;top: -45px;}
+.tab_slider .slider .slick-prev {right: 48px;top: -45px;}
+
+
+.main03 .contents_box .main_banner img{width: 130px;top:150px;right: -5px;}
+.main03 .contents_box .main_banner{margin-bottom: 100px;padding: 18px 40px 35px 30px;}
+.main03 .contents_box .main_banner .red_bg{font-size: 18px;}
+.main03 .contents_box .main_banner .red_bg::after {width: 20px; background-size:20px;top:-10px;right: 0;}
+.main03 .contents_box .main_banner a{margin-top: 12px;}
+
+
+/* 홈 - main5 강의 시작 -------------*/
+.main05 .class_3slide .slick-prev{left: -340px;}
+.main05 .class_3slide .slick-next{left: -270px;}
+.main05 .contents_box3{height: auto;position: relative;}
+.main05 .search_terms_box {bottom:-15px}
+.main05 .contents_box2 {margin: 0!important;margin-right: 10px!important;}
+.main05 .contents_box2 .main_banner {width: 100%;padding:30px 20px!important;height: 220px;margin-bottom: 70px;
+border-top-left-radius: 0;border-bottom-left-radius: 0;}
+.main05 .contents_box2 .main_banner .cont_tit{font-size: 18px;text-align: left;margin-top: 0;}
+.main05 .contents_box2 .main_banner a{float: none;position: absolute;left: 10px; right: inherit;top:70px;padding: 6px 15px;}
+.main05 .contents_box2 img{width: 150px;top: inherit;bottom:0;right: 5px;bottom:30px;}
+.bottom_center_txt{width: 80%;margin-left: 0%;padding-top: 0;position: absolute;top:120px;left: 20px;}
+.bottom_center_txt p{font-size: 15px;text-align: left;word-break: keep-all; margin-top: 10px;}
+.main05 .class_3slide .slick-slide{margin: 0 4px;padding:20px;height: auto;}
+.main05 .ellipsis4{font-size: 14px;height: 80px;}
+
+.main05 .class_3slide li h2{font-size: 18px;}
+.main05 .class_3slide li h2 a {overflow: hidden;text-overflow: ellipsis;display: -webkit-box;
+-webkit-line-clamp: 2;-webkit-box-orient: vertical;height: 48px;line-height: 23px;}
+
+.search_terms_box h3::before {top:10px}
+.search_terms_box > ul > li a {padding: 5px 15px; font-size: 15px;}
+.search_terms_box h3 {font-size: 18px;}
+.search_terms_box h3::before {top:10px}
+.search_terms_box > ul > li a {padding: 5px 10px; font-size: 14px;}
+.search_terms_box{width: 100%;padding: 10px 10px 15px 10px; height: auto; position:relative; bottom:-30px}
+.search_terms_box ul{clear: both;padding-top: 45px;width: 100%; padding-left: 0; }
+.search_terms_box h3 {font-size: 20px;}
+.search_terms_box h3::before {top:10px}
+.search_terms_box > ul > li a {padding:5px 8px; font-size: 16px;}
+.search_terms_box span{font-size: 16px;margin: 0 4px;padding: 8px 12px;}
+
+
+.main05 .left_txt_box .big_tit{padding-bottom: 0;}
+.main05 .class_3slide{margin-top: 0;}
+.main05 .select_slide_box{padding-top: 10px!important;margin-bottom: 0;}
+.main05 .right_slider3{margin-top: 0;}
+
+/* 강의 - 중간 탭 슬라이드 추가 */
+.main05 .tab_slider4{margin-top: 20px;height: 370px;}
+.main05 .tab_slider4 .slide5_box .slick-slide{width: 140px!important;margin: 0 12px;}
+.main05 .tab_slider4 li a.slide5_box_img01{width: 140px!important;height: 208px!important;}
+.main05 .tab_slider4 .slick-track{margin-top: 0px;}
+.main05 .slider4{width: 86%!important;margin: 0 auto;}
+.main05 .tab_slider4 .slide5_box .slick-prev{top:36%;left: 0px!important;}
+.main05 .tab_slider4 .slide5_box .slick-next{transform: translateX(100%);right: 30px;top:36%;}
+
+.main05 .tab_slider4 .slide3_box{box-shadow: none;border:0;padding: 0;}
+.main05 .tab_slider4 .slide3_box li{box-shadow: none;border:0;width: 270px;padding: 20px 30px;margin: 0 7px;height: 230px;}
+.main05 .tab_slider4 .slide3_box .slick-prev{top:44%;left: 0!important;}
+.main05 .tab_slider4 .slide3_box .slick-next{transform: translateX(100%);right: 30px;top:44%;}
+/* 홈 - main5 강의 끝 -------------*/
+
+
+/* 홈 - main4 논문 시작 -------------*/
+.main04 .top_slide3_play .slick-prev{right: 30px;left: inherit;top:-210px;bottom:inherit;}
+.main04 .top_slide3_play .slick-next{right: 20px;left: inherit;top:-210px;bottom:inherit;}
+.main04 .top_slide3_play{margin-top: 10px;width: 100%;}
+.main04 .visual_slide{height: auto;background-size: cover;padding-bottom: 20px;margin-bottom: 0px;}
+.main04 .contents_box3{height: auto;}
+.main04 .left_txt_box{padding-top: 10px;}
+.main04 .top_slide3_play .slick-slide{margin: 0 8px!important;padding: 25px 15px;height: 215px;}
+
+.main04 .top_slide3_play li h2 {height: 43px;}
+.main04 .top_slide3_play li h2 > a{font-size: 16px;height: 43px;}
+.main04 .top_slide3_play li h3{font-size: 13px;margin-top: 5px;}
+.main04 .top_slide3_play li p{font-size: 12px;line-height: 16px!important;height: 51px;}
+.main04 .search_terms_box{bottom:-15px;}
+
+.main04 .contents_box2 .main_banner > a{position: inherit;right: inherit;top: inherit;margin-top: 10px;left: inherit;}
+.main04 .contents_box2 .main_banner{width: 100%;margin-bottom: 0!important;height: 300px;padding: 20px 20px 35px 20px!important;
+transform: none;border-radius: 0;background-size: cover;}
+.main04 .contents_box2 .main_banner .cont_tit{font-size: 18px;padding-top:20px;}
+
+.main04 .top_slide3_play .more_view_btn1{right: 5px;bottom:20px;}
+.main04 .top_slide3_play .more_view_drop1 {width: 201px;}
+
+.main04 .thesis_3box{margin-top: 0!important;width: 100%!important;padding:30px 20px;}
+.main04 .thesis_3box .slick-slide{height: 250px;width: 280px;}
+.main04 .slide3_box li p{line-height: 21px;}
+/* 홈 - main4 논문 끝 -------------*/
+
+
+
+/* sub ----------------------------------------- */
+
+/* Sub - sub3_도서검색_상세 슬라이드 시작 -------------*/
+.sub3-2 .card3_play .left_book_img {margin: 0 16px;}
+.sub3-2 .cont{width: 100%;}
+.sub3-2 .card2{width: 100%;}
+.sub3-2 .slide5_box{width: 90%;margin: 0 auto;padding: 0 16px;height: 400px;}
+.sub3-2 .slide5_box li.slick-slide{width: 170px!important;margin: 0 15px;}
+.sub3-2 .slide5_box li a.slide5_box_img{width: 170px!important;height: 233px;}
+
+.sub3-2 .slide5_box .slick-prev{left: 0;}
+.sub3-2 .slide5_box .slick-next{right: 0px;}
+.search_filter{width: 250px;}
+/* 2023.12.28 유지나 수정 */
+.sub3-2 .slide3_box li{width: 350px;margin: 0 10px;height: 250px;}
+.sub3-2 .slide3_box{width: 90%;}
+.sub3-2 .card_cont_box {padding: 0 40px 0px 40px;}
+.sub3-2 .sub_cont_height{height: auto;}
+.sub3-2 .search_filter{float: none;width: 100%;background: none;border-top: 1px solid #d1d1d1;border-radius: 0;height: auto;}
+.sub3-2 .search_filter_box .card_box{width: 100%;margin-right: 0%;}
+.sub3-2 .search_filter_box .card_box:nth-child(2n){margin-right: 0;}
+.sub3-2 .card_box{width: 100%;height: auto;}
+.sub3-2 .tag_box {float: left;margin-top: 13px;margin-left: 0px;}
+/* 2023.12.28 유지나 수정 */
+.sub3-2 .card_box .share_box{margin-top: 0;}
+/* Sub - sub3_도서검색_상세 슬라이드 끝 -------------*/
+
+
+/* Sub - sub5_강의검색_상세 슬라이드 시작 -------------*/
+#scontents .left_book_img01{display: block;}
+#scontents .right_book_list{display: block;}
+.tab_slider3 .slider3 .slick-list{width: auto;}
+.sub3-2 .left_card_box {height: auto;}
+.sub5-2 .tab_slider3 .buttons > button.active{padding: 0 6px;}
+.sub5-2 .tab_slider3 .buttons > button{padding: 0 6px;}
+/* Sub - sub5_강의검색_상세 슬라이드 끝 -------------*/
+
+
+}
+
+
+
+
+/* 반응형 - ten 수정 */
+
+
+@media (max-width: 1600px)
+{
+
+   .search_terms_box > ul > li a{padding:8px 8px; font-size: 14px !important; margin: 0 6px;}
+   .search_terms_box span {font-size: 16px;}
+   /*240502 수정  */
+   .main02 .contents_box2 .main_banner, .main05 .main_banner, .main03 .main_banner{height: 500px; background-size: cover;}
+   .main02 .contents_box2 .main_banner ul, .main05 .main_banner ul, .main04 .main_banner ul, .main03 .main_banner ul  {width: 100%;}
+   .main3_bt_bn .cont_txt {color:#a9aeb2}
+	/*240502 수정  */
+}
+
+@media (max-width: 1280px)
+{
+
+.search_terms_box ul {white-space:inherit; padding-top: 25px;}
+/*240502수정  */
+.main01 .main_banner, .main02 .contents_box2 .main_banner, .main05 .main_banner, .main03 .main_banner {height: 400px; background-size: cover;}
+.main01 .cont_tit, .main02 .contents_box2 .cont .cont_tit, .main05 .contents_box2 .cont_tit, .main3_bt_bn .cont_tit {font-size: 28px; padding-top: 20px;}
+/*240502수정  */
+
+}
+
+
+@media (max-width: 991px)
+{
+   .main03 .left_txt_box {height: 200px !important; max-height: 200px !important; min-height: 200px !important;}
+   .main03 .visual_slide .slide5_box .slick-prev{right: 80px;left: inherit;top:-205px; }
+   .main03 .visual_slide .slide5_box .slick-next{right: 40px;left: inherit;top:-205px;}
+  
+   .main05 .contents_box .cont {padding-top:30px !important }
+
+
+   .main04 .top_slide3_play .slick-prev{right: 55px;left: inherit;top:-180px;bottom:inherit;}
+   .main04 .top_slide3_play .slick-next{right: 40px;left: inherit;top:-180px;bottom:inherit;}
+
+   .main05 .visual_slide .class_3slide .slick-prev{right: 85px;left: inherit;top:-190px; }
+   .main05 .visual_slide .class_3slide .slick-next{right: 20px;left: inherit;top:-190px;}
+/*240502수정  */
+   .main01 .main_banner, .main02 .contents_box2 .main_banner, .main05 .main_banner, .main03 .main_banner {height: 360px;background-size: cover;}
+   .main01 .cont_tit, .main02 .contents_box2 .cont .cont_tit, .main05 .contents_box2 .cont_tit, .main3_bt_bn .cont_tit {font-size: 24px; padding-top: 10px; }
+/*240502수정  */
+}
+
+
+@media (max-width: 767px)
+{
+
+   .main05 .visual_slide .class_3slide .slick-prev{top:-180px; }
+   .main05 .visual_slide .class_3slide .slick-next{top:-180px;}
+
+   .main04 .top_slide3_play .slick-prev{top:-200px;}
+   .main04 .top_slide3_play .slick-next{top:-200px;}
+
+   .main03 .visual_slide .slide5_box .slick-prev{top:-190px; }
+   .main03 .visual_slide .slide5_box .slick-next{top:-190px;}
+/*240502 수정  */
+   .main01 .cont_txt, .main02 .contents_box2 .cont .cont_txt, .main04 .contents_box2 .cont .cont_txt, .bottom_center_txt, .main3_bt_bn .cont_txt {font-size: 14px;}
+/*240502 수정  */
+}
+
+
+@media (max-width:479px)
+{
+
+  
+   .main03 .visual_slide .slide5_box .slick-prev{top:-210px; }
+   .main03 .visual_slide .slide5_box .slick-next{top:-210px;}
+/*240502수정  */   
+   .main04 .top_slide3_play .slick-prev{top:-190px;}
+   .main04 .top_slide3_play .slick-next{top:-190px;}
+/*240502수정  */ 
+
+}
+
+@media (max-width: 375px)
+{
+
+ 
+
+   .main05 .left_txt_box .big_tit{padding-bottom: 0; font-size: 18px; line-height: normal;}
+
+   
+  
+
+
+   
+}
+
+
+@media (max-width: 335px)
+{
+
+  
+
+}
+
+
+
+
+
+
+
