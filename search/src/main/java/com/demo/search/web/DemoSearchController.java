@@ -8,10 +8,11 @@
 
 package com.demo.search.web;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Map;
-
+import org.opensearch.client.json.JsonData;
 import org.opensearch.client.opensearch.OpenSearchClient;
 import org.opensearch.client.opensearch._types.FieldValue;
 import org.opensearch.client.opensearch._types.Refresh;
@@ -22,7 +23,11 @@ import org.opensearch.client.opensearch._types.analysis.CustomAnalyzer;
 import org.opensearch.client.opensearch._types.analysis.ShingleTokenFilter;
 import org.opensearch.client.opensearch._types.analysis.TokenFilter;
 import org.opensearch.client.opensearch._types.analysis.TokenFilterDefinition;
+import org.opensearch.client.opensearch._types.mapping.DynamicMapping;
+import org.opensearch.client.opensearch._types.mapping.FieldNamesField;
 import org.opensearch.client.opensearch._types.mapping.Property;
+import org.opensearch.client.opensearch._types.mapping.RoutingField;
+import org.opensearch.client.opensearch._types.mapping.SourceField;
 import org.opensearch.client.opensearch._types.mapping.TextProperty;
 import org.opensearch.client.opensearch._types.mapping.TypeMapping;
 import org.opensearch.client.opensearch.core.IndexRequest;
@@ -37,8 +42,11 @@ import org.opensearch.client.opensearch.core.search.Suggester;
 import org.opensearch.client.opensearch.core.search.TermSuggester;
 import org.opensearch.client.opensearch.indices.CreateIndexRequest;
 import org.opensearch.client.opensearch.indices.DeleteIndexRequest;
+import org.opensearch.client.opensearch.indices.GetMappingRequest;
+import org.opensearch.client.opensearch.indices.GetMappingResponse;
 import org.opensearch.client.opensearch.indices.IndexSettings;
 import org.opensearch.client.opensearch.indices.IndexSettingsAnalysis;
+import org.opensearch.client.opensearch.indices.PutMappingRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -66,7 +74,6 @@ public class DemoSearchController {
                 LOGGER.debug("Creating index {}", indexName);
                 CreateIndexRequest createIndexRequest = new CreateIndexRequest.Builder().index(indexName).build();
                 client.indices().create(createIndexRequest);
-                System.out.println("Creating index {}" + indexName);
             }
 
             LOGGER.debug("Indexing documents");
@@ -84,10 +91,26 @@ public class DemoSearchController {
             // wait for the document to index
             Thread.sleep(3000);
 
+            LOGGER.info("Adding a new mapping to index {}", indexName);
+            PutMappingRequest.Builder mappingsRequestBuilder = new PutMappingRequest.Builder().index(indexName)
+                .source(new SourceField.Builder().enabled(true).build())
+                .routing(new RoutingField.Builder().required(false).build())
+                .dynamic(DynamicMapping.Strict)
+                .meta("key", JsonData.of("key value"))
+                .fieldNames(new FieldNamesField.Builder().enabled(false).build())
+                .dateDetection(false)
+                .dynamicDateFormats(new ArrayList<>())
+                .dynamicTemplates(new ArrayList<>())
+                .numericDetection(false);
+            client.indices().putMapping(mappingsRequestBuilder.build());
+
+            GetMappingRequest mappingsRequest = new GetMappingRequest.Builder().index(indexName).build();
+            GetMappingResponse getMappingResponse = client.indices().getMapping(mappingsRequest);
+            LOGGER.info("Mappings {} found for index {}", getMappingResponse.result().get(indexName).mappings(), indexName);
+            
             SearchResponse<IndexData> searchResponse = client.search(s -> s.index(indexName), IndexData.class);
             for (Hit<IndexData> hit : searchResponse.hits().hits()) {
                 LOGGER.debug("Found {} with score {}", hit.source(), hit.score());
-                System.out.println("Found {} with score {} " + hit.source() + " " + hit.score());
             }
 
             SearchRequest searchRequest = new SearchRequest.Builder().query(
@@ -144,9 +167,9 @@ public class DemoSearchController {
             //     LOGGER.debug("Found {} with score {}", hit.source(), hit.score());
             // }
 
-            searchWithCompletionSuggester();
-            searchWithTermSuggester();
-            searchWithPhraseSuggester();
+            // searchWithCompletionSuggester();
+            // searchWithTermSuggester();
+            // searchWithPhraseSuggester();
         } catch (Exception e) {
             LOGGER.error("Unexpected exception", e);
         }
