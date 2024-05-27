@@ -23,7 +23,7 @@
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Insert title here</title>
+<title>Demo Search</title>
 </head>
 <body>
 	<%@ include file="/jsp/demoSearchMain.jsp" %>

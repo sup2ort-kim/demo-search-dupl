@@ -8,23 +8,12 @@
 
 package com.demo.search.web;
 
-import java.io.IOException;
-import java.security.KeyManagementException;
-import java.security.KeyStoreException;
-import java.security.NoSuchAlgorithmException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import org.opensearch.client.opensearch.OpenSearchClient;
 import org.opensearch.client.opensearch._types.FieldValue;
-import org.opensearch.client.opensearch._types.OpenSearchException;
 import org.opensearch.client.opensearch._types.Refresh;
 import org.opensearch.client.opensearch._types.aggregations.Aggregate;
 import org.opensearch.client.opensearch._types.aggregations.Aggregation;
@@ -36,6 +25,7 @@ import org.opensearch.client.opensearch._types.analysis.TokenFilterDefinition;
 import org.opensearch.client.opensearch._types.mapping.Property;
 import org.opensearch.client.opensearch._types.mapping.TextProperty;
 import org.opensearch.client.opensearch._types.mapping.TypeMapping;
+import org.opensearch.client.opensearch.core.IndexRequest;
 import org.opensearch.client.opensearch.core.SearchRequest;
 import org.opensearch.client.opensearch.core.SearchResponse;
 import org.opensearch.client.opensearch.core.search.CompletionSuggester;
@@ -43,86 +33,144 @@ import org.opensearch.client.opensearch.core.search.FieldSuggester;
 import org.opensearch.client.opensearch.core.search.FieldSuggesterBuilders;
 import org.opensearch.client.opensearch.core.search.Hit;
 import org.opensearch.client.opensearch.core.search.PhraseSuggester;
-import org.opensearch.client.opensearch.core.search.Suggest;
 import org.opensearch.client.opensearch.core.search.Suggester;
 import org.opensearch.client.opensearch.core.search.TermSuggester;
+import org.opensearch.client.opensearch.indices.CreateIndexRequest;
 import org.opensearch.client.opensearch.indices.DeleteIndexRequest;
 import org.opensearch.client.opensearch.indices.IndexSettings;
 import org.opensearch.client.opensearch.indices.IndexSettingsAnalysis;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
 
 import com.demo.search.service.DemoClient;
 import com.demo.search.util.AppData;
 import com.demo.search.util.IndexData;
 
-@RestController
-public class DemoSearchController {
-    private static final Logger LOGGER = LoggerFactory.getLogger(DemoSearchController.class);
+@Controller
+public class DemoSearchRunJava {
+    private static final Logger LOGGER = LoggerFactory.getLogger(DemoSearchRunJava.class);
 
     private static OpenSearchClient client;
 
-    @RequestMapping(value = "/searchEngine.do")
-    public String searchEngine(@RequestParam HashMap<String, Object> searchMap, ModelMap model, HttpServletRequest request, HttpSession session) throws OpenSearchException, IOException {
-		
-    	final String indexName = "tb_book_index";
-    	
-    	try {
-			client = DemoClient.create();
-			
-	    	SearchResponse<IndexData> searchResponse = client.search(s -> s.index(indexName), IndexData.class);
-	        for (Hit<IndexData> hit : searchResponse.hits().hits()) {
-	            LOGGER.debug("Found {} with score {}", hit.source(), hit.score());
-	            System.out.println("Found {} with score {} " + hit.source() + " " + hit.score());
-	        }
-
-	        // 실제 검색으로 추정, FieldValue.of("검색어")
-	        SearchRequest searchRequest = new SearchRequest.Builder().query(
-	            q -> q.match(m -> m.field("text").query(FieldValue.of("Text for document 2")))
-	        ).build();
-
-	        searchResponse = client.search(searchRequest, IndexData.class);
-	        for (Hit<IndexData> hit : searchResponse.hits().hits()) {
-	            LOGGER.debug("Found {} with score {}", hit.source(), hit.score());
-	        }
-
-	        searchRequest = new SearchRequest.Builder().query(q -> q.match(m -> m.field("title").query(FieldValue.of("Document 1"))))
-	            .aggregations("titles", new Aggregation.Builder().terms(t -> t.field("title.keyword")).build())
-	            .build();
-
-	        searchResponse = client.search(searchRequest, IndexData.class);
-	        for (Map.Entry<String, Aggregate> entry : searchResponse.aggregations().entrySet()) {
-	            LOGGER.debug("Agg - {}", entry.getKey());
-	            entry.getValue().sterms().buckets().array().forEach(b -> LOGGER.debug("{} : {}", b.key(), b.docCount()));
-	        }
-	        
-	        // 서울대 소스처럼 model에 담아서 표출
-	        // 의미검색은 bertResult로 해서 따로 담아야 할 것 같음
-	        // 메신저상 본부장님 지시: 상단에 키워드 검색, 하단에 의미 검색
-	        model.addAttribute("searchResult", searchResponse.hits().hits());
-		} catch (KeyManagementException | NoSuchAlgorithmException | KeyStoreException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-    	
-		model.addAttribute("searchMap", searchMap);
-    	
-    	return "index";
-    }
-    
-    @RequestMapping(value = "/searchSuggester.do")
-    public static ArrayList<String> searchWithCompletionSuggester(@RequestParam HashMap<String, Object> searchMap, ModelMap model, HttpServletRequest request, HttpSession session) {
-    	
-		// 여기에다 값을 담을 것임
-		ArrayList<String> autoResultList = new ArrayList<String>();
-		
-		String index = "tb_book_index";
-		
+    public static void main(String[] args) {
         try {
+            client = DemoClient.create();
+
+            // OpenSearchVersionInfo version = client.info().version();
+            // LOGGER.debug("Server: {}@{}", version.distribution(), version.number());
+
+            final String indexName = "demo-search";
+
+            if (!client.indices().exists(r -> r.index(indexName)).value()) {
+                LOGGER.debug("Creating index {}", indexName);
+                CreateIndexRequest createIndexRequest = new CreateIndexRequest.Builder().index(indexName).build();
+                client.indices().create(createIndexRequest);
+                System.out.println("Creating index {}" + indexName);
+            }
+
+            LOGGER.debug("Indexing documents");
+            IndexData indexData = new IndexData("Document 1", "Text for document 1");
+            IndexRequest<IndexData> indexRequest = new IndexRequest.Builder<IndexData>().index(indexName)
+                .id("1")
+                .document(indexData)
+                .build();
+            client.index(indexRequest);
+
+            indexData = new IndexData("Document 2", "Text for document 2");
+            indexRequest = new IndexRequest.Builder<IndexData>().index(indexName).id("2").document(indexData).build();
+            client.index(indexRequest);
+
+            // wait for the document to index
+            Thread.sleep(3000);
+
+            SearchResponse<IndexData> searchResponse = client.search(s -> s.index(indexName), IndexData.class);
+            for (Hit<IndexData> hit : searchResponse.hits().hits()) {
+                LOGGER.debug("Found {} with score {}", hit.source(), hit.score());
+                System.out.println("Found {} with score {} " + hit.source() + " " + hit.score());
+            }
+
+            SearchRequest searchRequest = new SearchRequest.Builder().query(
+                q -> q.match(m -> m.field("text").query(FieldValue.of("Text for document 2")))
+            ).build();
+
+            searchResponse = client.search(searchRequest, IndexData.class);
+            for (Hit<IndexData> hit : searchResponse.hits().hits()) {
+                LOGGER.debug("Found {} with score {}", hit.source(), hit.score());
+            }
+
+            searchRequest = new SearchRequest.Builder().query(q -> q.match(m -> m.field("title").query(FieldValue.of("Document 1"))))
+                .aggregations("titles", new Aggregation.Builder().terms(t -> t.field("title.keyword")).build())
+                .build();
+
+            searchResponse = client.search(searchRequest, IndexData.class);
+            for (Map.Entry<String, Aggregate> entry : searchResponse.aggregations().entrySet()) {
+                LOGGER.debug("Agg - {}", entry.getKey());
+                entry.getValue().sterms().buckets().array().forEach(b -> LOGGER.debug("{} : {}", b.key(), b.docCount()));
+            }
+
+            // Custom Aggregations
+            // final Map<String, CompositeAggregationSource> comAggrSrcMap = new HashMap<>();
+            // CompositeAggregationSource compositeAggregationSource1 = new CompositeAggregationSource.Builder().terms(
+            //     termsAggrBuilder -> termsAggrBuilder.field("title.keyword").missingBucket(false).order(SortOrder.Asc)
+            // ).build();
+            // comAggrSrcMap.put("titles", compositeAggregationSource1);
+            // 
+            // CompositeAggregation compAgg = new CompositeAggregation.Builder().sources(comAggrSrcMap).build();
+            // Aggregation aggregation = new Aggregation.Builder().composite(compAgg).build();
+
+            SearchRequest request = SearchRequest.of(
+                r -> r.index(indexName)
+                    .query(q -> q.match(m -> m.field("title").query(FieldValue.of("Document 1"))))
+                   // .aggregations("my_buckets", aggregation)
+            );
+            SearchResponse<IndexData> response = client.search(request, IndexData.class);
+            for (Map.Entry<String, Aggregate> entry : response.aggregations().entrySet()) {
+                LOGGER.debug("Agg - {}", entry.getKey());
+                entry.getValue().composite().buckets().array().forEach(b -> LOGGER.debug("{} : {}", b.key(), b.docCount()));
+            }
+
+            // HybridSearch
+            // Query searchQuery = Query.of(
+            //     h -> h.hybrid(
+            //         q -> q.queries(
+            //             Arrays.asList(new MatchQuery.Builder().field("text").query(FieldValue.of("Text for document 2")).build().toQuery())
+            //         )
+            //     )
+            // );
+            // searchRequest = new SearchRequest.Builder().query(searchQuery).build();
+            // searchResponse = client.search(searchRequest, IndexData.class);
+            // for (var hit : searchResponse.hits().hits()) {
+            //     LOGGER.debug("Found {} with score {}", hit.source(), hit.score());
+            // }
+
+            searchWithCompletionSuggester();
+            searchWithTermSuggester();
+            searchWithPhraseSuggester();
+        } catch (Exception e) {
+            LOGGER.error("Unexpected exception", e);
+        }
+    }
+
+    public static void searchWithCompletionSuggester() {
+        try {
+            String index = "completion-suggester";
+            Property intValueProp = new Property.Builder().long_(v -> v).build();
+            Property msgCompletionProp = new Property.Builder().completion(c -> c).build();
+            client.indices()
+                .create(c -> c.index(index).mappings(m -> m.properties("intValue", intValueProp).properties("msg", msgCompletionProp)));
+
+            AppData appData = new AppData();
+            appData.setIntValue(1337);
+            appData.setMsg("foo");
+
+            client.index(b -> b.index(index).id("1").document(appData).refresh(Refresh.True));
+
+            appData.setIntValue(1338);
+            appData.setMsg("foobar");
+
+            client.index(b -> b.index(index).id("2").document(appData).refresh(Refresh.True));
+
             String suggesterName = "msgSuggester";
 
             CompletionSuggester completionSuggester = FieldSuggesterBuilders.completion().field("msg").size(1).build();
@@ -131,26 +179,14 @@ public class DemoSearchController {
             SearchRequest searchRequest = new SearchRequest.Builder().index(index).suggest(suggester).build();
 
             SearchResponse<AppData> searchResponse = client.search(searchRequest, AppData.class);
-            List<Suggest<AppData>> suggestions = searchResponse.suggest().get(suggesterName);
-            
-            for (int o = 0; o < suggestions.size(); o++) {
-            	if (suggestions.get(o) != null) {
-            		autoResultList.add(suggestions.get(o).toString());
-            	}
-            }
             LOGGER.debug("Suggester response size {}", searchResponse.suggest().get(suggesterName).size());
 
             client.indices().delete(new DeleteIndexRequest.Builder().index(index).build());
         } catch (Exception e) {
             LOGGER.error("Unexpected exception", e);
         }
-        
-        return autoResultList;
     }
 
-    // 2024.05.27
-    // 샘플 코드 그대로임 (수정X)
-    // 백업용
     public static void searchWithTermSuggester() {
         try {
             String index = "term-suggester";
@@ -185,9 +221,6 @@ public class DemoSearchController {
         }
     }
 
-    // 2024.05.27
-    // 샘플 코드 그대로임 (수정X)
-    // 백업용
     public static void searchWithPhraseSuggester() {
         try {
             String index = "test-phrase-suggester";
@@ -246,5 +279,4 @@ public class DemoSearchController {
             LOGGER.error("Unexpected exception", e);
         }
     }
-    
 }

@@ -1,6 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c"      uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form"   uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="UTF-8">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,21 +14,131 @@
 	<link rel="shortcut icon" href="./images/favicon.png">
 	<link rel="icon" href="./images/favicon.png" sizes="30x30" type="image/x-icon">
 	 
-	 <script src="../js/jquery-3.6.0.min.js"></script>
-	 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	 <script src="../js/slick.min.js"></script>
+	<script src="../js/jquery-3.6.0.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="../js/slick.min.js"></script>
  
-	 <!-- 서울대 도서관 js 추가 -->
-	 <script src="../js/template-functions.js"></script>
-	 <script src="../js/common.js"></script>
+	<!-- 서울대 도서관 js 추가 -->
+	<script src="../js/template-functions.js"></script>
+	<script src="../js/common.js"></script>
+	
+	<!-- 검색어 자동완성 기능 s -->
+	<script type="text/javascript" src="../js/jquery-easyui-1.10.17/jquery-ui.js"></script>
+	<!-- 검색어 자동완성 기능 e -->
 	
 	<title>LikeSNU 통합검색</title>
-	<script>
-
-	</script>
+<style type="text/css">
+	/* 검색어 자동완성 css */
+	.ui-autocomplete {
+	  max-height: 200px;
+	  overflow-y: auto;
+	  /* prevent horizontal scrollbar */
+	  overflow-x: hidden;
+	  height: auto;
+	}
+	.ui-menu-item div.ui-state-hover,
+	.ui-menu-item div.ui-state-active {
+	  color: #ffffff;
+	  text-decoration: none;
+	  background-color: #183989;
+	  border-radius: 0px;
+	  -webkit-border-radius: 0px;
+	  -moz-border-radius: 0px;
+	  background-image: none;
+	  border:none;
+	}
+</style>
 </head>
+<form name="searchForm" id="searchForm" action="/searchEngine" method="post">
+	<input type="hidden" id="searchKeyword" name="searchKeyword" value="${searchMap.searchKeyword}" />
+	<input type="hidden" id="recordCountPerPage" name="recordCountPerPage" value="${paginationInfo.recordCountPerPage}">
+	<input type="hidden" id="currentPageNum" name="currentPageNum" value="${currentPageNum}">
+</form>
+<script type="text/javascript">
+$(document).ready(function(){
+	// 통합검색 엔터
+	$("#searchEngineKeyword").keydown(function (key) {
+        if (key.keyCode == 13) {
+        	cfn_searchEngine();
+        }
+    });	
+});
+// 통합검색
+function cfn_searchEngine(keyword) {
+	var searchEngineBackKeyword = $('#searchEngineBackKeyword').val();
+	var strKeword = $("#searchEngineKeyword").val();
+	if (keyword != null && keyword != '') {
+		strKeword = keyword;
+	}
+	
+	if(strKeword != '') {
+		var strGoUrl = "/searchEngine.do";
+			
+		var form = document.createElement("form");
+		form.setAttribute("method", "post");  
+		form.setAttribute("action", strGoUrl); 				//요청 보낼 주소
+		
+		var hiddenField = document.createElement("input");
+	    hiddenField.setAttribute("type", "hidden");
+	    hiddenField.setAttribute("name", "searchKeyword");
+	    hiddenField.setAttribute("value", strKeword);
+
+		// 여기서 직전 키워드 저장! 02-15
+		if ($("#searchEngineKeyword").val() != searchEngineBackKeyword || strKeword != searchEngineBackKeyword) {
+			var hiddenBackField = document.createElement("input");
+	    	hiddenBackField.setAttribute("type", "hidden");
+	   		hiddenBackField.setAttribute("name", "backSearchKeyword");
+	    	hiddenBackField.setAttribute("value", searchEngineBackKeyword);
+		}
+
+	    form.appendChild(hiddenField);
+		form.appendChild(hiddenBackField);
+		document.body.appendChild(form);
+	    form.submit();
+		document.body.removeChild(form);	
+	} else {
+		alert("검색어를 입력해주세요.");
+	}
+}
+
+// 자동완성
+$('#searchEngineKeyword').autocomplete({
+	source: function (request, response) {
+		$.ajax({
+			url: "/searchSuggester.do",
+			type: "GET",
+			dataType: "JSON",
+			data: { searchKeyword : request.term }, 
+			success: function (data) {
+				$('#backupKeyword').val($('#searchEngineKeyword').val()); // 검증용으로 저장
+				response(data);
+			}
+			,error : function(){
+				// 아무것도 없으면 패스
+			}
+		});
+	},
+	focus: function (event, ui) {
+		//방향키로 자동완성단어 선택 가능하게 만들어줌
+		event.preventDefault();
+		$(this).autocomplete("search", $(this).val());
+		return false;
+	},
+	select: function (event, ui) {
+		cfn_searchEngine(ui.item.value);
+	},
+	focus: function (event, ui) {
+		return false;
+	},
+	delay: 100,	//autocomplete 딜레간(ms)
+	minLength : 1, //최소 글자 수
+//		autoFocus: true, // true == 첫 번째 항목에 자동으로 초점이 맞춰짐
+	close : function(event){
+	}
+});
+</script>
+
 <body>
- 
 	<div id="skip">
 		<strong class="blind">반복영역 건너뛰기</strong>
 		<a href="#gnb">주메뉴 바로가기</a> 
@@ -164,9 +280,6 @@
 											
 				<nav class="header-menu" aria-label="부가적인 메뉴">
 					<ul class="menu-wrapper">
-
-					 
-					
 						<!-- <li>					
 							<a role="button" class="btn btn-no-spacing btn-user-login" id="user-login-button" data-toggle="modal" data-target="#login_modal">로그인</a>
 						<li>
@@ -392,12 +505,14 @@
 			</p>
 		</div> 
 		<div class="top_box search_wrap">
-			<input type="text" placeholder="도서, 논문,강의 등 서울대학교의 모든 지식을 검색해보세요.">
-			<button title="검색"></button>
+	        <input id="searchEngineKeyword" type="text" placeholder='도서, 논문,강의 등 서울대학교의 모든 지식을 검색해보세요.' value="${searchMap.searchKeyword}"><!-- 도서, 논문,강의 등 서울대학교의 모든 지식을 검색해보세요. -->
+	        <input type="hidden" id="backupKeyword" value=""/> <!-- 검색엔진을 자주 호출하지 않기 위한 검증용 키워드 저장 input -->
+	        <input type="hidden" id="searchEngineBackKeyword" value="${searchMap.searchKeyword}"/>
+	        <button title="검색" onclick="cfn_searchEngine(); return false;" value="검색" />		
 		</div>
 	</div> <!--top_search_box-->
 
-		<div class="sub sub3-1 sub-search ">
+		<div class="sub sub3-1 sub-search">
 			<div id="sub_bar">
 				<div class="inner">
 					<div class="location_wrap">
@@ -429,8 +544,8 @@
 						<ul class="search_tab">
 							<li class="tab-link" data-tab="tab-1"><a class="blue li_tit" href="#link">통합검색(232)</a></li>
 							<li class="tab-link current" data-tab="tab-2"><a class="blue li_tit " href="#link">도서(122)</a></li>
-							<li class="tab-link" data-tab="tab-3"><a class="blue li_tit " href="#link">논문(100)</a></li>
-							<li class="tab-link" data-tab="tab-4"><a class="blue li_tit " href="#link">강의(10)</a></li>
+							<li class="tab-link" data-tab="tab-3"><a class="blue li_tit " href="#link">논문(0)</a></li>
+							<li class="tab-link" data-tab="tab-4"><a class="blue li_tit " href="#link">강의(0)</a></li>
 							<li class="tab-link" data-tab="tab-5"><a class="blue li_tit " href="#link">기타자료(0)</a></li>
 							<li class="tab-link" data-tab="tab-6"><a class="blue li_tit " href="#link">LikeSNU(0)</a></li>
 						</ul>
@@ -441,7 +556,7 @@
 						<div class="sub-search-book">
 						<div class="search_book_wrap">
 							<div class="sub_search_tit">
-								<p class="sub_top_tit1">‘인공지능 AI’ 에 대해 <span class="red">도서</span> 결과가 <span class="red">122건</span> 자료가 있습니다. </p>
+								<p class="sub_top_tit1">‘<c:out value="${searchMap.searchKeyword}"/>’ 에 대해 <span class="red">도서</span> 결과가 <span class="red">122건</span> 자료가 있습니다. </p>
 								<span class="blue_bar">도서(122)</span>
 							</div>
 							
@@ -466,7 +581,7 @@
 										<option value="">추천도순2</option>
 										<option value="">추천도순3</option>
 									</select>
-									<h3>정렬</h3>
+									<h3>검색</h3>
 									<a href="#none" class="filter_o filter_btn"><button>필터적용</button></a>
 									<a href="#none" class="reset_btn filter_btn"><button>초기화</button></a>
 									<h3>기간</h3>
@@ -493,7 +608,6 @@
 										</li>
 									</ul>
 									<h3>주제</h3>
-
 									<div class="work_type_box">
 										<ul class="work_type work_type2">
 											<li>
@@ -538,153 +652,40 @@
 										</ul>
 									</div> <!--top_recommended_book-->
 								</div>
-								<li>
-									<div class="ch_n"> <input type="checkbox" id="ar_ch1" class="ml_5"> </div>
-									<a href="#"><p class="sub_book_liet_img sub_book_liet_img01"><img src="../images/sub_book_list_B_img01.png"></p></a>
-									<div class="sub_book_list_txt">
-										<h3><a href="#"> 예약판매 기초에서 응용까지 대화형 GPT: 생성AI</a></h3>
-										<p>강건욱 저자(글) /  한영석 감수</p>
-										<span class="green">교양/전공</span><span class="year2">2023년</span>
-										<div class="tag_box">
-											<span class="tag">#과학</span>
-											<span class="tag">#과학자</span>
-											<span class="tag">#생물</span>
-										</div>
-										<ul class="share_box">
-											<button title="공유하기" class="mr_30"><i class="xi-share-alt-o"></i></button>	
-											<button class="more_view_btn1" title="더보기"><i class="xi-ellipsis-v"></i></button>								
-											<ul class="more_view_drop1">
-												<li><a href="#link" class="basket">LikeSNU 컬렉션에 담기</a></li>
-												<li><a href="link" class="read"> 이미읽음</a></li>
-												<li><a href="link" class="not_interested">관심없음</a></li>
-												<li><a href="link" class="loan">대출하기</a></li>
-												<li><a href="link" class="aladdin">알라딘에서 보기</a></li>
-											</ul>
-										</ul>
-									</div>
-								</li>
-
-								<li>
-									<div class="ch_n"> <input type="checkbox" id="ar_ch1" class="ml_5"> </div>
-									<a href="#"><p class="sub_book_liet_img sub_book_liet_img01"><img src="../images/sub_book_list_B_img01.png"></p></a>
-									<div class="sub_book_list_txt">
-										<h3><a href="#"> 생성형 AI 프롬프트 디자인</a></h3>
-										<p>강건욱 저자(글) /  한영석 감수</p>
-										<span class="green">교양/전공</span><span class="year2">2023년</span>
-										<div class="tag_box">
-											<span class="tag">#과학</span>
-											<span class="tag">#과학자</span>
-											<span class="tag">#생물</span>
-										</div>
-										<ul class="share_box">
-											<button title="공유하기" class="mr_30"><i class="xi-share-alt-o"></i></button>	
-											<button class="more_view_btn1" title="더보기"><i class="xi-ellipsis-v"></i></button>								
-											<ul class="more_view_drop1">
-												<li><a href="#link" class="basket">LikeSNU 컬렉션에 담기</a></li>
-												<li><a href="link" class="read"> 이미읽음</a></li>
-												<li><a href="link" class="not_interested">관심없음</a></li>
-												<li><a href="link" class="loan">대출하기</a></li>
-												<li><a href="link" class="aladdin">알라딘에서 보기</a></li>
-											</ul>
-										</ul>
-									</div>
-								</li>
-
-								<li>
-									<div class="ch_n"> <input type="checkbox" id="ar_ch1" class="ml_5"> </div>
-									<a href="#"><p class="sub_book_liet_img sub_book_liet_img01"><img src="../images/sub_book_list_B_img01.png"></p></a>
-									<div class="sub_book_list_txt">
-										<h3><a href="#">물고기는 존재하지않는다.</a> </h3>
-										<p>강건욱 저자(글) /  한영석 감수</p>
-										<span class="green">교양/전공</span><span class="year2">2023년</span>
-										<div class="tag_box">
-											<span class="tag">#과학</span>
-											<span class="tag">#과학자</span>
-											<span class="tag">#생물</span>
-										</div>
-										<ul class="share_box">
-											<button title="공유하기" class="mr_30"><i class="xi-share-alt-o"></i></button>	
-											<button class="more_view_btn1" title="더보기"><i class="xi-ellipsis-v"></i></button>								
-											<ul class="more_view_drop1">
-												<li><a href="#link" class="basket">LikeSNU 컬렉션에 담기</a></li>
-												<li><a href="link" class="read"> 이미읽음</a></li>
-												<li><a href="link" class="not_interested">관심없음</a></li>
-												<li><a href="link" class="loan">대출하기</a></li>
-												<li><a href="link" class="aladdin">알라딘에서 보기</a></li>
-											</ul>
-										</ul>
-									</div>
-								</li>
-
-								<li>
-									<div class="ch_n"> <input type="checkbox" id="ar_ch1" class="ml_5"> </div>
-									<a href="#"><p class="sub_book_liet_img sub_book_liet_img01"><img src="../images/sub_book_list_B_img01.png"></p></a>
-									<div class="sub_book_list_txt">
-										<h3><a href="#">[국내도서] 예약판매 기초에서 응용까지 대화형 GPT: 생성AI</a></h3>
-										<p>강건욱 저자(글) /  한영석 감수</p>
-										<span class="green">교양/전공</span><span class="year2">2023년</span>
-										<div class="tag_box">
-											<span class="tag">#과학</span>
-											<span class="tag">#과학자</span>
-											<span class="tag">#생물</span>
-										</div>
-										<ul class="share_box">
-											<button title="공유하기" class="mr_30"><i class="xi-share-alt-o"></i></button>	
-											<button class="more_view_btn1" title="더보기"><i class="xi-ellipsis-v"></i></button>								
-											<ul class="more_view_drop1">
-												<li><a href="#link" class="basket">LikeSNU 컬렉션에 담기</a></li>
-												<li><a href="link" class="read"> 이미읽음</a></li>
-												<li><a href="link" class="not_interested">관심없음</a></li>
-												<li><a href="link" class="loan">대출하기</a></li>
-												<li><a href="link" class="aladdin">알라딘에서 보기</a></li>
-											</ul>
-										</ul>
-									</div>
-								</li>
-
-								<li>
-									<div class="ch_n"> <input type="checkbox" id="ar_ch1" class="ml_5"> </div>
-									<a href="#"><p class="sub_book_liet_img sub_book_liet_img01"><img src="../images/sub_book_list_B_img01.png"></p></a>
-									<div class="sub_book_list_txt">
-										<h3><a href="#">[국내도서] 생성형 AI 프롬프트 디자인</a></h3>
-										<p>강건욱 저자(글) /  한영석 감수</p>
-										<span class="green">교양/전공</span><span class="year2">2023년</span>
-										<div class="tag_box">
-											<span class="tag">#과학</span>
-											<span class="tag">#과학자</span>
-											<span class="tag">#생물</span>
-										</div>
-										<ul class="share_box">
-											<button title="공유하기" class="mr_30"><i class="xi-share-alt-o"></i></button>	
-											<button class="more_view_btn1" title="더보기"><i class="xi-ellipsis-v"></i></button>								
-											<ul class="more_view_drop1">
-												<li><a href="#link" class="basket">LikeSNU 컬렉션에 담기</a></li>
-												<li><a href="link" class="read"> 이미읽음</a></li>
-												<li><a href="link" class="not_interested">관심없음</a></li>
-												<li><a href="link" class="loan">대출하기</a></li>
-												<li><a href="link" class="aladdin">알라딘에서 보기</a></li>
-											</ul>
-										</ul>
-									</div>
-								</li>
-
-								<div id="paging_div" class="paging_normal">
-									<ul class="paging_align">
-										<li><a href="#"><span>처음</span></a></li>
-										<li><a href="#"><i class="xi-angle-left"></i></a></li>
-										<li><a href="#" class="num"><strong>1</strong></a></li>
-										<li><a href="#" class="num">2</a></li>
-										<li><a href="#" class="num">3</a></li>
-										<li><a href="#" class="num">4</a></li>
-										<li><a href="#" class="num">5</a></li>
-										<li><a href="#" class="num">6</a></li>
-										<li><a href="#" class="num">7</a></li>
-										<li><a href="#" class="num">8</a></li>
-										<li><a href="#" class="num">9</a></li>
-										<li><a href="#"><i class="xi-angle-right"></i></a></li>
-										<li><a href="#"><span>마지막</span></a></li>
-									</ul>
-								</div>
+								<c:if test="${!empty searchResult}">
+									<c:forEach var="result" items="${searchResult}" varStatus="status">
+										<c:if test="${status.index < 10}">
+											<div class="ch_n"> <input type="checkbox" id="ar_ch1" class="ml_5"> </div>
+											<a href="#"><p class="sub_book_liet_img sub_book_liet_img01"><img src='<c:out value="${result.cover}"/>'></p></a>
+											<div class="sub_book_list_txt">
+												<h3><a href="#"><c:out value="${result.title}"/></a></h3>
+												<p><c:out value="${result.author}"/></p>
+												<span class="year2"><c:out value="${result.publication_date}"/>년</span>
+												<ul class="share_box">
+													<button title="공유하기" class="mr_30"><i class="xi-share-alt-o"></i></button>	
+													<button class="more_view_btn1" title="더보기"><i class="xi-ellipsis-v"></i></button>								
+													<ul class="more_view_drop1">
+														<li><a href="#link" class="basket">LikeSNU 컬렉션에 담기</a></li>
+														<li><a href="link" class="read"> 이미읽음</a></li>
+														<li><a href="link" class="not_interested">관심없음</a></li>
+														<li><a href="link" class="loan">대출하기</a></li>
+														<li><a href="link" class="aladdin">알라딘에서 보기</a></li>
+													</ul>
+												</ul>
+											</div>										
+										</c:if>
+									</c:forEach>
+								</c:if>
+								<c:if test="${empty searchResult}">
+									<div class="no_info" style="border: none;">
+										<p>검색결과가 존재하지 않습니다.</p>
+										<button type="button">
+											<a href="https://lib.snu.ac.kr/using/purchase-textbook/p-guide/" title="희망 도서 신청">
+												희망 도서 신청
+											</a>
+										</button>
+									</div>									
+								</c:if>
 							</ul><!--recommended_book_list-->
 						</div>
 						</div>
