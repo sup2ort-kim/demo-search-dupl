@@ -21,7 +21,7 @@ public class DemoClient {
 		// System.setProperty("javax.net.ssl.trustStore", "/full/path/to/keystore");
 		// System.setProperty("javax.net.ssl.trustStorePassword", "password-to-keystore");
 
-		final HttpHost host = new HttpHost("192.168.0.202", 9200, "http");
+		final HttpHost host = new HttpHost("192.168.0.202", 13023, "http");
 		final BasicCredentialsProvider credentialsProvider = new BasicCredentialsProvider();
 		// Only for demo purposes. Don't specify your credentials in code.
 		UsernamePasswordCredentials credentials = new UsernamePasswordCredentials("admin", "flxmflqj1!");

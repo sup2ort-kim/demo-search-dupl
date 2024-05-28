@@ -51,6 +51,7 @@ import org.opensearch.client.opensearch.indices.IndexSettings;
 import org.opensearch.client.opensearch.indices.IndexSettingsAnalysis;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -60,7 +61,7 @@ import com.demo.search.service.DemoClient;
 import com.demo.search.util.AppData;
 import com.demo.search.util.IndexData;
 
-@RestController
+@Controller
 public class DemoSearchController {
     private static final Logger LOGGER = LoggerFactory.getLogger(DemoSearchController.class);
 
@@ -82,7 +83,7 @@ public class DemoSearchController {
 
 	        // 실제 검색으로 추정, FieldValue.of("검색어")
 	        SearchRequest searchRequest = new SearchRequest.Builder().query(
-	            q -> q.match(m -> m.field("text").query(FieldValue.of("Text for document 2")))
+	            q -> q.match(m -> m.field("title").query(FieldValue.of("테스트")))
 	        ).build();
 
 	        searchResponse = client.search(searchRequest, IndexData.class);
@@ -91,7 +92,7 @@ public class DemoSearchController {
 	        }
 
 	        searchRequest = new SearchRequest.Builder().query(q -> q.match(m -> m.field("title").query(FieldValue.of("Document 1"))))
-	            .aggregations("titles", new Aggregation.Builder().terms(t -> t.field("title.keyword")).build())
+	            .aggregations("titles", new Aggregation.Builder().terms(t -> t.field("title")).build())
 	            .build();
 
 	        searchResponse = client.search(searchRequest, IndexData.class);
@@ -111,11 +112,11 @@ public class DemoSearchController {
     	
 		model.addAttribute("searchMap", searchMap);
     	
-    	return "index";
+    	return "/searchEngine";
     }
     
     @RequestMapping(value = "/searchSuggester.do")
-    public static ArrayList<String> searchWithCompletionSuggester(@RequestParam HashMap<String, Object> searchMap, ModelMap model, HttpServletRequest request, HttpSession session) {
+    public ArrayList<String> searchWithCompletionSuggester(@RequestParam HashMap<String, Object> searchMap, ModelMap model, HttpServletRequest request, HttpSession session) {
     	
 		// 여기에다 값을 담을 것임
 		ArrayList<String> autoResultList = new ArrayList<String>();
@@ -123,7 +124,7 @@ public class DemoSearchController {
 		String index = "tb_book_index";
 		
         try {
-            String suggesterName = "msgSuggester";
+            String suggesterName = "autocomplete";
 
             CompletionSuggester completionSuggester = FieldSuggesterBuilders.completion().field("msg").size(1).build();
             FieldSuggester fieldSuggester = new FieldSuggester.Builder().prefix("foo").completion(completionSuggester).build();

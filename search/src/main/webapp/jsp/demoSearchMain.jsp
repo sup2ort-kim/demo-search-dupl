@@ -24,6 +24,7 @@
 	
 	<!-- 검색어 자동완성 기능 s -->
 	<script type="text/javascript" src="../js/jquery-easyui-1.10.17/jquery-ui.js"></script>
+	<link rel="stylesheet" href="../css/jquery-ui.css">
 	<!-- 검색어 자동완성 기능 e -->
 	
 	<title>LikeSNU 통합검색</title>
@@ -62,7 +63,46 @@ $(document).ready(function(){
         	cfn_searchEngine();
         }
     });	
+	
+	// 자동완성
+	$('#searchEngineKeyword').autocomplete({
+		source: function (request, response) {
+			$.ajax({
+				url: "/searchSuggester.do",
+				type: "GET",
+				dataType: "JSON",
+				data: { searchKeyword : request.term }, 
+				success: function (data) {
+					$('#backupKeyword').val($('#searchEngineKeyword').val()); // 검증용으로 저장
+					response(data);
+					console.log("타나");
+				}
+				,error : function(){
+					// 아무것도 없으면 패스
+					console.log('아무것도 없어');
+				}
+			});
+		},
+		focus: function (event, ui) {
+			//방향키로 자동완성단어 선택 가능하게 만들어줌
+			event.preventDefault();
+			$(this).autocomplete("search", $(this).val());
+			return false;
+		},
+		select: function (event, ui) {
+			cfn_searchEngine(ui.item.value);
+		},
+		focus: function (event, ui) {
+			return false;
+		},
+		delay: 100,	//autocomplete 딜레간(ms)
+		minLength : 1, //최소 글자 수
+//			autoFocus: true, // true == 첫 번째 항목에 자동으로 초점이 맞춰짐
+		close : function(event){
+		}
+	});	
 });
+
 // 통합검색
 function cfn_searchEngine(keyword) {
 	var searchEngineBackKeyword = $('#searchEngineBackKeyword').val();
@@ -100,42 +140,6 @@ function cfn_searchEngine(keyword) {
 		alert("검색어를 입력해주세요.");
 	}
 }
-
-// 자동완성
-$('#searchEngineKeyword').autocomplete({
-	source: function (request, response) {
-		$.ajax({
-			url: "/searchSuggester.do",
-			type: "GET",
-			dataType: "JSON",
-			data: { searchKeyword : request.term }, 
-			success: function (data) {
-				$('#backupKeyword').val($('#searchEngineKeyword').val()); // 검증용으로 저장
-				response(data);
-			}
-			,error : function(){
-				// 아무것도 없으면 패스
-			}
-		});
-	},
-	focus: function (event, ui) {
-		//방향키로 자동완성단어 선택 가능하게 만들어줌
-		event.preventDefault();
-		$(this).autocomplete("search", $(this).val());
-		return false;
-	},
-	select: function (event, ui) {
-		cfn_searchEngine(ui.item.value);
-	},
-	focus: function (event, ui) {
-		return false;
-	},
-	delay: 100,	//autocomplete 딜레간(ms)
-	minLength : 1, //최소 글자 수
-//		autoFocus: true, // true == 첫 번째 항목에 자동으로 초점이 맞춰짐
-	close : function(event){
-	}
-});
 </script>
 
 <body>
@@ -505,7 +509,7 @@ $('#searchEngineKeyword').autocomplete({
 			</p>
 		</div> 
 		<div class="top_box search_wrap">
-	        <input id="searchEngineKeyword" type="text" placeholder='도서, 논문,강의 등 서울대학교의 모든 지식을 검색해보세요.' value="${searchMap.searchKeyword}"><!-- 도서, 논문,강의 등 서울대학교의 모든 지식을 검색해보세요. -->
+	        <input id="searchEngineKeyword" type="text" placeholder='도서, 논문,강의 등 서울대학교의 모든 지식을 검색해보세요.'><!-- 도서, 논문,강의 등 서울대학교의 모든 지식을 검색해보세요. -->
 	        <input type="hidden" id="backupKeyword" value=""/> <!-- 검색엔진을 자주 호출하지 않기 위한 검증용 키워드 저장 input -->
 	        <input type="hidden" id="searchEngineBackKeyword" value="${searchMap.searchKeyword}"/>
 	        <button title="검색" onclick="cfn_searchEngine(); return false;" value="검색" />		
