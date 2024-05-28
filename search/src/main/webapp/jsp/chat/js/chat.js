@@ -24,6 +24,7 @@ function qustionSubmit() {
 	showLoadingIndicator(); // 로딩 표시 활성화
 	
 	const botResponse = sendData(message); // 챗봇 응답 받아오기
+	$('#chat-log').scrollTop($('#chat-log')[0].scrollHeight);
 }
 
 // 챗봇 응답 받아오기
