@@ -31,7 +31,7 @@ function qustionSubmit() {
 function sendData(message) {
 	$.ajax({
 		 type : 'post'
-		,url : "http://192.168.2.118:8090/chatbot"
+		,url : "http://192.168.0.58:8090/chatbot"
 		,dataType : 'json'
 		,data: { "message" : message }
 		,success : function(result) {
