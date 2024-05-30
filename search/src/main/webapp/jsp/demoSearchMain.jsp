@@ -60,7 +60,8 @@ $(document).ready(function(){
 	// 통합검색 엔터
 	$("#searchEngineKeyword").keydown(function (key) {
         if (key.keyCode == 13) {
-        	cfn_searchEngine();
+//         	cfn_searchEngine();
+        	cfn_searchEngine_ex();
         }
     });	
 	
@@ -102,6 +103,12 @@ $(document).ready(function(){
 		}
 	});	
 });
+
+// html 보여주기 용
+function cfn_searchEngine_ex() {
+	$('#emptyList').css('display','none');
+	$('.viewList').css('display','block');
+}
 
 // 통합검색
 function cfn_searchEngine(keyword) {
@@ -512,7 +519,8 @@ function cfn_searchEngine(keyword) {
 	        <input id="searchEngineKeyword" type="text" placeholder='도서, 논문,강의 등 서울대학교의 모든 지식을 검색해보세요.'><!-- 도서, 논문,강의 등 서울대학교의 모든 지식을 검색해보세요. -->
 	        <input type="hidden" id="backupKeyword" value=""/> <!-- 검색엔진을 자주 호출하지 않기 위한 검증용 키워드 저장 input -->
 	        <input type="hidden" id="searchEngineBackKeyword" value="${searchMap.searchKeyword}"/>
-	        <button title="검색" onclick="cfn_searchEngine(); return false;" value="검색" />		
+	        <!-- <button title="검색" onclick="cfn_searchEngine(); return false;" value="검색" />-->
+	        <button title="검색" onclick="cfn_searchEngine_ex(); return false;" value="검색" />		
 		</div>
 	</div> <!--top_search_box-->
 
@@ -560,7 +568,7 @@ function cfn_searchEngine(keyword) {
 						<div class="sub-search-book">
 						<div class="search_book_wrap">
 							<div class="sub_search_tit">
-								<p class="sub_top_tit1">‘<c:out value="${searchMap.searchKeyword}"/>’ 에 대해 <span class="red">도서</span> 결과가 <span class="red">122건</span> 자료가 있습니다. </p>
+								<%-- <p class="sub_top_tit1">‘<c:out value="${searchMap.searchKeyword}"/>’ 에 대해 <span class="red">도서</span> 결과가 <span class="red">122건</span> 자료가 있습니다. </p> --%>
 								<span class="blue_bar">도서(122)</span>
 							</div>
 							
@@ -640,7 +648,7 @@ function cfn_searchEngine(keyword) {
 								</div><!--search_filter_box-->
 							</div><!--search_filter-->
 
-							<ul class="recommended_book_list">
+							<ul class="recommended_book_list" id="emptyList">
 								<div class="recommended_book ml_20_mn">
 									<div class="top_recommended_book">
 										<ul>
@@ -656,6 +664,19 @@ function cfn_searchEngine(keyword) {
 										</ul>
 									</div> <!--top_recommended_book-->
 								</div>
+								
+								<li>
+									<div class="no_info" style="border: none;">
+										<p>검색결과가 존재하지 않습니다.</p>
+										<button type="button">
+											<a href="https://lib.snu.ac.kr/using/purchase-textbook/p-guide/" title="희망 도서 신청">
+												희망 도서 신청
+											</a>
+										</button>
+									</div>
+								</li>
+								
+								<%-- 
 								<c:if test="${!empty searchResult}">
 									<c:forEach var="result" items="${searchResult}" varStatus="status">
 										<c:if test="${status.index < 10}">
@@ -676,7 +697,7 @@ function cfn_searchEngine(keyword) {
 														<li><a href="link" class="aladdin">알라딘에서 보기</a></li>
 													</ul>
 												</ul>
-											</div>										
+											</div>
 										</c:if>
 									</c:forEach>
 								</c:if>
@@ -688,9 +709,167 @@ function cfn_searchEngine(keyword) {
 												희망 도서 신청
 											</a>
 										</button>
-									</div>									
+									</div>
 								</c:if>
+								 --%>
 							</ul><!--recommended_book_list-->
+							
+							<ul class="recommended_book_list viewList" style="display: none;">
+								<div class="recommended_book ml_20_mn">
+									<div class="top_recommended_book">
+										<ul>
+											<li class="ch_nAll">
+												<input type="checkbox" id="ar_ch1all" class="ml_10">
+											</li>
+											<li>
+												<p class="blue_arrow">
+													<span></span> 
+													키워드검색
+												</p>
+											</li>
+										</ul>
+									</div> <!--top_recommended_book-->
+								</div>
+								
+								<li>
+									<div class="ch_n"> <input type="checkbox" id="ar_ch1" class="ml_5"> </div>
+									<a href="#"><p class="sub_book_liet_img sub_book_liet_img01"></p></a>
+									<div class="sub_book_list_txt">
+										<h3><a href="#"><c:out value="${result.title}"/></a></h3>
+										<span class="year2"><c:out value=""/></span>
+										<ul class="share_box">
+											<button title="공유하기" class="mr_30"><i class="xi-share-alt-o"></i></button>	
+											<button class="more_view_btn1" title="더보기"><i class="xi-ellipsis-v"></i></button>
+											<ul class="more_view_drop1">
+												<li><a href="#link" class="basket">LikeSNU 컬렉션에 담기</a></li>
+												<li><a href="link" class="read"> 이미읽음</a></li>
+												<li><a href="link" class="not_interested">관심없음</a></li>
+												<li><a href="link" class="loan">대출하기</a></li>
+												<li><a href="link" class="aladdin">알라딘에서 보기</a></li>
+											</ul>
+										</ul>
+									</div>
+								</li>
+							</ul>
+							
+							<ul class="recommended_book_list viewList" style="display: none;">
+								<div class="recommended_book ml_20_mn">
+									<div class="top_recommended_book">
+										<ul>
+											<li class="ch_nAll">
+												<input type="checkbox" id="ar_ch1all" class="ml_10">
+											</li>
+											<li>
+												<p class="blue_arrow">
+													<span></span> 
+													의미검색
+												</p>
+											</li>
+										</ul>
+									</div> <!--top_recommended_book-->
+								</div>
+								
+								<li>
+									<div class="ch_n"> <input type="checkbox" id="ar_ch1" class="ml_5"> </div>
+									<a href="#"><p class="sub_book_liet_img sub_book_liet_img01"></p></a>
+									<div class="sub_book_list_txt">
+										<h3><a href="#"><c:out value="농업의 이해"/></a></h3>
+										
+										<span class="year2"><c:out value=""/>99120711302591</span>
+										<ul class="share_box">
+											<button title="공유하기" class="mr_30"><i class="xi-share-alt-o"></i></button>	
+											<button class="more_view_btn1" title="더보기"><i class="xi-ellipsis-v"></i></button>
+											<ul class="more_view_drop1">
+												<li><a href="#link" class="basket">LikeSNU 컬렉션에 담기</a></li>
+												<li><a href="link" class="read"> 이미읽음</a></li>
+												<li><a href="link" class="not_interested">관심없음</a></li>
+												<li><a href="link" class="loan">대출하기</a></li>
+												<li><a href="link" class="aladdin">알라딘에서 보기</a></li>
+											</ul>
+										</ul>
+									</div>
+								</li>
+								<li>
+									<div class="ch_n"> <input type="checkbox" id="ar_ch1" class="ml_5"> </div>
+									<a href="#"><p class="sub_book_liet_img sub_book_liet_img01"></p></a>
+									<div class="sub_book_list_txt">
+										<h3><a href="#"><c:out value="보통작물"/></a></h3>
+										
+										<span class="year2"><c:out value=""/>99140298502591</span>
+										<ul class="share_box">
+											<button title="공유하기" class="mr_30"><i class="xi-share-alt-o"></i></button>	
+											<button class="more_view_btn1" title="더보기"><i class="xi-ellipsis-v"></i></button>
+											<ul class="more_view_drop1">
+												<li><a href="#link" class="basket">LikeSNU 컬렉션에 담기</a></li>
+												<li><a href="link" class="read"> 이미읽음</a></li>
+												<li><a href="link" class="not_interested">관심없음</a></li>
+												<li><a href="link" class="loan">대출하기</a></li>
+												<li><a href="link" class="aladdin">알라딘에서 보기</a></li>
+											</ul>
+										</ul>
+									</div>
+								</li>
+								<li>
+									<div class="ch_n"> <input type="checkbox" id="ar_ch1" class="ml_5"> </div>
+									<a href="#"><p class="sub_book_liet_img sub_book_liet_img01"></p></a>
+									<div class="sub_book_list_txt">
+										<h3><a href="#"><c:out value="농군"/></a></h3>
+										
+										<span class="year2"><c:out value=""/>99123453302591</span>
+										<ul class="share_box">
+											<button title="공유하기" class="mr_30"><i class="xi-share-alt-o"></i></button>	
+											<button class="more_view_btn1" title="더보기"><i class="xi-ellipsis-v"></i></button>
+											<ul class="more_view_drop1">
+												<li><a href="#link" class="basket">LikeSNU 컬렉션에 담기</a></li>
+												<li><a href="link" class="read"> 이미읽음</a></li>
+												<li><a href="link" class="not_interested">관심없음</a></li>
+												<li><a href="link" class="loan">대출하기</a></li>
+												<li><a href="link" class="aladdin">알라딘에서 보기</a></li>
+											</ul>
+										</ul>
+									</div>
+								</li>
+								<li>
+									<div class="ch_n"> <input type="checkbox" id="ar_ch1" class="ml_5"> </div>
+									<a href="#"><p class="sub_book_liet_img sub_book_liet_img01"></p></a>
+									<div class="sub_book_list_txt">
+										<h3><a href="#"><c:out value="농업재해보험이 농산물 생산에 미치는 영향 분석 "/></a></h3>
+										
+										<span class="year2"><c:out value=""/>99645284402591</span>
+										<ul class="share_box">
+											<button title="공유하기" class="mr_30"><i class="xi-share-alt-o"></i></button>	
+											<button class="more_view_btn1" title="더보기"><i class="xi-ellipsis-v"></i></button>
+											<ul class="more_view_drop1">
+												<li><a href="#link" class="basket">LikeSNU 컬렉션에 담기</a></li>
+												<li><a href="link" class="read"> 이미읽음</a></li>
+												<li><a href="link" class="not_interested">관심없음</a></li>
+												<li><a href="link" class="loan">대출하기</a></li>
+												<li><a href="link" class="aladdin">알라딘에서 보기</a></li>
+											</ul>
+										</ul>
+									</div>
+								</li>
+								<li>
+									<div class="ch_n"> <input type="checkbox" id="ar_ch1" class="ml_5"> </div>
+									<a href="#"><p class="sub_book_liet_img sub_book_liet_img01"></p></a>
+									<div class="sub_book_list_txt">
+										<h3><a href="#"><c:out value="식용작물학"/></a></h3>
+										
+										<span class="year2"><c:out value=""/>99123942702591</span>
+										<ul class="share_box">
+											<button title="공유하기" class="mr_30"><i class="xi-share-alt-o"></i></button>	
+											<button class="more_view_btn1" title="더보기"><i class="xi-ellipsis-v"></i></button>
+											<ul class="more_view_drop1">
+												<li><a href="#link" class="basket">LikeSNU 컬렉션에 담기</a></li>
+												<li><a href="link" class="read"> 이미읽음</a></li>
+												<li><a href="link" class="not_interested">관심없음</a></li>
+												<li><a href="link" class="loan">대출하기</a></li>
+												<li><a href="link" class="aladdin">알라딘에서 보기</a></li>
+											</ul>
+										</ul>
+									</div>
+								</li>
+							</ul>
 						</div>
 						</div>
 					</div>
