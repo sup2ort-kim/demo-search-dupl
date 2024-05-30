@@ -24,14 +24,13 @@ function qustionSubmit() {
 	showLoadingIndicator(); // 로딩 표시 활성화
 	
 	const botResponse = sendData(message); // 챗봇 응답 받아오기
-	$('#chat-log').scrollTop($('#chat-log')[0].scrollHeight);
 }
 
 // 챗봇 응답 받아오기
 function sendData(message) {
 	$.ajax({
 		 type : 'post'
-		,url : "http://192.168.2.118:8090/chatbot"
+		,url : "http://192.168.0.58:8090/chatbot"
 		,dataType : 'json'
 		,data: { "message" : message }
 		,success : function(result) {
@@ -39,6 +38,8 @@ function sendData(message) {
 			displayMessage(result.result, 'bot'); // 챗봇 응답 표시
 			enableUserInput(); // 사용자 입력 활성화
 			$('#user-input').val(''); // 입력 필드 초기화
+
+			$('#chat-log').scrollTop($('#chat-log')[0].scrollHeight);
 		}
 		,error : function(request, status, error) {
 			hideLoadingIndicator();
