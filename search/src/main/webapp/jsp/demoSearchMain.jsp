@@ -66,7 +66,7 @@ $(document).ready(function(){
     });	
 	
 	// 자동완성
-	$('#searchEngineKeyword').autocomplete({
+	$('#searchEngineKeyword1').autocomplete({
 		source: function (request, response) {
 			$.ajax({
 				url: "/searchSuggester.do",
