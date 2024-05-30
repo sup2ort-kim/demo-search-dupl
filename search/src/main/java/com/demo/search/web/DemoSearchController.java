@@ -17,17 +17,13 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.opensearch.client.opensearch.OpenSearchClient;
-import org.opensearch.client.opensearch._types.FieldValue;
 import org.opensearch.client.opensearch._types.OpenSearchException;
 import org.opensearch.client.opensearch._types.Refresh;
-import org.opensearch.client.opensearch._types.aggregations.Aggregate;
-import org.opensearch.client.opensearch._types.aggregations.Aggregation;
 import org.opensearch.client.opensearch._types.analysis.Analyzer;
 import org.opensearch.client.opensearch._types.analysis.CustomAnalyzer;
 import org.opensearch.client.opensearch._types.analysis.ShingleTokenFilter;
@@ -55,7 +51,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
 import com.demo.search.service.DemoClient;
 import com.demo.search.util.AppData;
@@ -71,6 +66,7 @@ public class DemoSearchController {
     public String searchEngine(@RequestParam HashMap<String, Object> searchMap, ModelMap model, HttpServletRequest request, HttpSession session) throws OpenSearchException, IOException {
 		
     	final String indexName = "tb_book_index";
+    	ArrayList<IndexData> resultList = new ArrayList<IndexData>();
     	
     	try {
 			client = DemoClient.create();
@@ -80,31 +76,35 @@ public class DemoSearchController {
 	            LOGGER.debug("Found {} with score {}", hit.source(), hit.score());
 	            System.out.println("Found {} with score {} " + hit.source() + " " + hit.score());
 	        }
-
+	        
 	        // 실제 검색으로 추정, FieldValue.of("검색어")
 	        SearchRequest searchRequest = new SearchRequest.Builder().query(
-	            q -> q.match(m -> m.field("title").query(FieldValue.of("테스트")))
+	        		 q -> q.multiMatch(
+    			        m -> m.fields("title","title_choseong","title_hantoeng").query(searchMap.get("searchKeyword").toString())
+    			    )
+//	            q -> q.multiMatch(m -> m.fields("title").query(FieldValue.of(searchMap.get("searchKeyword").toString())))
 	        ).build();
 
 	        searchResponse = client.search(searchRequest, IndexData.class);
 	        for (Hit<IndexData> hit : searchResponse.hits().hits()) {
 	            LOGGER.debug("Found {} with score {}", hit.source(), hit.score());
+	            resultList.add(hit.source());
 	        }
 
-	        searchRequest = new SearchRequest.Builder().query(q -> q.match(m -> m.field("title").query(FieldValue.of("Document 1"))))
-	            .aggregations("titles", new Aggregation.Builder().terms(t -> t.field("title")).build())
-	            .build();
-
-	        searchResponse = client.search(searchRequest, IndexData.class);
-	        for (Map.Entry<String, Aggregate> entry : searchResponse.aggregations().entrySet()) {
-	            LOGGER.debug("Agg - {}", entry.getKey());
-	            entry.getValue().sterms().buckets().array().forEach(b -> LOGGER.debug("{} : {}", b.key(), b.docCount()));
-	        }
+//	        searchRequest = new SearchRequest.Builder().query(q -> q.match(m -> m.field("title").query(FieldValue.of(searchMap.get("searchKeyword").toString()))))
+//	            .aggregations("title", new Aggregation.Builder().terms(t -> t.field("title")).build())
+//	            .build();
+//
+//	        searchResponse = client.search(searchRequest, IndexData.class);
+//	        for (Map.Entry<String, Aggregate> entry : searchResponse.aggregations().entrySet()) {
+//	            LOGGER.debug("Agg - {}", entry.getKey());
+//	            entry.getValue().sterms().buckets().array().forEach(b -> LOGGER.debug("{} : {}", b.key(), b.docCount()));
+//	        }
 	        
 	        // 서울대 소스처럼 model에 담아서 표출
 	        // 의미검색은 bertResult로 해서 따로 담아야 할 것 같음
 	        // 메신저상 본부장님 지시: 상단에 키워드 검색, 하단에 의미 검색
-	        model.addAttribute("searchResult", searchResponse.hits().hits());
+	        model.addAttribute("searchResult", resultList);
 		} catch (KeyManagementException | NoSuchAlgorithmException | KeyStoreException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -124,7 +124,7 @@ public class DemoSearchController {
 		String index = "tb_book_index";
 		
         try {
-            String suggesterName = "autocomplete";
+            String suggesterName = "msgSuggester";
 
             CompletionSuggester completionSuggester = FieldSuggesterBuilders.completion().field("msg").size(1).build();
             FieldSuggester fieldSuggester = new FieldSuggester.Builder().prefix("foo").completion(completionSuggester).build();
@@ -141,7 +141,7 @@ public class DemoSearchController {
             }
             LOGGER.debug("Suggester response size {}", searchResponse.suggest().get(suggesterName).size());
 
-            client.indices().delete(new DeleteIndexRequest.Builder().index(index).build());
+            // client.indices().delete(new DeleteIndexRequest.Builder().index(index).build());
         } catch (Exception e) {
             LOGGER.error("Unexpected exception", e);
         }
